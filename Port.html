@@ -1,0 +1,1382 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.6.1/css/all.css">
+    <title>PortFolio</title>
+</head>
+    <style>
+ 
+/* Custom scrollbar */
+::-webkit-scrollbar {
+  width: 10px;
+}
+
+::-webkit-scrollbar-track {
+  background: #f1f1f1; 
+}
+ 
+
+::-webkit-scrollbar-thumb {
+  background: #888; 
+}
+
+
+::-webkit-scrollbar-thumb:hover {
+  background: #555; 
+}
+
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+    html {
+    scroll-behavior: smooth;
+    -webkit-text-size-adjust: 100%;
+        }
+   
+    </style>
+    <style>
+            *{
+    margin: 0;
+    padding: 0;
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    box-sizing: border-box;
+
+    transition: 0.5s;
+    }
+        body{
+      background-color: rgb(43, 43, 43);
+      background-color: rgb(255, 255, 255);
+     /*  overflow-x: hidden; */
+      overflow: hidden;
+    }
+    .f1{
+        width: 100%;
+        height: 100vh;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        transition-timing-function: ease-in-out;
+        transition: 1s;
+    }
+    .f2{
+        width: 100%;
+        height: 100vh;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        flex-direction: column;
+        transition-timing-function: ease-in-out;
+  
+   
+  
+       
+
+
+    }
+    .ig-logo{
+        width:300px;
+        height: 300px;
+       /*  background: linear-gradient(135deg,#4c68d7,10%,#8a3ab9,50%,#e95950,#fbad50,#fccc63); */
+        background: url(/img/iglogo2.jpg);
+        border-radius: 40px;
+        background-size: 130%;
+        background-repeat: no-repeat;
+        background-position-x: center;
+        transform: scale(6,6);
+        transition: 0.5s;
+        transition-timing-function: ease-out;
+ 
+    }
+    .ig{
+        transition-timing-function: ease-out;
+        transition: 0.5s;
+    }
+ 
+ 
+ 
+  /*   body:hover .ig-logo{
+        transform: scale(0.5,0.5);
+        transition: 0.5s;
+    
+
+    } */
+    .box{
+        width: 300px;
+        height: 300px;
+        margin-top: 10%;
+        display: flex;
+        position: relative;
+        transform: rotate(40deg);
+
+        
+ 
+    }
+    .box2{
+        width: 300px;
+        height: 300px;
+        margin-top: 10%;
+        position: absolute;
+        top: 0;
+
+
+    }
+
+     svg circle:nth-child(1){
+        stroke-dashoffset: calc(440 - (440*55)/100);
+        fill: transparent;
+        stroke-width: 10px;
+      
+        
+    }
+    svg circle:nth-child(2){
+    
+        stroke-dasharray: 440;
+        stroke-dashoffset: calc(440 - (440*0)/100);
+        stroke: rgb(255, 255, 255);
+        fill: transparent;
+        stroke-width: 10px;
+        transition: 1s;
+        stroke-linecap: round;
+       
+    }
+    .box3{
+        width: 180px;
+       height: 180px;
+       
+        transform: rotateZ(0deg);
+        background-image: url(/img/me1.jpg);
+        border-radius: 50%;
+        background-size: cover;
+        overflow: visible;
+        margin-top: 10px;
+      
+   }
+
+
+    .box3 circle:nth-child(1){
+        stroke-dashoffset: calc(440 - (440*55)/100);
+        fill: transparent;
+        stroke-width: 10px;
+      
+        
+    }
+    .box3 circle:nth-child(2){
+    
+        stroke-dasharray: 1000;
+        stroke-dashoffset: 1000;
+        stroke: #8a3ab9;
+        fill: transparent;
+        stroke-width: 3px;
+        transition: 4s;
+        stroke-linecap: round;
+       
+    }
+    circle{
+        stroke:url(#MyGradient);
+        fill: transparent;
+        stroke-dasharray: 1000;
+        stroke-dashoffset: 1000;
+        stroke-width: 5px;
+        transition: 4s;
+        stroke-linecap: round;
+    }
+    
+    .cir-eff{
+        stroke-dashoffset: calc(440 - (440*100)/100);
+     
+      
+    }
+    svg rect:nth-child(1){
+        stroke-dashoffset: calc(440 - (440*55)/100);
+        stroke-width: 10px;
+        fill: transparent;
+        stroke-linecap: round;
+     
+    }
+    
+    svg rect:nth-child(2){
+        width:200px;
+        height:200px;
+        stroke-dasharray: 1000;
+        stroke-dashoffset: 1000;
+        stroke: rgba(255, 255, 255);
+        fill: transparent;
+        stroke-width: 10px;
+        transition: 1.3s;
+        stroke-linecap: round;
+    }
+  /*   body:hover svg rect:nth-child(2){
+
+
+        stroke-dashoffset: 0;
+        transition: 1s;
+   
+
+    } */
+   .dot{
+       width: 20px;
+       height: 20px;
+       background-color: white;
+       border-radius: 50%;
+       position: absolute;
+       right: 70px;
+       top: 80px;
+        transform: scale(0,0);    
+        transition: 1s;   
+
+   }
+  /*  body:hover .dot{
+ 
+    transition: 1s  ;
+    transform: scale(1,1); 
+   } */
+
+   .profile-bg{
+       width: 300px;
+       height: 300px;
+       background: url(/img/iglogo2.jpg);
+        margin-top: 90px;
+        border-radius: 50%;
+        background-size: 100%;
+        background-repeat: no-repeat;
+        background-position-x: center;
+        background-size: contain;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+      
+      
+   }
+   .profile{
+       width: 100%;
+       height: 100%;
+       background: url(/img/me1.jpg);
+        border-radius: 50%;
+        background-size: 100%;
+        background-repeat: no-repeat;
+        background-position-x: center;
+        background-size: cover;
+        transform: scale(0,0);
+        transition: 0.5s;
+   }
+   .profile-bg-cover{
+    transform: translate(0%,0%);
+    z-index: 3;
+    
+   }
+/* 
+   body:hover .profile-bg {
+       transform: translate(0%,0%);
+   
+   }
+   .profile-bg:hover .profile{
+   
+       transform: scale(2,2);
+       border: 2px solid white;
+
+   
+   }
+
+   body:hover .profile-bg{
+    transform: scale(1,1);
+   }
+   */
+
+   .profile-bar{
+       width: 0%;
+       height: auto;
+       display: flex;
+       flex-direction: column;
+       align-items: flex-end;
+       justify-content: flex-start;
+       position: absolute;
+       overflow: hidden;
+       right: 25%;
+       
+
+
+   }
+   .profile-detail {
+    width: 80%;
+       height: 40vh;
+  
+       display: flex;
+       flex-direction: column;
+       color: black;
+       padding: 10px;
+       padding-left: 30px;
+       
+   }
+   .profile-name{
+    width: 100%;
+    height: 25%;
+    display: flex;
+       flex-direction: row;
+       align-items: center;
+       justify-content:  flex-start;
+
+       font-weight: 300;
+       font-family: "Segoe UI";
+     
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    
+       
+    
+   }
+   .profile-name div{
+       margin-right: 10px;
+   }
+   .fl-btn{
+       width: 30%;
+       height: 30px;
+       background-color: #0095f6;
+       border-radius: 3px;
+       display: flex;
+       align-items: center;
+       justify-content:  center;
+       color: rgb(255, 255, 255);
+       border: 1px solid #ffffff;
+       transition: 1.5s;
+   }
+   .more-btn{
+       width: fit-content;
+       height: 30px;
+       background-color: #0095f6;
+       border-radius: 3px;
+       display: flex;
+       align-items: center;
+       justify-content:  center;  
+       padding: 10px;
+       color: rgb(255, 255, 255);
+       transition: 1.5s;
+   }
+   .profile-follow-bar{
+    width: 100%;
+    height: 20%;
+    display: flex;
+       flex-direction: column;
+       align-items: center;
+       justify-content:  flex-start;
+  
+       overflow: hidden;
+       
+    
+   }
+   .profile-follow-detail{
+    width: 100%;
+    height: 50px;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content:  flex-start;
+    overflow: hidden;
+        
+
+   }
+   .profile-follow-detail div{
+       margin-right: 50px;
+   }
+   .profile-bio-bar{
+    width: 100%;
+    height: 50%;
+    display: flex;
+       flex-direction: column;
+       align-items: center;
+       justify-content:  flex-start
+   
+   }
+   .profile-bio{
+    width: 100%;
+    height: 20vh;
+    display: flex;
+    flex-direction: column;
+       align-items: flex-start;
+       justify-content:  flex-start;
+       overflow: hidden;
+       
+     
+    
+   }
+   .bio{
+       transform: translate(0%,150%);
+       font-weight: 300;
+   }
+   .fl{
+       transform: translate(0%,150%);
+   }
+   .header{
+       width: 100%;
+       height: 0vh;
+       background-color: white;
+       position: fixed;
+       top: 0;
+       transition: 1s;
+       visibility: hidden;
+       border-bottom: 1px solid black;
+       display: flex;
+       flex-direction: row;
+       align-items: center;
+       justify-content: center;
+       overflow: hidden;
+       z-index: 5;
+
+    
+    
+   }
+   .ig-icon{
+       width: auto;
+       height: 100%;
+      margin-right: 700px;
+      position: absolute;
+      left: 20px;
+      font-size: 1.5rem;
+      display: flex;
+       flex-direction: row;
+       align-items: center;
+       justify-content: center;
+       background: linear-gradient(135deg,#4c68d7,10%,#8a3ab9,50%,#e95950,#fbad50,#fbad50);
+     -webkit-background-clip: text;
+     -webkit-text-fill-color: transparent;
+     transform: scale(0,0);
+       
+   }
+   .ig-icon-box{
+       width: auto;
+       height: 100%;
+       display: flex;
+       flex-direction: row;
+       align-items: center;
+       justify-content: center;
+       overflow: hidden;
+ 
+       position: absolute;
+       right: 50px;
+   
+    
+   }
+   .ig-icon-box svg {
+       margin-left: 20px;
+       height: 0px;
+       transition: 1s;
+   }
+   .ig-icon-box  div{
+       margin-left: 20px;
+   }
+   .profile-icon{
+       width: 30px;
+       height: 30px;
+       border-radius: 50%;
+       background: url(/img/me1.jpg);
+       background-position: center;
+       background-size: cover;
+       transform: scale(0,0);
+       transition: 1s;
+
+   }
+   .fl span{
+       font-weight: 300;
+
+   }
+   .img-bar{
+       width: 0%;
+       height: 200vh;
+  
+       position: fixed;
+       top: 70%;
+       display: flex;
+       flex-direction: column;
+       align-items:center;
+       justify-content: flex-start;
+       overflow: hidden;
+    
+
+      
+   }
+   .page-bar{
+       width: 0%;
+       height: 7vh;
+        border-top: 1px solid rgba(0, 0, 0, 0.185);
+       display: flex;
+       flex-direction: row;
+       align-items: center;
+       justify-content: center;
+       overflow: hidden;
+    
+    
+       
+   }
+   .page-item{
+       width: 100%;
+       height: 100%;
+       margin: 5px;
+       display: flex;
+       flex-direction: row;
+       align-items: center;
+       justify-content: center;
+       font-size: 0.8rem;
+       transform: translate(-400%,100%);
+       overflow: hidden;
+   
+
+     
+   
+   }
+   .page-item span{
+       margin-left: 5px;
+   }
+   .pic-bar{
+       width: 80%;
+       height: auto;
+       display: flex;
+        align-items: center;
+        justify-content: center;
+        flex-direction: row;
+        flex-wrap: wrap;
+   }
+
+   .pic-box{
+    width: 30%;
+    height: 400px;
+    margin: 15px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 10px;
+  
+ 
+
+
+}
+.img{
+        width: 100%;
+        height: 100%;
+        object-fit:cover;
+        transform: translate(0%,150%);
+        transition: 1s;
+   
+  
+    }
+
+     body:hover{
+       /*  transform: translate(0%,0%); */
+       /*  transform: skew(5deg,0deg); */
+      
+    }  
+    .display{
+        width: 100%;
+        height: 100vh;
+        backdrop-filter: blur(30px);
+        position: absolute;
+        top: 0;
+        z-index: 6;
+        transform: scale(0,0);
+      
+        display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: row;
+    overflow: hidden;
+    transition: 0.3s;
+ 
+ 
+    }
+    .post-item-main{
+        width: 30%;
+        height: 80%;
+        background-color: rgb(255, 255, 255);
+        z-index: 3;
+        display: flex;
+        flex-direction: column;
+        border-radius: 20px;
+    }
+    .post-item-sub{
+        width: 20%;
+        height: 65%;
+        background-color: rgb(255, 255, 255);
+        transition-timing-function: ease-out;
+        display: flex;
+        flex-direction: column;
+        border-radius: 20px;
+
+      
+     
+    }
+    .post-header{
+        width: 100%;
+        height: 7vh;
+        background-color: white;
+        border-top-left-radius: 30px;
+        border-top-right-radius: 30px;
+      
+        padding-left: 30px;
+        font-size: 0.9rem;
+     
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        justify-content: flex-start;
+        
+
+        
+    }
+    .post-img{
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+    }
+    .post-img img{
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+    }
+    .post-caption{
+        width: 100%;
+        height: 7vh;
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        justify-content: space-around;
+    }
+    .post{
+        transform: scale(0,0);
+    }
+    .heart{
+       position: absolute;
+       top: 35%;
+       left: 35%;
+       font-size: 6rem;
+       color: rgb(255, 255, 255);
+       transform: scale(0,0);
+        transition: 0.2s;
+        z-index: 15;
+ 
+  
+
+    }
+    .heart-cover{
+       position: absolute;
+       bottom: 1.6%;
+       left: 14%;
+       color: rgb(255, 255, 255);
+       transform: scale(0,0);
+        transition: 0.5s;
+     
+ 
+  
+
+    }
+    
+    .display-circle{
+        width: 60%;
+        height: 60%;
+       position: absolute;
+        top: -6%;
+        left: 20%;
+        transition: 0.6s;
+        box-shadow: 0px 0px 0px 5000px rgb(255, 255, 255);
+        border-radius: 100%;
+        z-index: 16;
+        transform: scale(3,3);
+        display: none;
+
+       
+      /*   transform: scale(10,10); */
+    }
+    .display-end{
+        width: 100%;
+        height: 100vh;
+       z-index: 14;
+       position: absolute;
+       top: 0;
+       display: none;
+       color: white;
+   
+    }
+    .profile-end{
+        width: 100%;
+        height: 100%;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        background-color: rgba(85, 85, 85, 0.603);
+        font-size: 1.5rem;
+        position: relative;
+     
+      
+    }
+ 
+    .cir-cover{
+        width: 100%;
+        height: 100%;
+       
+    }
+  
+   .end-img{
+       width: 180px;
+       height: 180px;
+       background: rgb(255, 255, 255);
+       
+       border-radius: 50%;
+       margin-top: 50px;
+       background-size: cover;
+  
+       
+   }
+   .end-bg{
+        width: 0%;
+        height: 250%;
+        background-image: url(/img/me1.jpg);
+        position: absolute;
+        z-index: -1;
+        top: -70%;
+        left: -30%;
+        transition: 20s;
+        transform:
+        rotateX(51deg)
+        rotateZ(20deg);
+        background-repeat: space;
+   }
+   .final{
+       width: 100%;
+       height: 100vh;
+       background: white;
+        display: none;
+        position: absolute;
+        z-index: 17;
+        font-size: 1.5rem;
+
+   }
+   .title{
+    width: 100%;
+       height: 100vh;
+       background: white;
+       display: flex;
+        flex-direction: row;
+        align-items: center;
+        justify-content: center;
+        position: absolute;
+   }
+  
+    </style>
+    <style>
+         .neon{
+             width: 100px;
+            height: 40px;
+              position: relative;
+              display: inline-block;
+            padding: 10px;
+              color: #ffffff;
+              text-transform: uppercase;
+             letter-spacing: 2px;
+            
+              text-decoration: none;
+              font-size: 20px;
+              overflow: hidden;
+              transition: 1;
+              display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        margin-top: 10px;
+        border-radius: 5px;
+              
+            }
+
+           .neon:hover{
+
+                color: #255784;
+                background-color: #2196f3;
+                box-shadow: 0 0 10px #2196f3,
+                            0 0 40px #2196f3,
+                            0 0 80px #2196f3 ;
+              transition: 1s;
+               transition-delay: 1.2s;
+            }
+
+            .neon span{
+
+              position:absolute;
+              display: block;
+            
+            }
+
+            .neon span:nth-child(1)
+            {
+              top:0;
+              left: -100%;
+              width: 100%;
+              height: 2px;
+              background: linear-gradient(180deg,#2196f3,#2196f3) ;
+              transition: 1s;
+             
+            }
+
+            .neon:hover span:nth-child(1)
+            {
+              left: 100%;
+              transition: 1s;
+              
+            }
+
+            .neon span:nth-child(3)
+            {
+              bottom: 0;
+              right: -100%;
+              width: 100%;
+              height: 2px;
+              background: linear-gradient(180deg,#2196f3,#2196f3) ;
+
+              transition: 1s;
+              
+            }
+
+            .neon:hover span:nth-child(3)
+            { 
+             
+              
+              right: 100%;
+              transition: 1s;
+              transition-delay:0.5s ;
+             
+            }
+
+            .neon span:nth-child(2)
+            {
+              top: -100%;
+              right: 0;
+              width: 2px;
+              height: 100% ;
+              background: linear-gradient(180deg,#2196f3,#2196f3) ;
+              transition: 1s;
+              
+            }
+
+            .neon:hover span:nth-child(2)
+            { 
+             
+              
+             top: 100%;
+              transition: 1s;
+              transition-delay:0.25s ;
+             
+            }
+
+            .neon span:nth-child(4)
+            {
+              bottom: -100%;
+              left: 0;
+              width: 2px;
+              height: 100% ;
+              background: linear-gradient(180deg,#2196f3,#2196f3) ;
+
+              transition: 1s;
+              
+            }
+
+            .neon:hover span:nth-child(4)
+            { 
+             
+              
+            bottom: 100%;
+              transition: 1s;
+              transition-delay:0.75s ;
+             
+            }
+            
+    </style>
+<body>
+  
+   <div class="final">
+        <div class="title">
+           <!--  <span> Dev By Captz </span> <i class="fas fa-code"></i> -->
+            </div>
+    </div> 
+    <div class="header">
+        <div class="ig-icon"><i class="fab fa-instagram"></i></div>
+        <div class="ig-icon-box">
+        <svg aria-label="Home" class="headicon" fill="#262626" height="0" viewBox="0 0 48 48" width="22"><path d="M45.5 48H30.1c-.8 0-1.5-.7-1.5-1.5V34.2c0-2.6-2.1-4.6-4.6-4.6s-4.6 2.1-4.6 4.6v12.3c0 .8-.7 1.5-1.5 1.5H2.5c-.8 0-1.5-.7-1.5-1.5V23c0-.4.2-.8.4-1.1L22.9.4c.6-.6 1.6-.6 2.1 0l21.5 21.5c.3.3.4.7.4 1.1v23.5c.1.8-.6 1.5-1.4 1.5z"></path></svg>
+        <svg aria-label="Messenger" class="headicon" fill="#262626" height="0" viewBox="0 0 48 48" width="22"><path d="M36.2 16.7L29 22.2c-.5.4-1.2.4-1.7 0l-5.4-4c-1.6-1.2-3.9-.8-5 .9l-6.8 10.7c-.7 1 .6 2.2 1.6 1.5l7.3-5.5c.5-.4 1.2-.4 1.7 0l5.4 4c1.6 1.2 3.9.8 5-.9l6.8-10.7c.6-1.1-.7-2.2-1.7-1.5zM24 1C11 1 1 10.5 1 23.3 1 30 3.7 35.8 8.2 39.8c.4.3.6.8.6 1.3l.2 4.1c0 1 .9 1.8 1.8 1.8.2 0 .5 0 .7-.2l4.6-2c.2-.1.5-.2.7-.2.2 0 .3 0 .5.1 2.1.6 4.3.9 6.7.9 13 0 23-9.5 23-22.3S37 1 24 1zm0 41.6c-2 0-4-.3-5.9-.8-.4-.1-.8-.2-1.3-.2-.7 0-1.3.1-2 .4l-3 1.3V41c0-1.3-.6-2.5-1.6-3.4C6.2 34 4 28.9 4 23.3 4 12.3 12.6 4 24 4s20 8.3 20 19.3-8.6 19.3-20 19.3z"></path></svg>
+        <svg aria-label="Find People" class="headicon" fill="#262626" height="0" viewBox="0 0 48 48" width="22"><path clip-rule="evenodd" d="M24 0C10.8 0 0 10.8 0 24s10.8 24 24 24 24-10.8 24-24S37.2 0 24 0zm0 45C12.4 45 3 35.6 3 24S12.4 3 24 3s21 9.4 21 21-9.4 21-21 21zm10.2-33.2l-14.8 7c-.3.1-.6.4-.7.7l-7 14.8c-.3.6-.2 1.3.3 1.7.3.3.7.4 1.1.4.2 0 .4 0 .6-.1l14.8-7c.3-.1.6-.4.7-.7l7-14.8c.3-.6.2-1.3-.3-1.7-.4-.5-1.1-.6-1.7-.3zm-7.4 15l-5.5-5.5 10.5-5-5 10.5z" fill-rule="evenodd"></path></svg>
+        <svg aria-label="Activity Feed" class="headicon" fill="#262626" height="0" viewBox="0 0 48 48" width="22"><path d="M34.6 6.1c5.7 0 10.4 5.2 10.4 11.5 0 6.8-5.9 11-11.5 16S25 41.3 24 41.9c-1.1-.7-4.7-4-9.5-8.3-5.7-5-11.5-9.2-11.5-16C3 11.3 7.7 6.1 13.4 6.1c4.2 0 6.5 2 8.1 4.3 1.9 2.6 2.2 3.9 2.5 3.9.3 0 .6-1.3 2.5-3.9 1.6-2.3 3.9-4.3 8.1-4.3m0-3c-4.5 0-7.9 1.8-10.6 5.6-2.7-3.7-6.1-5.5-10.6-5.5C6 3.1 0 9.6 0 17.6c0 7.3 5.4 12 10.6 16.5.6.5 1.3 1.1 1.9 1.7l2.3 2c4.4 3.9 6.6 5.9 7.6 6.5.5.3 1.1.5 1.6.5.6 0 1.1-.2 1.6-.5 1-.6 2.8-2.2 7.8-6.8l2-1.8c.7-.6 1.3-1.2 2-1.7C42.7 29.6 48 25 48 17.6c0-8-6-14.5-13.4-14.5z"></path></svg>
+        <div class="profile-icon"> </div>
+    </div>
+</div>
+    
+   
+ <div class="display">
+    <div class="post-item-sub post" style="margin-right: -20px; z-index: 2;">
+        <div class="post-header">Captain.swk</div>
+        <div class="post-img"><img  src="/img/me2.jpg" ></div>
+        <div class="post-caption">
+            <svg  aria-label="Like" class="_8-yf5 " fill="#262626" height="24" viewBox="0 0 48 48" width="24"><path d="M34.6 6.1c5.7 0 10.4 5.2 10.4 11.5 0 6.8-5.9 11-11.5 16S25 41.3 24 41.9c-1.1-.7-4.7-4-9.5-8.3-5.7-5-11.5-9.2-11.5-16C3 11.3 7.7 6.1 13.4 6.1c4.2 0 6.5 2 8.1 4.3 1.9 2.6 2.2 3.9 2.5 3.9.3 0 .6-1.3 2.5-3.9 1.6-2.3 3.9-4.3 8.1-4.3m0-3c-4.5 0-7.9 1.8-10.6 5.6-2.7-3.7-6.1-5.5-10.6-5.5C6 3.1 0 9.6 0 17.6c0 7.3 5.4 12 10.6 16.5.6.5 1.3 1.1 1.9 1.7l2.3 2c4.4 3.9 6.6 5.9 7.6 6.5.5.3 1.1.5 1.6.5.6 0 1.1-.2 1.6-.5 1-.6 2.8-2.2 7.8-6.8l2-1.8c.7-.6 1.3-1.2 2-1.7C42.7 29.6 48 25 48 17.6c0-8-6-14.5-13.4-14.5z"></path></svg>
+            <svg aria-label="Comment" class="_8-yf5 " fill="#262626" height="24" viewBox="0 0 48 48" width="24"><path clip-rule="evenodd" d="M47.5 46.1l-2.8-11c1.8-3.3 2.8-7.1 2.8-11.1C47.5 11 37 .5 24 .5S.5 11 .5 24 11 47.5 24 47.5c4 0 7.8-1 11.1-2.8l11 2.8c.8.2 1.6-.6 1.4-1.4zm-3-22.1c0 4-1 7-2.6 10-.2.4-.3.9-.2 1.4l2.1 8.4-8.3-2.1c-.5-.1-1-.1-1.4.2-1.8 1-5.2 2.6-10 2.6-11.4 0-20.6-9.2-20.6-20.5S12.7 3.5 24 3.5 44.5 12.7 44.5 24z" fill-rule="evenodd"></path></svg>
+            <svg aria-label="Share Post" class="_8-yf5 " fill="#262626" height="24" viewBox="0 0 48 48" width="24"><path d="M47.8 3.8c-.3-.5-.8-.8-1.3-.8h-45C.9 3.1.3 3.5.1 4S0 5.2.4 5.7l15.9 15.6 5.5 22.6c.1.6.6 1 1.2 1.1h.2c.5 0 1-.3 1.3-.7l23.2-39c.4-.4.4-1 .1-1.5zM5.2 6.1h35.5L18 18.7 5.2 6.1zm18.7 33.6l-4.4-18.4L42.4 8.6 23.9 39.7z"></path></svg>
+        </div>
+    </div>
+    <div class="post-item-main post">
+      <div class="heart">
+            <i class="fas fa-heart "></i>
+        </div>
+        <div class="post-header">Captain.swk</div>
+        <div class="post-img"><img src="/img/me1.jpg" ></div>
+        <div class="post-caption">
+            <svg aria-label="Unlike" class="heart-cover " fill="#ed4956" height="24" viewBox="0 0 48 48" width="24"><path d="M34.6 3.1c-4.5 0-7.9 1.8-10.6 5.6-2.7-3.7-6.1-5.5-10.6-5.5C6 3.1 0 9.6 0 17.6c0 7.3 5.4 12 10.6 16.5.6.5 1.3 1.1 1.9 1.7l2.3 2c4.4 3.9 6.6 5.9 7.6 6.5.5.3 1.1.5 1.6.5s1.1-.2 1.6-.5c1-.6 2.8-2.2 7.8-6.8l2-1.8c.7-.6 1.3-1.2 2-1.7C42.7 29.6 48 25 48 17.6c0-8-6-14.5-13.4-14.5z"></path></svg>
+            <svg aria-label="Like" class="_8-yf5 " fill="#262626" height="24" viewBox="0 0 48 48" width="24"><path d="M34.6 6.1c5.7 0 10.4 5.2 10.4 11.5 0 6.8-5.9 11-11.5 16S25 41.3 24 41.9c-1.1-.7-4.7-4-9.5-8.3-5.7-5-11.5-9.2-11.5-16C3 11.3 7.7 6.1 13.4 6.1c4.2 0 6.5 2 8.1 4.3 1.9 2.6 2.2 3.9 2.5 3.9.3 0 .6-1.3 2.5-3.9 1.6-2.3 3.9-4.3 8.1-4.3m0-3c-4.5 0-7.9 1.8-10.6 5.6-2.7-3.7-6.1-5.5-10.6-5.5C6 3.1 0 9.6 0 17.6c0 7.3 5.4 12 10.6 16.5.6.5 1.3 1.1 1.9 1.7l2.3 2c4.4 3.9 6.6 5.9 7.6 6.5.5.3 1.1.5 1.6.5.6 0 1.1-.2 1.6-.5 1-.6 2.8-2.2 7.8-6.8l2-1.8c.7-.6 1.3-1.2 2-1.7C42.7 29.6 48 25 48 17.6c0-8-6-14.5-13.4-14.5z"></path></svg>
+            <svg aria-label="Comment" class="_8-yf5 " fill="#262626" height="24" viewBox="0 0 48 48" width="24"><path clip-rule="evenodd" d="M47.5 46.1l-2.8-11c1.8-3.3 2.8-7.1 2.8-11.1C47.5 11 37 .5 24 .5S.5 11 .5 24 11 47.5 24 47.5c4 0 7.8-1 11.1-2.8l11 2.8c.8.2 1.6-.6 1.4-1.4zm-3-22.1c0 4-1 7-2.6 10-.2.4-.3.9-.2 1.4l2.1 8.4-8.3-2.1c-.5-.1-1-.1-1.4.2-1.8 1-5.2 2.6-10 2.6-11.4 0-20.6-9.2-20.6-20.5S12.7 3.5 24 3.5 44.5 12.7 44.5 24z" fill-rule="evenodd"></path></svg>
+            <svg aria-label="Share Post" class="_8-yf5 " fill="#262626" height="24" viewBox="0 0 48 48" width="24"><path d="M47.8 3.8c-.3-.5-.8-.8-1.3-.8h-45C.9 3.1.3 3.5.1 4S0 5.2.4 5.7l15.9 15.6 5.5 22.6c.1.6.6 1 1.2 1.1h.2c.5 0 1-.3 1.3-.7l23.2-39c.4-.4.4-1 .1-1.5zM5.2 6.1h35.5L18 18.7 5.2 6.1zm18.7 33.6l-4.4-18.4L42.4 8.6 23.9 39.7z"></path></svg>
+        </div>
+    </div>
+    <div class="post-item-sub post" style="margin-left: -20px; z-index: 2;">
+        <div class="post-header">Captain.swk</div>
+        <div class="post-img"><img  src="/img/me8.jpg" ></div>
+        <div class="post-caption">
+            <svg aria-label="Like" class="_8-yf5 " fill="#262626" height="24" viewBox="0 0 48 48" width="24"><path d="M34.6 6.1c5.7 0 10.4 5.2 10.4 11.5 0 6.8-5.9 11-11.5 16S25 41.3 24 41.9c-1.1-.7-4.7-4-9.5-8.3-5.7-5-11.5-9.2-11.5-16C3 11.3 7.7 6.1 13.4 6.1c4.2 0 6.5 2 8.1 4.3 1.9 2.6 2.2 3.9 2.5 3.9.3 0 .6-1.3 2.5-3.9 1.6-2.3 3.9-4.3 8.1-4.3m0-3c-4.5 0-7.9 1.8-10.6 5.6-2.7-3.7-6.1-5.5-10.6-5.5C6 3.1 0 9.6 0 17.6c0 7.3 5.4 12 10.6 16.5.6.5 1.3 1.1 1.9 1.7l2.3 2c4.4 3.9 6.6 5.9 7.6 6.5.5.3 1.1.5 1.6.5.6 0 1.1-.2 1.6-.5 1-.6 2.8-2.2 7.8-6.8l2-1.8c.7-.6 1.3-1.2 2-1.7C42.7 29.6 48 25 48 17.6c0-8-6-14.5-13.4-14.5z"></path></svg>
+            <svg aria-label="Comment" class="_8-yf5 " fill="#262626" height="24" viewBox="0 0 48 48" width="24"><path clip-rule="evenodd" d="M47.5 46.1l-2.8-11c1.8-3.3 2.8-7.1 2.8-11.1C47.5 11 37 .5 24 .5S.5 11 .5 24 11 47.5 24 47.5c4 0 7.8-1 11.1-2.8l11 2.8c.8.2 1.6-.6 1.4-1.4zm-3-22.1c0 4-1 7-2.6 10-.2.4-.3.9-.2 1.4l2.1 8.4-8.3-2.1c-.5-.1-1-.1-1.4.2-1.8 1-5.2 2.6-10 2.6-11.4 0-20.6-9.2-20.6-20.5S12.7 3.5 24 3.5 44.5 12.7 44.5 24z" fill-rule="evenodd"></path></svg>
+            <svg aria-label="Share Post" class="_8-yf5 " fill="#262626" height="24" viewBox="0 0 48 48" width="24"><path d="M47.8 3.8c-.3-.5-.8-.8-1.3-.8h-45C.9 3.1.3 3.5.1 4S0 5.2.4 5.7l15.9 15.6 5.5 22.6c.1.6.6 1 1.2 1.1h.2c.5 0 1-.3 1.3-.7l23.2-39c.4-.4.4-1 .1-1.5zM5.2 6.1h35.5L18 18.7 5.2 6.1zm18.7 33.6l-4.4-18.4L42.4 8.6 23.9 39.7z"></path></svg>
+        </div>
+
+    </div>
+</div> 
+  <div class="f1">
+    <div class="ig">
+      <div class="ig-logo">
+        <div class="dot"></div>
+        <svg class="box" >
+            <circle class="circle" cx="130" cy="130" r="50" />
+            <circle class="circle cir2" cx="150" cy="150" r="50" />
+          
+          </svg>
+          <svg class="box2" >
+            <rect x="70" y="45" rx="20" ry="20" width="150" height="150" />
+          <rect class="rec2" x="50" y="20" rx="20" ry="20"  />
+        </svg>
+
+            
+        </div> 
+    </div>
+    </div> 
+  
+    <div class="f2">
+          
+   
+        <div class="profile-bg-cover">
+            <div class="profile-bg">
+                <div class="profile"></div>
+            </div>
+    </div>
+    <div class="profile-bar">
+      
+        <div class="profile-detail">
+            <div class="profile-name">
+                <div style="font-size: 1.5rem; ">captain.swk</div>
+                <div class="fl-btn"> Follow</div>
+                <div class="more-btn" ><i class="fas fa-chevron-down"></i></div>
+                <div style=" font-size: 0.8rem; margin-left: 20px;"><i class="fas fa-ellipsis-h"></i></div>
+            </div>
+            <div class="profile-follow-bar">
+                <div class="profile-follow-detail">
+                    <div class="fl">115 <span>posts</span> </div>
+                    <div class="fl">395 <span> followers</span> </div>
+                    <div class="fl"> 424 <span>following</span> </div>
+                </div>
+            </div>
+            <div class="profile-bio-bar">
+                <div class="profile-bio">
+                    <div class="bio">
+                    <div style="font-weight: 600;">Captain not Captun</div>
+                    <div> @bam.wcp 🖤</div>
+                    <div>♡ 10.02.62</div>
+                   <div> FB: Captun Siwakorn</div>
+                </div>
+                </div>
+            </div>
+        </div>
+    </div>
+   
+    <div class="img-bar">
+        <div class="page-bar">
+            <div style="border-top: 1px solid black;" class="page-item">
+                 <svg aria-label="Posts" class="_8-yf5 " fill="#262626" height="12" viewBox="0 0 48 48" width="12"><path clip-rule="evenodd" d="M45 1.5H3c-.8 0-1.5.7-1.5 1.5v42c0 .8.7 1.5 1.5 1.5h42c.8 0 1.5-.7 1.5-1.5V3c0-.8-.7-1.5-1.5-1.5zm-40.5 3h11v11h-11v-11zm0 14h11v11h-11v-11zm11 25h-11v-11h11v11zm14 0h-11v-11h11v11zm0-14h-11v-11h11v11zm0-14h-11v-11h11v11zm14 28h-11v-11h11v11zm0-14h-11v-11h11v11zm0-14h-11v-11h11v11z" fill-rule="evenodd"></path></svg>
+                 <span>POSTS</span>
+            </div>
+            <div class="page-item">
+                <svg aria-label="Saved" class="_8-yf5 " fill="#8e8e8e" height="12" viewBox="0 0 48 48" width="12"><path d="M43.5 48c-.4 0-.8-.2-1.1-.4L24 29 5.6 47.6c-.4.4-1.1.6-1.6.3-.6-.2-1-.8-1-1.4v-45C3 .7 3.7 0 4.5 0h39c.8 0 1.5.7 1.5 1.5v45c0 .6-.4 1.2-.9 1.4-.2.1-.4.1-.6.1zM24 26c.8 0 1.6.3 2.2.9l15.8 16V3H6v39.9l15.8-16c.6-.6 1.4-.9 2.2-.9z"></path></svg>
+                <span>SAVED</span>
+                </div>
+            <div class="page-item">
+                <svg aria-label="Tagged" class="_8-yf5 " fill="#8e8e8e" height="12" viewBox="0 0 48 48" width="12"><path d="M41.5 5.5H30.4c-.5 0-1-.2-1.4-.6l-4-4c-.6-.6-1.5-.6-2.1 0l-4 4c-.4.4-.9.6-1.4.6h-11c-3.3 0-6 2.7-6 6v30c0 3.3 2.7 6 6 6h35c3.3 0 6-2.7 6-6v-30c0-3.3-2.7-6-6-6zm-29.4 39c-.6 0-1.1-.6-1-1.2.7-3.2 3.5-5.6 6.8-5.6h12c3.4 0 6.2 2.4 6.8 5.6.1.6-.4 1.2-1 1.2H12.1zm32.4-3c0 1.7-1.3 3-3 3h-.6c-.5 0-.9-.4-1-.9-.6-5-4.8-8.9-9.9-8.9H18c-5.1 0-9.4 3.9-9.9 8.9-.1.5-.5.9-1 .9h-.6c-1.7 0-3-1.3-3-3v-30c0-1.7 1.3-3 3-3h11.1c1.3 0 2.6-.5 3.5-1.5L24 4.1 26.9 7c.9.9 2.2 1.5 3.5 1.5h11.1c1.7 0 3 1.3 3 3v30zM24 12.5c-5.3 0-9.6 4.3-9.6 9.6s4.3 9.6 9.6 9.6 9.6-4.3 9.6-9.6-4.3-9.6-9.6-9.6zm0 16.1c-3.6 0-6.6-2.9-6.6-6.6 0-3.6 2.9-6.6 6.6-6.6s6.6 2.9 6.6 6.6c0 3.6-3 6.6-6.6 6.6z"></path></svg>
+                <span>TAGGED</span>
+            </div>
+        </div>
+        <div class="pic-bar">
+         
+            <div class="pic-box"><img class="img" src="/img/me4.jpg" ></div>
+            <div class="pic-box"><img class="img" src="/img/me5.jpg" ></div>
+            <div class="pic-box"><img class="img" src="/img/me6.jpg" ></div>
+            <div class="pic-box"><img class="img" src="/img/me1.jpg" ></div>
+            <div class="pic-box"><img class="img" src="/img/me3.jpg" ></div>
+            <div class="pic-box"><img class="img" src="/img/me2.jpg" ></div>
+            <div class="pic-box"><img class="img" src="/img/me7.jpg" ></div>
+            <div class="pic-box"><img class="img" src="/img/me8.jpg" ></div>
+            <div class="pic-box"><img class="img" src="/img/me9.jpg" ></div>
+        </div>
+      
+    </div>
+
+    </div>
+    <div class="display-end">
+        <div class="end-bg"></div>
+        <div class="profile-end">
+       
+            <svg class="box3" >
+                <defs>
+                    <linearGradient id="MyGradient">   
+                        <stop offset="0%" stop-color="#833AB4" />
+                
+                        <stop offset="50%" stop-color="#E1306C" />
+                        
+                        <stop offset="100%" stop-color="#FCAF45" />
+                 
+                      </linearGradient>
+                    </defs>
+                <circle class="circle" cx="91" cy="90" r="95" />
+                <circle class="circle cir3" cx="91" cy="90" r="95" />
+                
+            </svg>
+      
+            
+            <div style="margin-top: 20px;"> captain.swk </div>
+            <a class='neon' href="#">
+                <span class="ne"></span>
+                <span class="ne"></span>
+                <span class="ne"></span>
+                <span class="ne"></span>
+                Follow
+            </a>
+       
+    </div>
+    </div>
+    <div class="display-circle"></div>
+
+
+
+
+
+    
+    
+</body>
+    <script>
+
+        //-------f2-----------------
+      
+         let f2 = document.querySelector(".f2")
+         let profile_bg = document.querySelector(".profile-bg") 
+         let profile = document.querySelector(".profile")
+         let profile_bg_cover = document.querySelector(".profile-bg-cover")
+         let profile_bar = document.querySelector(".profile-bar")
+         let header = document.querySelector(".header")
+         let fl = document.querySelectorAll(".fl")
+         let bio = document.querySelector(".bio")
+         let headicon = document.querySelectorAll(".headicon")
+        let profile_icon = document.querySelector(".profile-icon")
+        let ig_icon = document.querySelector(".ig-icon")
+        let img_bar = document.querySelector(".img-bar")
+        let page_item = document.querySelectorAll(".page-item")
+        let page_bar = document.querySelector(".page-bar")
+        let pic_bar = document.querySelector(".pic-bar")
+        let pic_box = document.querySelectorAll(".pic-box")
+        let img = document.querySelectorAll(".img")
+        let display = document.querySelector(".display")
+        let post = document.querySelectorAll(".post")
+        let heart = document.querySelector(".heart")
+        let heart_icon = document.querySelector(".fa-heart")
+        let fl_btn =document.querySelector(".fl-btn")
+        let more_btn = document.querySelector(".more-btn")
+        
+        let heart_cover = document.querySelector(".heart-cover")
+        let display_circle = document.querySelector(".display-circle")
+        let display_end = document.querySelector(".display-end")
+
+        let end_img = document.querySelector(".end-img")
+        let neon = document.querySelector(".neon")
+        let ne = document.querySelectorAll(".ne")
+        let final = document.querySelector(".final")
+        //-------f1-----------------
+        let f1 = document.querySelector(".f1")
+       
+         let ig = document.querySelector(".ig")
+        let ig_logo = document.querySelector(".ig-logo")
+        let body = document.querySelector("body")
+        let cir2 = document.querySelector(".cir2")
+        let cir3 = document.querySelector(".cir3")
+        let rec2  =document.querySelector(".rec2")
+        let dot = document.querySelector(".dot")
+        console.log(cir2)
+        window.addEventListener("load",function(e){
+        setTimeout(()=>{
+                ig_logo.style.transform = "scale(0.5,0.5)" 
+        },500)
+        setTimeout(()=>{
+            cir2.style.strokeDashoffset = "calc(440 - (440*100)/100)"
+            rec2.style.strokeDashoffset = "0"
+            dot.style.transform = "scale(1,1)" 
+          
+        },500)
+        setTimeout(()=>{
+            ig.style.transform = "translate(-80%,0%)"
+        },1500)
+         setTimeout(()=>{
+            f1.style.transform = "translate(0%,-100%)"
+            f2.style.transform = "translate(0%,-100%)"
+            profile_bg_cover.style.transform =  "translate(0%,-50%)"
+        },2000)
+        setTimeout(()=>{
+            profile.style.transform = "scale(0.95,0.95)"
+            profile.style.border = "5px solid white"
+        },2200)
+        setTimeout(()=>{
+            profile_bg.style.transform = "scale(0.75,0.75)"
+            
+        
+        },2500)
+        setTimeout(()=>{
+            profile_bg_cover.style.transform =  "translate(0%,-15%)"
+        },2700)
+      
+        setTimeout(()=>{
+            profile_bar.style.width = "50%"
+            header.style.visibility = "visible"
+            header.style.height =  "7vh"
+        
+            setTimeout(()=>{
+            fl[0].style.transform = "translate(0%,0%)"
+       
+            },100)
+            setTimeout(()=>{
+            fl[1].style.transform = "translate(0%,0%)"
+            },200)
+            setTimeout(()=>{
+            fl[2].style.transform = "translate(0%,0%)"
+            bio.style.transform = "translate(0%,0%)"
+
+            headicon.forEach(item =>{
+                item.style.height = "22px"
+            })
+            profile_icon.style.transform = "scale(1,1)"
+            ig_icon.style.transform = "scale(1,1)"
+           
+            },300)
+           
+        },3200)
+        setTimeout(()=>{
+           
+            profile_bg_cover.style.transform =  "translate(-120%,-15%)"
+         
+        },3200)
+        setTimeout(()=>{
+            fl_btn.style.background = "white"
+            fl_btn.style.color = "black"
+            more_btn.style.background = "white"
+            more_btn.style.color = "black"
+           
+        },3500)
+
+        setTimeout(()=>{
+            f2.style.transform = "translate(0%,-120%)"
+            img_bar.style.width = "100%"
+           
+        },3700)
+
+        setTimeout(()=>{
+            page_bar.style.width = "60%"
+            setTimeout(()=>{
+            page_item[0].style.transform = "translate(0%,0%)"
+            },100)
+            setTimeout(()=>{
+            page_item[1].style.transform = "translate(0%,0%)"
+            },200)
+            setTimeout(()=>{
+            page_item[2].style.transform = "translate(0%,0%)"
+            },300)
+        },3800)
+        setTimeout(()=>{
+            img[0].style.transform = "translate(0%,0%)"
+        },4000)
+        setTimeout(()=>{
+            img[1].style.transform = "translate(0%,0%)"
+        },4100)
+        setTimeout(()=>{
+            img[2].style.transform = "translate(0%,0%)"
+        },4200)
+        setTimeout(()=>{
+            f2.style.transitionTimingFunction = "ease-in-out"
+            header.style.transform = "translate(0%,-400%)"
+            img[3].style.transform = "translate(0%,0%)"
+            f2.style.transform = "translate(0%,-170%)"
+            f2.style.transition = "1.5s"
+            body.style.transform = "perspective(1000px) rotateX(0deg) rotateY(15deg) rotateZ(0deg) "
+          
+        },4300)
+        setTimeout(()=>{
+            img[4].style.transform = "translate(0%,0%)"
+         
+        },4500)
+        setTimeout(()=>{
+            img[5].style.transform = "translate(0%,0%)"
+       
+        },4700)
+        setTimeout(()=>{
+            img[6].style.transform = "translate(0%,0%)"
+        },5500)
+        setTimeout(()=>{
+            img[7].style.transform = "translate(0%,0%)"
+        },5700)
+        setTimeout(()=>{
+            img[8].style.transform = "translate(0%,0%)"
+        },6000)
+        setTimeout(()=>{
+            f2.style.transform = "translate(0%,-240%)"
+            body.style.transform = "perspective(1000px) rotateX(0deg) rotateY(0deg) rotateZ(0deg) " 
+           
+        },5700)
+        setTimeout(()=>{
+            display.style.transform = "scale(1,1)"
+             setTimeout(()=>{
+             post[0].style.transform = "scale(1.1,1.1)"
+            },200)
+            setTimeout(()=>{
+             post[0]
+            },400)
+             setTimeout(()=>{
+                post[1].style.transform = "scale(1.1,1.1)"
+            },600)
+            setTimeout(()=>{
+                post[1].style.transform = "scale(1,1)"
+                },1200)
+            setTimeout(()=>{
+             post[2].style.transform = "scale(1.1,1.1)"
+            },400)
+            setTimeout(()=>{
+             post[2].style.transform = "scale(1,1)"
+            },600)
+        },6500)
+
+        setTimeout(()=>{
+            heart.style.transform = "scale(1.2,1.2)"
+            setTimeout(()=>{
+            heart.style.transform = "scale(1,1)"
+        },200)
+        setTimeout(()=>{
+            heart.style.transform = "scale(1.2,1.2)"
+            
+        },400)
+        setTimeout(()=>{
+            heart.style.transform = "scale(1,1)"
+            
+        },600)
+        },8000)
+        setTimeout(()=>{
+            heart_cover.style.transform = "scale(1.1,1.1)"
+            display_circle.style.display = "block"
+        
+        },8100)
+
+        setTimeout(()=>{
+            heart.style.opacity = "0"
+                setTimeout(()=>{
+              
+                  display_circle.style.transform = "scale(0.16,0.16)"
+                    
+                },500) 
+                setTimeout(()=>{
+                    pic_bar.style.transition = "0s"
+                    pic_bar.style.transform = "rotateX(50deg) rotateZ(25deg) translate(-6%,0%)" 
+                    pic_bar.style.width = "100%"
+                    pic_bar.style.height = "260%"
+                    img_bar.style.height  = "220vh"
+                    img_bar.style.width = "120%"
+                    f2.style.transform ="translate(10%,-180%)"
+                    pic_box[0].style.height = "500px"
+                    pic_box[1].style.height = "500px"
+                    pic_box[2].style.height = "500px"
+                    pic_box[3].style.height = "500px"
+                    pic_box[4].style.height = "500px"
+                    pic_box[5].style.height = "500px"
+                    pic_box[6].style.height = "500px"
+                    pic_box[7].style.height = "500px"
+                    pic_box[8].style.height = "500px"
+
+               
+                },900) 
+                setTimeout(()=>{
+                    f2.style.transition = "30s"
+                    f2.style.transform ="translate(10%,-250%)"
+                },1000) 
+                setTimeout(()=>{
+                    display_circle.style.transition = "0s"  
+                  display_circle.style.background = "white"  
+                },1000) 
+                setTimeout(()=>{
+                
+                    display_end.style.display = "block"
+                    display.style.display = "none"
+                    display_circle.style.background = "none"  
+                },1100) 
+                setTimeout(()=>{
+                  display_circle.style.transition = "0.6s"  
+                 display_circle.style.transform = "scale(2,2)"  
+                     
+                },1110) 
+             /*    setTimeout(()=>{
+                 
+                    end_img.style.background = "url(/img/me1.jpg)" 
+                    end_img.style.backgroundSize = "cover"
+                  
+
+
+                },1120) */ 
+                setTimeout(()=>{
+                    ne[0].style.left = "100%"
+                    ne[2].style.right = "100%"
+                    ne[2].style.transitionDelay = "0.5s" 
+                    ne[1].style.top = "100%"
+                    ne[1].style.transitionDelay = "0.25s" 
+                    ne[3].style.bottom = "100%"
+                    ne[3].style.transitionDelay = "0.75s" 
+
+/*                     neon.style.boxShadow = "0 0 10px #2196f3, 0 0 40px #2196f3, 0 0 80px #2196f3" */
+                    neon.style.background = "#0095f6"
+                    neon.style.transitionDelay = "1.2s" 
+                    cir3.style.strokeDashoffset = "0"
+                },1200) 
+             
+        },8500)
+        setTimeout(()=>{
+            
+               
+                /* setTimeout(()=>{
+                 final.style.display = "block"
+                },1200) 
+ */
+               
+         },14000)
+     
+      
+        
+
+        }) 
+   
+        
+    </script>
+</html>
