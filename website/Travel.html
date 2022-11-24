@@ -1,0 +1,974 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Travel</title>
+    <script src="https://kit.fontawesome.com/0244365092.js" crossorigin="anonymous"></script>
+    
+</head>
+
+<style>
+    /* Custom scrollbar */
+        ::-webkit-scrollbar {
+          width: 0px;
+        }
+    
+        ::-webkit-scrollbar-track {
+          background: #f1f1f1; 
+        }
+         
+        ::-webkit-scrollbar-thumb {
+          background: #888; 
+        }
+    
+        ::-webkit-scrollbar-thumb:hover {
+          background: #555; 
+        }
+        
+        input::-webkit-outer-spin-button,
+        input::-webkit-inner-spin-button {
+          -webkit-appearance: none;
+          margin: 0;
+        }
+        
+            html {
+            scroll-behavior: smooth;
+            -webkit-text-size-adjust: 100%;
+           
+                }
+    </style>
+    <style>
+         
+    
+            *{
+        margin: 0;
+        padding: 0;
+        font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+        box-sizing: border-box;
+        transition: 0.5s;
+
+        }
+            body{
+       
+             background: url("/img/general/sea2.jpg") no-repeat;
+            background-size: cover;
+            background-position: top 0%;
+
+        }
+        
+  
+    .header{
+      width: 100%;
+      height: 50px;
+       background: linear-gradient(to right,
+      rgb(16, 187, 173),rgb(30, 104, 243) );
+      background: #ffffffb4; 
+      position: sticky;
+      display: flex;
+      align-items: center;
+      justify-content: flex-end;
+      z-index: 5;
+      top: 0;
+     backdrop-filter: blur(80px); 
+      padding-right: 50px;
+    }
+    .header-logo{
+      position: absolute;
+      left: 15px;
+      background-size: cover;
+
+
+    }
+    .header-item{
+      width: auto;
+      height: 100%;
+      background-color: rgba(107, 107, 107, 0);
+      padding: 5px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 1rem;
+      cursor: pointer;
+      position: relative;
+        overflow: visible;
+        color: rgb(0, 0, 0);
+        margin-left: 10px;
+        margin-right: 10px;
+        font-weight: 400;
+
+
+
+        
+    }
+    .header-item:hover{
+    
+      border-bottom: 1px solid rgb(0, 0, 0);
+      
+    }
+    .detail {
+        width: auto;
+        height: auto;
+        position: absolute;
+        background-color: rgb(255, 255, 255);
+        z-index: 5;
+        top: 55px;
+        padding: 10px;
+        border-radius: 5px;
+        color: black;
+        display: none;
+        text-align: center;
+
+    }
+   
+ /*    .header-item:nth-child(3):hover div{
+        display: block;
+    }
+    .header-item:nth-child(4):hover div{
+        display: block;
+    }
+    .header-item:nth-child(5):hover div{
+        display: block;
+    } */
+    
+    
+  
+     .head-name-float{
+      font-size: 1.5rem;
+      margin-left: 5px;
+      z-index: -1;
+
+    }
+
+    .main{
+        width: 100%;
+        height: auto;
+        display: flex;
+        align-items: center;
+        justify-content: flex-start;
+        flex-direction: column;
+        position: relative;
+        padding: 0px 4.9% 50px 5%;
+ /*       background-color: rgb(43, 43, 43);
+       background-color: rgb(240, 240, 240); */
+       background-size: cover;
+       overflow-y: hidden;
+       background-color: rgba(255, 255, 255, 0.493); 
+       background: linear-gradient(to bottom,
+      rgba(255, 255, 255, 0),   rgba(255, 255, 255, 0.623),rgba(255, 255, 255, 0.300) );
+       overflow-x: hidden;
+       
+        
+    }
+    .banner-back{
+        width: 90%;
+        height: 80vh;
+        position: absolute;
+        z-index: 1;
+        opacity: 90%;
+        left: 5vw;
+        top: 50px;
+        background: url("/img//general/sea5.jpg") no-repeat;
+        background-size: cover;
+        background-position: top 45% left 0%;
+        
+    }
+    .banner{
+        width: 100%;
+        height: 80vh;
+ /*        background-color: rgba(61, 61, 61, 0.700); */
+        display: flex;
+        align-items: center;
+        justify-content: flex-end;
+        position: relative;
+        overflow: hidden;
+        z-index: 2;
+        
+        /* backdrop-filter: blur(3px); */
+
+
+    }
+    .banner-box-left{
+        width: 60%;
+        height: 100%;
+        display: flex;
+        align-items: flex-end;
+        justify-content: center;
+        flex-direction: column;
+        color: rgb(255, 255, 255);
+        font-size: 4.5vw;
+        padding-right: 7vw;
+        letter-spacing: 3px;
+        padding-top: 70px;
+        
+    }
+    
+    .box{
+        width: 70px;
+        height: 70px;
+        position: absolute;
+        top: 60px;
+        right: 0;
+        border-top: 1px solid white;
+        border-right: 1px solid white;
+        
+
+
+    }
+    .preview{
+        width: 100%;
+        height: 40vh;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        background: rgb(155, 155, 155); 
+        background: linear-gradient(to bottom,
+      rgba(255, 255, 255, 0),rgba(255, 255, 255, 0.1),rgba(255, 255, 255, 0.0) );
+      z-index: 3;
+
+      
+    }
+    .preview-item{
+        width: 15vw;
+        height: 35vh;
+        background: rgb(168, 168, 168);
+        margin: 20px;
+        margin-top: -10vh;
+        position: relative;
+        cursor: pointer;
+        overflow: hidden;
+        transform: scale(0,0);
+
+
+    }
+    .preview-item:hover{
+        width: 30vw;
+        
+    }
+    .preview-item img{
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+    }
+    .preview-detail{
+        width: 30%;
+        height: 0%;
+        background: rgba(175, 175, 175, 0.486); 
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        position: absolute;
+        bottom: 0;
+        color: #ffffff;
+        overflow: hidden;
+        color: rgb(255, 255, 255);
+        padding: 0px;
+        backdrop-filter: blur(30px);
+        font-size: 0.9rem;
+
+    }
+    .preview-item:hover .preview-detail{
+        height: 15%;
+        padding: 10px;
+
+
+        
+    }
+    .sprit-bar{
+        width: 100%;
+        height: 15vh;
+       /*  background-color: rgb(61, 61, 61); */
+        z-index: 2;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        color:rgb(80, 80, 80);
+        font-size: 1.7rem;
+        margin-top: 30px;
+        padding-top: 20px;
+        
+    }
+    .sprit-bar i{
+        margin-right: 10px;
+    }
+    .line-sprit{
+        width: 15%;
+        height: 1px;
+        background-color: rgb(80, 80, 80);
+        margin-left: 20px;
+        margin-right: 20px;
+
+    }
+    .content{
+        width: 100%;
+        height: auto;
+        z-index: 2;
+        display: flex;
+        align-items: center;
+        justify-content: flex-start;
+        flex-direction: column;
+        padding-bottom: 20vh;
+
+
+    }
+    .travel{
+        width: 0%;
+        height: 85vh;
+        display: flex;
+        align-items: flex-start;
+        justify-content: flex-start;
+        flex-direction: row;
+        margin-top: 5vh;
+        position:relative;
+        transition: 1s;
+        overflow: hidden;
+    }
+    .travel-display{
+        width: 100%;
+        height: 100%;
+        background-color: #f1f1f1;
+ 
+        display: flex;
+        align-items: flex-start;
+        justify-content: flex-start;
+        position:relative;
+
+    }
+    .travel-location-icon{
+            position: absolute;
+            top: 15px;
+            right: 20px;
+            color: white;
+            cursor: pointer;
+            font-size: 2vw;        
+    }
+
+    .travel-location{
+        width: 0%;
+        height: 100%;
+        background: rgb(255, 255, 255);
+        position: absolute;
+        right: 0;
+        z-index: 3;
+        display: flex;
+        align-items: flex-start;
+        justify-content: flex-start;
+        flex-direction: column;
+        overflow: hidden;
+
+    }
+    .travel-location-header{
+        width: 100%;
+        height: 10vh;
+        font-size: 2vw;
+        color: rgb(77, 77, 77);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        position: relative;
+        letter-spacing: 5px;
+    }
+    .travel-location-header i {
+        margin:  10px 5px 5px 5px;
+    }
+    .travel-display-name{
+        width: 100%;
+        height: 12%;
+        position: absolute;
+        bottom: 0;
+        background: rgba(177, 177, 177, 0.75);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-size: 1.5rem;
+        color: #ffffff;
+        letter-spacing: 2px;
+
+
+    }
+  
+    .travel-box{
+        width: 30%;
+        height: 100%;
+        display: flex;
+        align-items: flex-start;
+        justify-content: flex-start;
+        flex-direction: column;
+        overflow-y: scroll;
+        margin-left: 10px;
+    }
+    .travel-item{
+        width: 0%;
+        height: 0%;
+        background: rgba(87, 87, 87, 0.281);
+        margin-bottom: 5px;
+        cursor: pointer;
+        position: relative;
+    }
+     img{
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        
+    }
+    .travel-name{
+        width: 100%;
+        height: 0%;
+        position: absolute;
+        bottom: 0;
+        font-size: 1.2vw;
+        overflow: hidden;
+        background-color: rgba(228, 228, 228, 0.75);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+    .travel-item:hover .travel-name{
+        height: 20%;
+
+    }
+    .travel-item:hover{
+        height: 35%;
+
+    }
+    iframe {
+        width: 100%;
+        height: 100%;
+    }
+ 
+    .eff{
+        border-radius: 10px;
+        height: 30%;
+    }
+    .line-right{
+        width: 1px;
+        height: 7vh;
+        background-color: rgb(255, 255, 255);
+        position: absolute;
+        top: 60px;
+        left: 10px;
+        color: white;
+        font-size: 0.8rem;
+        letter-spacing: 5px;
+        z-index: 5;
+        
+    }
+    .fav{
+        width: 100%;
+        height: auto;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        flex-wrap: wrap;
+        margin-top: 20px;
+        position: relative;
+        padding: 50px 0px 50px 0px;
+   
+
+
+    }
+    .fav-item{
+        width: 30%;
+        height: 50vh;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        flex-direction: column-reverse;
+        margin: 10px;
+        transition: 1s;
+        overflow: hidden;
+        cursor: pointer;
+
+        transform: translateY(100vh);
+
+
+    }
+    .fav-detail {
+        width: 100%;
+        height: 40%;
+        background-color: rgba(107, 107, 107, 0.158);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        flex-direction: column;
+        font-size: 1.2rem;
+        color: rgb(255, 255, 255);
+        border-top-left-radius: 5px;
+        border-bottom-left-radius: 5px;
+        
+    }
+
+    .fav-detail div:nth-child(2){
+        margin-top: 10px;
+        font-size: 1.5rem;
+        color: white;
+
+    }
+    .fav-img {
+        width: 100%;
+        height: 100%;
+       
+       
+    }
+    footer{
+        width: 100%;
+        height: 20vh;
+        background: rgba(109, 109, 109, 0);
+        bottom: 0;
+        z-index: 2;
+        display: flex;
+        align-items: center;
+        color: rgb(255, 255, 255);
+        position: absolute;
+        background: rgba(44, 44, 44, 0.8);
+
+
+    }
+    
+.footer-social{
+  width: 50%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 20px;
+  font-size: 1.3rem;
+  border-right: 1px solid white;
+
+
+}
+.footer-social-icon{
+  width: 30%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  cursor: pointer;
+  font-size: 1.2rem;
+
+}
+.footer-about{
+  width: 70%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 20px;
+  font-size: 1.2rem;
+
+
+
+}
+.footer-about-detail{
+  width: 100%;
+  height:100%;
+  font-size: 0.8rem;
+
+}
+
+    .preview-eff{
+        transform: scale(1,1);
+    }
+
+    .travel-eff{
+        width: 100%;
+        height: 25%;
+
+    }
+    
+    .fav-eff{
+     
+        transform: translateY(0vh);
+
+    }
+    
+    
+</style>
+<body>
+    <header class="header">
+        <div class="loader"></div>
+        <div class="header-logo"><span class="head-name-float">Travel</span></div>
+        <div class="header-item">
+          <!--   <i class="fas fa-star"></i> -->
+          Popular
+            <div class="detail">Popular</div>
+        </div>
+        <div class="header-item">
+     <!--        <i class="fas fa-location-arrow"></i> -->
+         Recommended    
+            <div class="detail">Recommended Place </div>
+        </div>
+     
+      </header>
+
+    <div class="main">
+       
+        <div class="banner-back"></div>
+        <div class="banner">
+            <div class="box"></div>
+
+            <div class="line-right" style="width: 30px; background: none; padding-left: 10px; padding-top: 10px; font-size: 1.2rem;">Travel </div>
+               
+                <div class="line-right"></div>
+            <div class="banner-box-left"> 
+                <div>Welcome to <u>Krabi</u></div>
+                <div style="font-size: 1.2vw; letter-spacing: 5px; margin-top: 5px;">Sea Mountain Isle</div>
+              </div>
+            </div>
+            <div class="preview">
+                <div class="preview-item">
+                    <img src="https://www.uncledeng.com/wp-content/uploads/2021/03/%E0%B8%97%E0%B8%B0%E0%B9%80%E0%B8%A5%E0%B9%81%E0%B8%AB%E0%B8%A7%E0%B8%81.jpg" alt="">
+                     <div class="preview-detail">ทะเลแหวก</div>
+                    
+                </div>
+                <div class="preview-item">
+                    <img src="https://www.uncledeng.com/wp-content/uploads/2021/03/%E0%B9%80%E0%B8%81%E0%B8%B2%E0%B8%B0%E0%B8%9E%E0%B8%B5%E0%B8%9E%E0%B8%B5.jpg" alt="">
+                      <div class="preview-detail">เกาะพีพี</div>
+                    
+                </div>
+                <div class="preview-item">
+                    <img src="https://www.uncledeng.com/wp-content/uploads/2021/03/%E0%B8%AA%E0%B8%A3%E0%B8%B0%E0%B8%A1%E0%B8%A3%E0%B8%81%E0%B8%95.jpg" alt="">
+                      <div class="preview-detail">สระมรกต</div>
+
+                </div>
+
+            </div>
+        <div class="content">
+            <div class="sprit-bar">
+            
+                <div class="line-sprit"></div>
+                <i class="fas fa-star"></i>
+                 <div> Popular Place</div>
+                 <div class="line-sprit"></div>
+                </div>
+            <div class="travel">
+            <div class="line-right" style="width: 30px; background: none; padding-left: 10px; padding-top: 10px; font-size: 1.2rem; top: 0; left: 0;">Travel </div>
+                <div class="line-right" style="top: 0; left: 0;"></div>
+                <div class="travel-location">
+                <i style="position: absolute; left: 10px; top: 20px; font-size: 2vw; color:  rgb(80, 80, 80); cursor: pointer; z-index: 3; " 
+                class="fas fa-chevron-right"></i>
+                    <div class="travel-location-header">
+                        <i class="fas fa-map"></i> Location
+                    </div>
+                    <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d7429.20323902282!2d98.8042949235087!3d7.97143887703484!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3051c1961d4371c3%3A0xe2ba16cdddb90b5a!2sKo%20Poda!5e1!3m2!1sth!2sth!4v1626950094919!5m2!1sth!2sth" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
+        
+                </div>
+
+                <div class="travel-display">
+                        <div class="travel-location-icon"> 
+                            <i class="fas fa-map"></i> 
+                        </div>
+
+                        
+                    <div class="travel-display-name" >ทะเลแหวก</div>
+                    <img class="travel-display-img" src="https://www.uncledeng.com/wp-content/uploads/2021/03/%E0%B8%97%E0%B8%B0%E0%B9%80%E0%B8%A5%E0%B9%81%E0%B8%AB%E0%B8%A7%E0%B8%81.jpg" alt="">
+                </div>
+                <!-- ---------------------------------------- -->
+                <div class="travel-box">
+                    <div class="travel-item "  data-location="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d7429.20323902282!2d98.8042949235087!3d7.97143887703484!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3051c1961d4371c3%3A0xe2ba16cdddb90b5a!2sKo%20Poda!5e1!3m2!1sth!2sth!4v1626950094919!5m2!1sth!2sth">
+                      <div class="travel-name">  เกาะปอดะ</div>
+                        <img class="travel-img" src="https://www.uncledeng.com/wp-content/uploads/2021/03/%E0%B9%80%E0%B8%81%E0%B8%B2%E0%B8%B0%E0%B8%9B%E0%B8%AD%E0%B8%94%E0%B8%B0.jpg" alt="">
+                    </div>
+                   
+                    <div class="travel-item"  data-location="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d8399.63142327696!2d98.807117086243!3d7.961470338493546!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x21f827ff93a4f895!2z4LiX4Liw4LmA4Lil4LmB4Lir4Lin4LiBIOC4reC5iOC4suC4p-C4meC4suC4hyDguIHguKPguLDguJrguLXguYg!5e1!3m2!1sth!2sth!4v1626951108572!5m2!1sth!2sth">
+                        <div class="travel-name">  ทะเลแหวก  </div>
+                        <img class="travel-img" src="https://www.uncledeng.com/wp-content/uploads/2021/03/%E0%B8%97%E0%B8%B0%E0%B9%80%E0%B8%A5%E0%B9%81%E0%B8%AB%E0%B8%A7%E0%B8%81.jpg" alt="">
+    
+                    </div>
+                    <div class="travel-item" data-location="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d10361.705415587858!2d98.77018242376761!3d7.736687819785202!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3051df1ffc707e2f%3A0x68dfa658be415e53!2z4LiX4LmI4Liy4LmA4Lij4Li34Lit4Lit4LmI4Liy4Lin4LiV4LmJ4LiZ4LmE4LiX4Lij!5e1!3m2!1sth!2sth!4v1626959246364!5m2!1sth!2sth">
+                        <div class="travel-name">  อ่าวต้นไทร  </div>
+                        <img class="travel-img" src="https://www.uncledeng.com/wp-content/uploads/2021/03/%E0%B8%AD%E0%B9%88%E0%B8%B2%E0%B8%A7%E0%B8%95%E0%B9%89%E0%B8%99%E0%B9%84%E0%B8%97%E0%B8%A3.jpg" alt="">
+                    </div>
+                   
+                    <div class="travel-item" data-location="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d49644.40624547683!2d98.74618045592786!3d7.750403309793117!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3051dee915cc99bb%3A0x75bea0ddd8e4d014!2z4LmA4LiB4Liy4Liw4Lie4Li14Lie4Li14LiU4Lit4LiZ!5e1!3m2!1sth!2sth!4v1626959294233!5m2!1sth!2sth">
+                        <div class="travel-name">  เกาะพีพี  </div>
+                        <img class="travel-img" src="https://www.uncledeng.com/wp-content/uploads/2021/03/%E0%B9%80%E0%B8%81%E0%B8%B2%E0%B8%B0%E0%B8%9E%E0%B8%B5%E0%B8%9E%E0%B8%B5.jpg" alt="">
+    
+                    </div>
+                  
+                  
+                    <div class="travel-item" data-location="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3714.2348218037578!2d98.83481641459986!3d8.011740144230439!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3051ea9e0792e58b%3A0x61d88bb17c215081!2z4Lir4Liy4LiU4LmE4Lij4LmI4LmA4Lil4Lii4LmM!5e1!3m2!1sth!2sth!4v1626959341246!5m2!1sth!2sth">
+                        <div class="travel-name">  หาดไร่เลย์  </div>
+                        <img class="travel-img" src="https://www.uncledeng.com/wp-content/uploads/2021/03/%E0%B8%AB%E0%B8%B2%E0%B8%94%E0%B9%84%E0%B8%A3%E0%B9%88%E0%B9%80%E0%B8%A5%E0%B8%A2%E0%B9%8C.jpg" alt="">
+    
+                    </div>
+    
+                    <div class="travel-item" data-location="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3714.2917475076283!2d98.8362270645999!3d8.005498744234805!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3051ea82d0145b37%3A0x14e6ad85c955c821!2z4Lir4Liy4LiU4LiW4LmJ4Liz4Lie4Lij4Liw4LiZ4Liy4LiH!5e1!3m2!1sth!2sth!4v1626959395838!5m2!1sth!2sth">
+                        <div class="travel-name">   หาดถ้ำพระนาง  </div>
+                        <img class="travel-img" src="https://www.uncledeng.com/wp-content/uploads/2021/03/%E0%B8%AB%E0%B8%B2%E0%B8%94%E0%B8%96%E0%B9%89%E0%B8%B3%E0%B8%9E%E0%B8%A3%E0%B8%B0%E0%B8%99%E0%B8%B2%E0%B8%87.jpg" alt="">
+    
+                    </div>
+                    <div class="travel-item" data-location="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d14853.577459250746!2d98.673745224258!3d8.10333305665917!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3051b9bf64caebc3%3A0xa960c9e92c7d7632!2sKo%20Lao%20Lading!5e1!3m2!1sth!2sth!4v1626959425542!5m2!1sth!2sth">
+                        <div class="travel-name">   เกาะเหลาลาดิง  </div>
+                        <img class="travel-img" src="https://www.uncledeng.com/wp-content/uploads/2021/03/%E0%B9%80%E0%B8%81%E0%B8%B2%E0%B8%B0%E0%B9%80%E0%B8%AB%E0%B8%A5%E0%B8%B2%E0%B8%A5%E0%B8%B2%E0%B8%94%E0%B8%B4%E0%B8%87.jpg" alt="">
+    
+                    </div>
+                   
+                    <div class="travel-item" data-location="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d7427.254363045104!2d98.67457412351172!3d8.078064026735701!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3051b836f3a14a01%3A0xa307d5779c5e552b!2z4LmA4LiB4Liy4Liw4Lir4LmJ4Lit4LiH!5e1!3m2!1sth!2sth!4v1626959464407!5m2!1sth!2sth">
+                        <div class="travel-name">   เกาะห้อง  </div>
+                        <img class="travel-img" src="https://www.uncledeng.com/wp-content/uploads/2021/03/%E0%B9%80%E0%B8%81%E0%B8%B2%E0%B8%B0%E0%B8%AB%E0%B9%89%E0%B8%AD%E0%B8%87.jpg" alt="">
+    
+                    </div>
+                    <div class="travel-item" data-location="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d7428.117047826481!2d98.81739472351043!3d8.031039076867616!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3051c00ffe2230a3%3A0x5ceceb7ef0a2494d!2z4Lit4LmI4Liy4Lin4LiZ4Liy4LiH!5e1!3m2!1sth!2sth!4v1626959559151!5m2!1sth!2sth">
+                        <div class="travel-name">   อ่าวนาง  </div>
+                        <img class="travel-img" src="https://www.uncledeng.com/wp-content/uploads/2021/03/%E0%B8%AD%E0%B9%88%E0%B8%B2%E0%B8%A7%E0%B8%99%E0%B8%B2%E0%B8%87.jpg" alt="">
+    
+                    </div>
+                    <div class="travel-item" data-location="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d13151.021272935632!2d98.76932558259512!3d7.688755441465053!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x304e20a1728986a9%3A0xceb0fe1c813aa2be!2sViking%20Cave!5e1!3m2!1sth!2sth!4v1626959605987!5m2!1sth!2sth">
+                        <div class="travel-name">  ถ้ำไวกิ้ง   </div>
+                        <img  class="travel-img" src="https://www.uncledeng.com/wp-content/uploads/2021/03/%E0%B8%96%E0%B9%89%E0%B8%B3%E0%B9%84%E0%B8%A7%E0%B8%81%E0%B8%B4%E0%B9%89%E0%B8%87.jpg" alt="">
+                    </div>
+                  
+                    <div class="travel-item" data-location="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d7647.782873694605!2d99.26361677170095!3d7.923806288748758!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x30521c0d8d8ba7ff%3A0xad9f7a187dd245ee!2z4Liq4Lij4Liw4Lih4Lij4LiB4LiV!5e1!3m2!1sth!2sth!4v1626959641574!5m2!1sth!2sth">
+                        <div class="travel-name">   สระมรกต  </div>
+                        <img class="travel-img" src="https://www.uncledeng.com/wp-content/uploads/2021/03/%E0%B8%AA%E0%B8%A3%E0%B8%B0%E0%B8%A1%E0%B8%A3%E0%B8%81%E0%B8%95.jpg" alt="">
+    
+                    </div>
+                    <div class="travel-item" data-location="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d7647.782873694605!2d99.26361677170095!3d7.923806288748758!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x30521c1463128593%3A0x490c536721e1341d!2z4Liq4Lij4Liw4LiZ4LmJ4Liz4Lic4Li44LiUIOC4geC4o-C4sOC4muC4teC5iA!5e1!3m2!1sth!2sth!4v1626959672349!5m2!1sth!2sth"">
+                        <div class="travel-name">  สระน้ำผุด  </div>
+                        <img class="travel-img" src="https://www.uncledeng.com/wp-content/uploads/2021/03/%E0%B8%AA%E0%B8%A3%E0%B8%B0%E0%B8%99%E0%B9%89%E0%B8%B3%E0%B8%9C%E0%B8%B8%E0%B8%94.jpg" alt="">
+                    </div>
+                    <div class="travel-item" data-location="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3712.357520613404!2d98.77537651460133!3d8.214930594088063!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3051a33323420177%3A0xf3e8ab834b402d27!2z4LiX4LmI4Liy4Lib4Lit4Lih4LiE4Lil4Lit4LiH4Liq4Lit4LiH4LiZ4LmJ4Liz!5e1!3m2!1sth!2sth!4v1626959693485!5m2!1sth!2sth">
+                        <div class="travel-name">  ท่าปอมคลองสองน้ำ  </div>
+                        <img class="travel-img"src="https://www.uncledeng.com/wp-content/uploads/2021/03/%E0%B8%97%E0%B9%88%E0%B8%B2%E0%B8%9B%E0%B8%AD%E0%B8%A1%E0%B8%84%E0%B8%A5%E0%B8%AD%E0%B8%87%E0%B8%AA%E0%B8%AD%E0%B8%87%E0%B8%99%E0%B9%89%E0%B8%B3.jpg" alt="">
+                    </div>
+                    <div class="travel-item" data-location="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d15736.152263636279!2d98.92379440958311!3d8.120295042993746!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x305196aad2b5633b%3A0x54b73c818ba88811!2z4Lin4Lix4LiU4LiW4LmJ4Liz4LmA4Liq4Li34Lit!5e1!3m2!1sth!2sth!4v1626959744911!5m2!1sth!2sth">
+                        <div class="travel-name">  วัดถ้ำเสือ  </div>
+                        <img src="https://www.uncledeng.com/wp-content/uploads/2021/03/%E0%B8%A7%E0%B8%B1%E0%B8%94%E0%B8%96%E0%B9%89%E0%B8%B3%E0%B9%80%E0%B8%AA%E0%B8%B7%E0%B8%AD.jpg" alt="">
+                    </div>
+                    <div class="travel-item" data-location="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3713.6258700006547!2d98.91880461460033!3d8.078206594183884!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x305195ba988a1177%3A0x4da0dec289dddf62!2sKhao%20Khanab%20Nam!5e1!3m2!1sth!2sth!4v1626959793359!5m2!1sth!2sth">
+                        <div class="travel-name">  เขาขนาบน้ำ  </div>
+                        <img class="travel-img" src="https://www.uncledeng.com/wp-content/uploads/2021/03/%E0%B9%80%E0%B8%82%E0%B8%B2%E0%B8%82%E0%B8%99%E0%B8%B2%E0%B8%9A%E0%B8%99%E0%B9%89%E0%B8%B3.jpg" alt="">
+                    </div>
+                  
+    
+                
+    
+
+                </div>
+               
+
+            </div>
+            <div class="sprit-bar">
+                <div class="line-sprit"></div>
+                <i class="fas fa-location-arrow"></i>
+
+                 <div> Recommended Place</div>
+                 <div class="line-sprit"></div>
+                </div>
+            <div class="fav">
+                
+                <div class="fav-item">
+                    <div class="fav-detail"> 
+                        <div> | Bautiful Isle | </div>
+                    </div>
+                    <img src="https://www.uncledeng.com/wp-content/uploads/2021/03/%E0%B9%80%E0%B8%81%E0%B8%B2%E0%B8%B0%E0%B8%9B%E0%B8%AD%E0%B8%94%E0%B8%B0.jpg" alt="">
+                 </div>
+                 <div class="fav-item">
+                    <div class="fav-detail">
+                        <div> | Most Tourists | </div>
+    
+                    </div>
+                    <img src="https://www.uncledeng.com/wp-content/uploads/2021/03/%E0%B9%80%E0%B8%81%E0%B8%B2%E0%B8%B0%E0%B8%9E%E0%B8%B5%E0%B8%9E%E0%B8%B5.jpg" alt="">
+
+                 </div>
+                 <div class="fav-item">
+                    <div class="fav-detail">
+                        <div> | Natural Phenomenon | </div>
+    
+                    </div>
+                   <img src="https://www.uncledeng.com/wp-content/uploads/2021/03/%E0%B8%97%E0%B8%B0%E0%B9%80%E0%B8%A5%E0%B9%81%E0%B8%AB%E0%B8%A7%E0%B8%81.jpg" alt="">
+                 </div>
+                 <div class="fav-item">
+                    <div class="fav-detail">
+                        <div>  | Mysterious | </div>
+    
+                    </div>
+                    <img src="https://www.uncledeng.com/wp-content/uploads/2021/03/%E0%B8%96%E0%B9%89%E0%B8%B3%E0%B9%84%E0%B8%A7%E0%B8%81%E0%B8%B4%E0%B9%89%E0%B8%87.jpg" alt="">
+
+                 </div>
+                 <div class="fav-item">
+                    <div class="fav-detail">
+                        <div> | Relax | </div>
+    
+                    </div>
+                    <img src="https://www.uncledeng.com/wp-content/uploads/2021/03/%E0%B8%AA%E0%B8%A3%E0%B8%B0%E0%B8%A1%E0%B8%A3%E0%B8%81%E0%B8%95.jpg" alt="">
+
+
+                 </div>
+                 <div class="fav-item">
+                    <div class="fav-detail">
+                        <div> | Natue & Peace | </div>
+    
+                    </div>
+                    <img src="https://www.uncledeng.com/wp-content/uploads/2021/03/%E0%B8%AA%E0%B8%A3%E0%B8%B0%E0%B8%99%E0%B9%89%E0%B8%B3%E0%B8%9C%E0%B8%B8%E0%B8%94.jpg" alt="">
+
+                 </div>
+              
+    
+            </div>
+
+        </div>
+        <footer class="footer">
+            <div class = "footer-social">
+                Follow Me
+                <div class = "footer-social-icon">
+                     <i class="fab fa-facebook-square"></i>
+                     <i class="fab fa-instagram"></i>
+                     <i class="fab fa-twitter-square"></i>
+                 </div>
+            </div>
+            <div class = "footer-about">
+                About-Me
+            <div class = "footer-about-detail">
+                73 m.4 Nathawee Songkhla 90160
+                 Lorem ipsum dolor, sit amet consectetur adipisicing elit.
+                 Amet quibusdam doloribus animi ipsa eum exercitationem magni velit commodi nulla explicabo.
+                  Exercitationem tempora fugit non pariatur totam odio aliquid unde quas!
+    
+            </div>
+             
+            </div>
+            
+        </footer>
+        
+    </div>
+   
+  
+</body>
+<!-- <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAmf9XixFILaviwhB2eknJWOpcbZ7SbFRk&callback=myMap"></script> -->
+
+<script>        
+
+
+   
+  
+        function selectAll(el){
+            return document.querySelectorAll("."+el)
+        }
+        function select(el){
+            return document.querySelector("."+el)
+        }
+
+        
+       let travel_item = selectAll("travel-item")
+       let travel_display = select("travel-display")
+       let travel_display_img = select("travel-display-img")
+       let close_map = select("fa-chevron-right")
+       let travel_location_icon = select("travel-location-icon")
+       let travel_location = select("travel-location")
+       let travel_display_name = select("travel-display-name")
+       let iframe = document.querySelector("iframe")
+       let   fav_item = selectAll("fav-item")
+
+
+       let preview_item = selectAll("preview-item")
+
+       let isover = false;
+        
+       let i1 = 0;
+           let i2 = 0; 
+    
+
+       window.addEventListener("scroll",(e)=>{
+      
+        if(Math.round( pageYOffset) >= 100){
+
+            setTimeout(() => {
+               preview_item[0].classList.add("preview-eff")
+            },100);
+            setTimeout(() => {
+               preview_item[1].classList.add("preview-eff")
+            },300);
+            setTimeout(() => {
+               preview_item[2].classList.add("preview-eff")
+            },500);
+       
+           }
+
+
+           if(Math.round( pageYOffset) >= 800){
+           select("travel").style.width = "100%"
+             
+           let i = 0;
+         setTimeout(()=>{
+            setInterval(() => {
+               if(i <= travel_item.length-1){
+                travel_item[i++].classList.add("travel-eff")
+            }
+            },200);
+         },500)      
+           }
+           if(Math.round( pageYOffset) >= 1500){
+         
+            let i = 0;
+      
+            setInterval(() => {
+               if(i <= fav_item.length-1){
+                fav_item[i++].classList.add("fav-eff")
+            }
+            },200);
+     
+      
+        }
+      
+
+})
+     
+   
+    
+      //---------------------------------------------
+       travel_item.forEach(item =>{
+           item.addEventListener("click",(e) =>{
+            iframe.src = e.target.parentElement.dataset.location
+           })
+       })
+
+       travel_location_icon.addEventListener("click",(e) => {
+        travel_display.style.width = "50%"
+        travel_location.style.width = "50%"
+        travel_location_icon.style.display = "none"
+
+       })
+       
+        close_map.addEventListener("click",function(e){
+            console.log(e.target.parentElement)
+            e.target.parentElement.style.width = "0%"
+            travel_display.style.width = "100%"
+            travel_location_icon.style.display = "block"
+
+            
+        })
+
+        travel_item.forEach(item =>{
+            item.addEventListener("click",function(e) {
+                if(e.target.className == "travel-name"){
+                     let src = e.target.parentElement.children[1].src
+                     travel_display_name.innerHTML = e.target.innerHTML
+                     travel_display_img.src = src
+                     
+
+                }
+                else{
+                let src = e.target.src
+                travel_display_img.src = src
+                travel_display_name.innerHTML =  e.target.parentElement.children[0].innerHTML
+                    
+                for(let i = 0; i < travel_item.length ; i++){
+                     travel_item[i].classList.remove("eff")
+                }
+                e.target.parentElement.classList.add("eff")
+            
+
+
+            }
+            })
+           
+        })
+
+</script>
+
+</html>

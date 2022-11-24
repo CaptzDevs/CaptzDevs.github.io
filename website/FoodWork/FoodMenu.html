@@ -1,0 +1,430 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <script src="https://kit.fontawesome.com/0244365092.js" crossorigin="anonymous"></script>
+    <title>Food House</title>
+</head>
+<style>
+    @import url('https://fonts.googleapis.com/css2?family=Cormorant:ital,wght@1,300&display=swap');
+    @import url('https://fonts.googleapis.com/css2?family=Noto+Sans&display=swap');
+    </style>
+    <style>
+          *{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+
+    transition: 0.5s;
+    }
+        body{
+      overflow-x: hidden;
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif; 
+    overflow-y: hidden;
+    background-color: #212322;
+
+
+
+
+    }
+    main{
+        width: 100%;
+        height: auto;
+        display: flex;
+        align-items: flex-start;
+        justify-content: flex-start;
+        position: relative;
+        background-color: #212322;
+        padding-top: 50px;
+        padding: 20px;
+        margin-top: 50px;
+        transform: scale(1,1);
+        
+    }
+    .content-menu{
+        width: 100%;
+        height: 90vh;
+        padding: 10px;
+        padding-top: 0px;
+        overflow-y: auto;
+        padding-bottom: 50px;
+        border-radius: 20px;
+        
+    }
+    .content-descript{
+        width: 0%;
+        height: 88vh;
+        background-color: rgba(117, 117, 117, 0.2);
+        border-radius: 20px;
+        margin-left: 10px;
+        overflow-y: scroll;
+        position: relative;
+        backdrop-filter: blur(30px);
+  
+      
+    }
+    .banner{
+        width: 100%;
+        height: 60vh;
+        display: flex;
+        align-items: center;
+        justify-content: flex-end;
+        position: relative;
+        overflow: hidden;   
+        background: url(https://images.unsplash.com/photo-1476224203421-9ac39bcb3327?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=750&q=80);
+       /*https://images.unsplash.com/photo-1568689595552-ae5eb971f704?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=795&q=80*/
+        background-repeat: no-repeat;
+        background-position: center;
+        background-size: cover;
+        border-radius: 20px;
+
+    }
+    .menu{
+        width: 100%;
+        height: auto;
+        border-radius: 20px;
+        margin-top: 15px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        flex-wrap: wrap;
+
+
+    }
+    .menu-item{
+        width: 30%;
+        height: 40vh;
+        border: 1px solid white;
+        border-radius: 10px;
+        margin: 16px;
+        overflow: hidden;
+        cursor: pointer;
+        transform: translateY(100%);
+
+    }
+    .menu-item:hover{
+        transform: translate(-10px,-10px) scale(1.1,1.1); 
+        
+    }
+    .menu-pic {
+        width: 100%;
+        height: 100%;
+       
+
+    }
+    .menu-pic img{
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        object-position: center;
+
+    }
+
+    .menu-name {
+        width: 100%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-size: 2rem;
+        color: white;
+        text-transform: capitalize;
+        font-family: 'Cormorant', serif;
+        font-weight: 600;
+        margin-top: 20px;
+    }
+    
+    .menu-detail {
+        width: 100%;
+        display: flex;
+        align-items: flex-start;
+        justify-content: flex-start;
+        font-size: 1rem;
+        color: white;
+        text-indent: 10px;
+        overflow: hidden;
+        padding: 20px;
+        
+        
+    }
+    .menu-item-eff{
+        transform: translateY(0%);
+    }
+
+    .banner-box{
+        width: 50%;
+        height: 100%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-size: 3rem;
+        font-family: 'Cormorant', serif;
+        background: rgba(255, 255, 255, 0.534);
+        clip-path: polygon(25% 0%, 100% 0%, 75% 100%, 0% 100%);
+        font-weight: 600;
+        letter-spacing: 7px;
+    }
+    .menu-img{
+        width: 90%;
+        height: 50%;
+        border-radius: 20px;
+        margin-left: 20px;
+        margin-top: 20px;
+
+    }
+    .menu-img:hover{
+        height: 70%;
+
+
+    }
+    </style>
+<body>
+    <header >
+        <div class="loader"></div>
+        <div class="header-logo"><span class="head-name-float">Food House <i class="fab fa-accusoft"></i></span></div>
+        <a href="FoodIndex.html" class="header-item">
+            <i class="fas fa-home"></i> Home
+            <div class="detail">Home</div>
+        </a>
+        <a href="FoodMenu.html" class="header-item profile-btn">
+            <i class="fas fa-utensils"></i></i></i> Menu
+            <div class="detail">Library</div>
+        </a>
+        <a href="FoodIngre.html" class="header-item">
+            <i class="fab fa-elementor"></i></i> Recipe
+            <div class="detail">Shop</div>
+        </a>
+        <a href="Introduce.html" class="header-item">
+            <i class="fas fa-code"></i> Dev
+            <div class="detail">Shop</div>
+        </a>
+      </header>
+    <main>
+        <div class="content-menu">
+        <div class="banner">
+            <div class="banner-box">
+                Menu
+            </div>
+        </div>  
+        <div class="menu">
+            <div class="menu-item" data-index="0">
+                <div class="menu-pic">
+                    <img src="https://images.unsplash.com/photo-1506280754576-f6fa8a873550?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=334&q=80">
+                    bruschetta
+                </div>
+            </div>
+            <div class="menu-item" data-index="1">
+                <div class="menu-pic">
+                    <img src="https://images.unsplash.com/photo-1522666257812-173fdc2d11fe?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=375&q=80">
+                    spaghetti
+                     
+                </div>
+            </div>
+            <div class="menu-item" data-index="2">
+                <div class="menu-pic">
+                    <img src=" https://images.unsplash.com/photo-1565299624946-b28f40a0ae38?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=414&q=80">
+                    pizza
+                </div>
+            </div>
+           
+
+            <div class="menu-item" data-index="3">
+                <div class="menu-pic">
+                    <img src="https://images.unsplash.com/photo-1612152328178-4a6c83d96429?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=367&q=80">
+                    pasta
+                </div>
+            </div>
+            <div class="menu-item" data-index="4">
+                <div class="menu-pic">
+                    <img src="https://images.unsplash.com/photo-1588338529744-4d5b9b55579b?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=80">
+                    Carbonara
+                </div>
+            </div>
+            <div class="menu-item" data-index="5">
+                <div class="menu-pic">
+                    <img src="https://images.unsplash.com/photo-1574894709920-11b28e7367e3?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=375&q=80">
+                    Lasagna
+                </div>
+            </div>
+
+            <div class="menu-item" data-index="6">
+                <div class="menu-pic">
+                    <img src="https://images.unsplash.com/photo-1544025162-d76694265947?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=749&q=80">
+                    fiorentina steak
+                </div>
+            </div>
+            <div class="menu-item" data-index="7">
+                <div class="menu-pic">
+                    <img src="https://images.unsplash.com/photo-1609770424775-39ec362f2d94?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=401&q=80">
+                    Risotto
+                </div>
+            </div>
+            <div class="menu-item" data-index="8">
+                <div class="menu-pic">
+                    <img src="https://i2.wp.com/ifyougiveablondeakitchen.com/wp-content/uploads/2020/08/rosemary-focaccia-bread-2020-3.jpg">
+                    focaccia bread
+                </div>
+            </div>
+         
+
+        </div>
+
+        </div>
+        <div class="content-descript">
+            <div class="menu-name">Food Name</div>
+            <div class="menu-img">
+
+            </div>
+            <div class="menu-detail">
+
+            </div>
+
+       
+    </main>
+
+    
+</body>
+<script title="Fuction">
+
+    // S = Select 
+    // Sa = Select All
+    // Sc =  Select Class Without .
+
+    function S(el){
+          return document.querySelector("."+el)
+    }
+
+    function Sa(el){
+        return document.querySelectorAll("."+el)
+    }
+    function St(el){
+        return document.querySelector(el)
+    }
+
+    let arr = [1,2,3,4,5,6,7]
+
+    Array.prototype.size = function(){
+        return this.length
+    }
+    function IsGreater(v1,v2){
+       return v1 > v2 ? v1 : v2;
+    }
+    function IsGl(v1,v2){
+       return v1 < v2 ? v1 + " < " + v2 : v2 + " < " + v1;
+    }
+
+    const elem = HTMLElement
+
+    Object.prototype.click = function(func){
+        this.addEventListener("click",func)
+    }
+
+    NodeList.prototype.click = function(func){
+        this.addEventListener("click",func)
+    }
+
+
+    Object.prototype.on = function(evenHandler,func){
+        this.addEventListener(evenHandler,func)
+    }
+
+
+    
+
+    Object.prototype.css = function(prop,value){
+    
+     let v = this.getAttribute("style")
+     this.setAttribute("style",prop +":"+value ) 
+
+     
+        if(v != null){
+  
+        this.setAttribute("style",v +"; "+ prop +":" +value )
+        }
+
+      
+    }
+
+    Object.prototype.addClass = function(cssClass){
+        this.classList.add(cssClass)
+    }
+
+
+
+    Object.prototype.cd = function(){
+        setTimeout(() =>{
+           console.log(this)
+        },1000)
+
+    }
+
+        
+   function timing(s,t){
+       return setTimeout(s,t) 
+    }    
+  
+
+
+    
+
+
+
+
+</script>
+    <script>
+    let arr1 = [
+    "<br> คือ ขนมปังอิตาเลียนปิ้ง ชุ่มด้วยน้ำมันมะกอก เสิร์ฟพร้อมกระเทียมและมะเขือเทศ หลายคนเข้าใจว่าอ่านออกเสียงว่า “บรู-เช็ต-ต้า” แต่แท้จริงแล้วชาวอิตาเลียนนั้น ออกเสียงเมนูนี้ว่า “บรู-สเก็ต-ต้า” 2.“Lasagna” อีกหนึ่งอาหารยอดนิยมของคนไทย ที่ทำจากแป้งพาสต้ารูปแบบแผ่นหรือเส้นใหญ่<br>            ",
+    "<br> สปาเก็ตตี้เป็นอาหารประเภทพาสต้า โดยพาสต้าเป็นอาหารประจำชาติอิตาเลียน ต้นกำเนิดของพาสต้ามีหลากหลาย แต่ทฤษฎีที่ได้รับการยอมรับมากที่สุดกล่าวว่าพาสต้ามาจากชาวซิซิเลียนทางตอนใต้ของอิตาลี พาสต้านี้นี้มีเส้นอยู่หลายประเภท และสปาเก็ตตี้ก็เป็นหนึ่งในประเภทของเส้นของพาสต้า<br>                เส้นสปาเก็ตตี้ทำมาจากแป้งสาลีชนิดซีโมลินา (Semolina) ซึ่งมีโปรตีนและกลูเตนสูง แล้วนำมาผสมกับน้ำ ก่อนจะนำไปรีดเป็นเส้นสปาเก็ตตี้แบบที่หลายคนคุ้นตา เส้นสปาเก็ตตี้สำเร็จรูปจะมีความแข็ง บรรจุอยู่ในซอง เปราะและหักง่าย เมื่อจะใช้จะต้องนำไปต้มในน้ำเดือดให้นุ่มก่อน แล้วจึงนำไปผัดเป็นเมนูสปาเก็ตตี้<br>        ",
+    "<br> พิซซา หรือ พิซซ่า (อิตาลี: pizza) เป็นอาหารอิตาลีและอาหารจานด่วนประเภทหนึ่ง ซึ่งชาวอิตาลีเป็นผู้คิดค้น มีลักษณะเป็นแป้งแผ่นกลมแบนราดด้วยซอสมะเขือเทศ แล้วทำให้สุกโดยการอบในเตาอบ<br><br>            ในประเทศอิตาลี การเสิร์ฟพิซซาในโอกาสที่เป็นทางการ เช่น การทานในภัตตาคาร จะเสริ์ฟโดยไม่หั่นและจะรับประทานโดยใช้มีดและส้อม ในขณะที่ชาวอิตาเลียนโดยทั่วไปเมื่อทานพิซซาในโอกาสที่ไม่เป็นทางการ เช่น ทานกันเองที่บ้าน พิซซาจะถูกหั่นให้เป็นชิ้นพอดีคำและนิยมทานโดยใช้มือ<br>            <br>            คำว่า พิซซา ได้รับการบันทึกครั้งแรกในช่วงศตวรรษที่ 10 ในบันทึกเอกสารภาษาละติน ณ เมืองกาเอตา (Gaeta) ทางตอนใต้ของอิตาลีในแคว้นลัตซีโอ บนพรมแดนติดกับกัมปาเนีย พิซซาสมัยใหม่ได้ถูกคิดค้นขึ้นในเนเปิลส์ และได้รับความนิยมอย่างแพร่หลายในเวลาต่อมา<br>            พิซซาได้กลายเป็นหนึ่งในอาหารยอดนิยมที่สุดในโลกและเป็นรายการอาหารจานด่วนที่หาทานได้ทั่วไปในทวีปยุโรปและทวีปอเมริกาเหนือ โดยหาทานได้ง่ายทั้งในร้านที่ขายพิซซาโดยเฉพาะ (Pizzerias), ในภัตตาคารอาหารตะวันตกทั่วไป และในรูปแบบของการจัดส่ง  และหลายบริษัทได้มีการจำหน่ายพิซซาในรูปแบบแช่แข็ง เพื่อเพิ่มความสะดวกให้แก่ลูกค้าในการนำเข้าไมโครเวฟพร้อมทานได้ทันที<br>        ",
+    "<br> พาสตา หรือ พ้าสต้า(อังกฤษ: pasta) คือชื่อเรียกโดยรวมของอาหารอิตาลีประกอบด้วยเส้นที่ทำจากแป้งสาลี น้ำ ไข่ เกลือ และ น้ำมันมะกอก จากนั้นจึงนำมารีดเป็นแผ่นและตัดเป็นเส้น ทำให้สุกโดยการต้ม รับประทานกับซอสหลากหลายประเภท ที่มักมีส่วนประกอบหลักคือ น้ำมันมะกอก ผัก เครื่องเทศ และเนยแข็ง เส้นพาสตาเป็นชื่อเรียกโดยรวมของเส้นหลากหลายประเภท<br><br>            ในสมัยก่อนพาสตานั้นเป็นอาหารที่ชาวอิตาลีทางตอนใต้นิยมรับประทาน ซึ่งนับว่ายากจนกว่าชาวอิตาลีทางตอนเหนือ ซึ่งนิยมรับประทานนมเนย และข้าว<br><br>                ปัจจุบันมีการผลิตเส้นสำเร็จรูปแบบอบแห้งในลักษณะอุตสาหกรรม ถูกใช้แพร่หลายมากกว่าเส้นแบบสดเนื่องจากสะดวกไม่ต้องใช้เวลาและความชำนาญมากในการจัดเตรียม<br>            ",
+    "<br> คาร์โบนารา (อิตาลี: Carbonara) เป็นอาหารพาสตาชนิดหนึ่งตามแบบฉบับของแคว้นลาซีโอ โดยเฉพาะอย่างยิ่งในกรุงโรม ปรุงด้วยวัตถุดิบที่เป็นที่นิยมและมีรสชาติเข้มข้น<br>            ในสมัยก่อนสงครามโลกครั้งที่สอง ในช่วงที่ชาวอิตาลีประสบภาวะขาดแคลนเครื่องอุปโภคบริโภคอย่างหนัก ทำให้พ่อครัวเอาไข่ผงที่ทหารอเมริกันส่งมาให้มาผสมกับสปาเกตตีที่เป็นอาหารประจำชาติจนเกิดเป็นการ์โบนาราขึ้นมา จนกระทั่งทหารอเมริกันกลับสู่บ้านเกิด พวกเขาก็ยังนำเมนูนี้กลับไปเผยแพร่ในสหรัฐอเมริกาในชื่อ สปาเกตตีในซอสคาร์โบนารา<br>            ",
+    "<br> ลาซัญญา (อิตาลี: lasagna – เอกพจน์) หรือ ลาซัญเญ (lasagne – พหูพจน์)[1] เป็นพาสตาที่มีลักษณะเป็นแผ่นสี่เหลี่ยม อาจเป็นพาสตาที่เก่าแก่ที่สุดประเภทหนึ่ง[2] โดยทั่วไป คำ ลาซัญญา หรือ ลาซัญเญ ยังหมายถึงอาหารอิตาลีที่ทำจากแผ่นลาซัญญาแห้งวางสลับชั้นกับซอสและส่วนผสมอื่น ๆ เช่น เนื้อสัตว์ ซอสมะเขือเทศและผักต่าง ๆ เนยแข็ง (ซึ่งอาจเป็นรีกอตตาและพาร์เมซาน) และเครื่องปรุงรสและเครื่องเทศ เช่น กระเทียม ออริกาโน และใบโหระพา อาจโรยหน้าด้วยเนยแข็งมอซซาเรลลาขูด[3] ตามแบบฉบับแล้วจะนำแผ่นลาซัญญาที่วางสลับกับส่วนผสมอื่น ๆ นี้ไปอบในเตาอบ ในภาษาอิตาลีเรียกว่า ลาซัญเญอัลฟอร์โน (lasagne al forno; แปลว่า ลาซัญญาเตาอบ) ลาซัญญาที่อบสุกแล้วจะถูกตัดเป็นชิ้นสี่เหลี่ยมก่อนเสิร์ฟ<br>        ",
+    "<br> ประวัติของสเต็ก Florentine นั้นเก่าแก่พอๆ กับเมืองFlorenceของอิตาลีซึ่งเป็นที่มาของชื่อ และร่องรอยของต้นกำเนิดก็หายไปตามกาลเวลา แต่ประเพณีของชื่อเสียงและชื่อสามารถสืบย้อนกลับไปเฉลิมฉลองเทศกาลของเซนต์ลอว์เรเมื่อวันที่ 10 เดือนสิงหาคมและกับเมดีชี เนื่องในโอกาสเทศกาล Festa di San Lorenzoเมืองนี้สว่างไสวด้วยแสงจากกองไฟขนาดใหญ่ ซึ่งเนื้อลูกวัวจำนวนมากถูกย่างและแจกจ่ายให้กับประชากร<br>                ฟลอเรนซ์ในช่วงเวลาของเมดิชิเป็นทางแยกที่สำคัญซึ่งคุณสามารถพบกับนักเดินทางจากทั่วทุกมุมโลก ว่ากันว่าเนื่องในโอกาสฉลองนักบุญลอว์เรนซ์ อัศวินชาวอังกฤษบางคนเข้าร่วมงานเฉลิมฉลองและได้รับเนื้อย่างบนกองไฟ พวกเขาเรียกมันในภาษาของพวกเขาว่าสเต็กเนื้อหมายถึงประเภทของเนื้อสัตว์ที่พวกเขากิน จากที่นี่ การแปลที่ปรับให้เข้ากับภาษาอิตาลีในปัจจุบันทำให้เกิดคำว่าbisteccaที่สืบทอดมาจนถึงปัจจุบัน<br>        ",
+    "<br> รีซอตโต (อิตาลี: risotto) เป็นอาหารอิตาลีชนิดหนึ่ง ซึ่งเป็นข้าวผัดที่มีลักษณะข้นไปด้วยครีมจากการดูดซับไวน์และน้ำซุปจากเนื้อวัว ปลา หรือผักในขณะผัด ส่วนผสมหลักของรีซอตโตโดยทั่วไปมักประกอบด้วยชีสพาร์มีซอน เนย และหัวหอม ซึ่งเป็นหนึ่งในวิธีหุงข้าวอันนิยมที่สุดในอาหารอีตาลี<br><br>            ",
+    "<br> Focaccia นั้นมีต้นกำเนิดในแคว้น Liguria ซึ่งเป็นเมืองที่ติดทะเล และอยู่ทางตอนเหนือ และฉะนั้นทั้งอากาศหนาวและไอเกลือทำให้การทำงานของยีสในแป้งทำขนมปังนั้นไม่ค่อยฟูเท่าไหร เค้าก็เลยเลยตามเลย ทำขนมปังแบบแบนแทน ที่นี้ก็เลยโรยหน้าได้ ปกติเค้าก็จะโรยด้วยน้ำมันมะกอกและเกลือ แล้วก็เพิ่มโน้นนิด นี่หน่อย แต่พอเค้าเอามะเขือเทศมาวาง มันก็เลยกลายเป็นพิซซ่าในเวลาต่อมา<br>        "
+]
+
+      let menu_detail = S("menu-detail") 
+      let menu_item = Sa("menu-item")
+      let menu_item_name = Sa("menu-pic")
+      let menu_name = S("menu-name")
+      let content_descript = S("content-descript")
+      let menu_img = S('menu-img')
+
+        let i  = 0;
+
+      let c = setInterval(()=>{
+            menu_item[i].classList.add("menu-item-eff")
+            i++
+            if(i == menu_item.length)
+                clearInterval(c)
+      },100)
+
+
+        menu_item.forEach(item => {
+            item.addEventListener("click",function(e){
+                let index = e.target.parentElement.parentElement.dataset.index
+                let src = item.childNodes[1].childNodes[1].src
+   
+                if(content_descript.className != "content-descript-eff"){
+                    content_descript.style.width = "35%"
+                }
+                menu_detail.innerHTML = arr1[index];
+                menu_name.innerHTML = ` - ${menu_item_name[index].innerText} -`
+                menu_img.style.background = `url(${src})`
+                menu_img.style.backgroundSize = "cover"
+                menu_img.style.backgroundRepeat = "no-repeat"
+                menu_img.style.backgroundPosition = "center"
+
+
+
+
+                
+            })
+        })
+    
+        
+    </script>
+</html>

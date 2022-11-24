@@ -1,0 +1,1098 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" href="style.css">
+        <script src="https://kit.fontawesome.com/0244365092.js" crossorigin="anonymous"></script>
+        <title>Food House</title>
+    </head>
+    
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Cormorant:ital,wght@1,300&display=swap');
+        @import url('https://fonts.googleapis.com/css2?family=Noto+Sans&display=swap');
+    </style>
+       <style>
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+
+    transition: 0.5s;
+    }
+    body{
+      overflow-x: hidden;
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif; 
+    overflow-y: hidden;
+    background-color: #212322;
+      display: flex;
+        align-items: center;
+        justify-content: center;
+      overflow: hidden;
+
+    }
+    main{
+        width: 100%;
+        height: 100vh;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        position: relative;
+        padding: 20px 40px 50px 40px;
+       background-color: rgb(146, 146, 146);
+
+      overflow: hidden;  
+/*       overflow-y: scroll;  */
+    
+    }
+    .banner{
+        width: 100%;
+        height: 100vh;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        position: relative;
+        padding: 20px 40px 0px 40px;
+      overflow: hidden;   
+      margin-top: 50px;
+      
+    }
+        .card{
+                width: 25vw;
+                height: auto;
+                background:white;
+                position:relative;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                flex-wrap: wrap;
+                border-radius: 0px;
+                margin-bottom: 30px;
+                perspective: 1000px;
+                overflow-x: visible;
+                cursor: pointer;
+                
+        
+            }
+           
+        
+            .card-top{
+                width: 100%;
+                height: 6.5vh;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                font-size: 1.2rem;
+                padding-left: 5px;
+                font-weight: 500;
+                transform-origin: top ;
+                border-radius: 20px;
+                transform:perspective(0px) translateX(0px);
+                box-shadow: none;
+        
+            }
+            .card-center{
+                width: 150%;
+                height: 0vh;
+                background:rgb(155, 155, 155);
+                background-position: center;
+                background-size: cover;
+                transform:perspective(0px) translateX(0px);
+                box-shadow: none;
+                overflow-x: visible;
+        
+                
+            }
+            .card-bottom{
+                width: 100%;
+                height: 9vh;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                padding-left: 5px;
+                transform-origin: bottom left;
+                border-radius: 20px;
+                transform:perspective(0px) translateX(0px);
+                box-shadow: none;
+        
+            }
+           .title {
+                font-size: 1.2rem;
+                font-weight: 500;
+                text-transform: capitalize;
+            }
+        
+            .replay{
+                width: 100px;
+                height: 100px;
+                background: rgb(151, 151, 151);
+                position: absolute;
+                top: 0;
+                right: 0;
+            }
+            .card-bottom-box{
+                width: 100%;
+                height: 100%;
+                display: flex;
+                align-items: flex-start;
+                justify-content: flex-end;
+                flex-direction: column;
+                transform-origin: bottom left;
+                padding-bottom: 10px;
+              
+            }
+        
+            .card-top-box{
+                width: 100%;
+                height: 100%;
+                display: flex;
+                align-items: center;
+                justify-content: flex-start;
+                transform-origin: bottom left;
+                position: relative;
+            }
+        
+            .card-profile{
+                width: 35px;
+                height: 90%;
+                border-radius: 50%;
+                background: rgb(151, 151, 151);
+                margin-right: 10px;
+                transform: scale(0,0);
+                transform-origin: center;
+                color: rgb(255, 255, 255);
+                display: flex;
+                align-content: center;
+                justify-content: center;
+                font-size: 1rem;
+            }
+            .card-head{
+                margin-bottom: 1px;
+                position: absolute;
+              
+            }
+            .close{
+                top: 5px;
+                right: 5px;
+                position: absolute;
+                cursor: pointer;
+            }
+            
+            .column {
+                width: auto;
+                height: 50%;
+                display: flex;
+                align-content: center;
+                justify-content: center;
+                flex-direction: column;
+                margin-left: 50px;
+                margin-right: 50px;
+                transition: 1s ease-out;
+                overflow-x: visible;
+        
+        
+        
+            }
+            .none{
+                opacity: 0%;
+            }
+            .card-eff-rv{
+                transform: translateY(-100%);
+                transition: all 1s cubic-bezier(0, 0, .58, 1);
+            }
+            .card-eff{
+                transform: translateY(100%);
+                transition: all 1s cubic-bezier(0, 0, .58, 1);
+        
+        
+            }
+            .bg{
+                background: #505759;
+                }
+            .main-eff{
+                transform: rotate(20deg) skew(-20deg, -20deg) scale(0.8,0.8);
+            }
+            .main-eff2{
+                transform: rotate(0deg) skew(0deg, 0deg) scale(0.8,0.8);
+            }
+        
+            .main-eff-last{
+           /*      transform: rotate(0deg) skew(0deg, 0deg) scale(0.8,0.8) translateX(0%); */
+                display: flex;
+                align-items: center;
+                justify-content:center;
+                flex-direction: row;
+                flex-wrap: wrap;
+               /*  transform: rotate(40deg) skew(-20deg, -20deg) scale(0.8,0.8); */
+            }
+            .main-eff-last2{
+                transform: rotate(0deg) skew(0deg, 0deg) scale(1,1) translateX(0%);
+            }
+            .card-center-eff{
+                transform:perspective(500px) translateX(-100px) translateY(-70px);
+          /*       box-shadow: 100px 50px 10px rgba(0, 0, 0, 0.205); */
+                transition: 1.5s;
+                
+        
+            }
+        
+            .card-center-eff2{
+                transform:perspective(500px) translateX(-140px) translateY(-85px) scale(1.05,1.05);
+                box-shadow: 130px 65px 10px rgba(0, 0, 0, 0.205);
+                transition: 1.5s ;
+                z-index: 10;
+        
+            }
+            .slide-eff-bottom{
+                transform: translateY(-150%);
+            }
+            .slide-eff-center{
+                transform: translateY(0%);
+            }
+            .slide-eff-top{
+                transform: translateY(150%);
+            }
+        
+          
+
+
+           .menu-receipt{
+                width: 0%;
+                height: 80vh;
+                margin-left: 50px;
+                margin-top: 50px;
+                border-radius: 20px;
+                background-color: #4f4f505b;
+                overflow: hidden;
+                backdrop-filter: blur(30px);
+               
+           }
+           .menu-rec-name{
+               width: 100%;
+               height: 10%;
+               color: white;
+               display: flex;
+               align-items: center;
+               justify-content: center;
+               font-size: 2rem;
+            font-family: 'Cormorant', serif;
+
+           }
+           .menu-rec-detail{
+               width: 100%;
+               height: auto;
+               color: white;
+               display: flex;
+               align-items: flex-start;
+               justify-content: space-evenly;
+               flex-direction: column;
+               margin-top: 20px;
+               padding-left: 50px;
+               padding-right: 50px;
+               padding-bottom: 50px;
+
+           }
+           
+           .menu-detail-ingred{
+               width: 100%;
+               height: auto;
+               color: white;
+               font-size: 1rem;
+               display: flex;
+               align-items: flex-start;
+               justify-content: flex-start;
+           }
+           .menu-detail-met{
+               width: 100%;
+               height: auto;
+               color: white;
+               font-size: 1rem;
+               margin-top: 20px;
+               display: flex;
+               align-items: flex-start;
+               justify-content: flex-start;
+               
+           }
+     
+    .dot{
+        width: 15px;
+        height: 15px;
+        background: white;
+        transform: rotate(45deg);
+        margin-right: 10px;
+        margin-left: 10px;
+        position: relative;
+        background: linear-gradient(to right,
+    rgb(187, 133, 16),rgb(243, 229, 30) );
+
+    }
+
+    .bgg{
+        width: 100%;
+        height: 100vh;
+        background: url("https://images.unsplash.com/photo-1606787366850-de6330128bfc?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=750&q=80");
+        position: absolute;
+        background-position: center;
+        background-repeat: no-repeat;
+        background-size: cover;
+        filter: blur(20px);
+    }
+
+          </style>
+  
+<body>
+    <header >
+        <div class="loader"></div>
+        <div class="header-logo"><span class="head-name-float">Food House <i class="fab fa-accusoft"></i></span></div>
+        <a href="FoodIndex.html" class="header-item">
+            <i class="fas fa-home"></i> Home
+            <div class="detail">Home</div>
+        </a>
+        <a href="FoodMenu.html" class="header-item profile-btn">
+            <i class="fas fa-utensils"></i></i></i> Menu
+            <div class="detail">Library</div>
+        </a>
+        <a href="FoodIngre.html" class="header-item">
+            <i class="fab fa-elementor"></i></i> Recipe
+            <div class="detail">Shop</div>
+        </a>
+        <a href="Introduce.html" class="header-item">
+            <i class="fas fa-code"></i> Dev
+            <div class="detail">Shop</div>
+        </a>
+      </header>
+      <div class="bgg"></div>
+        <main>
+            <div class="banner">
+                
+              <div class="column">
+                  <div class="card" data-index="0">
+                      <div class="card-top">
+                          <div class="card-top-box"> 
+                          <i class="close fas fa-times"></i>
+                              <div class="card-profile"> A </div>
+                              <div class="card-head">
+                                  Author
+                              </div> 
+                          </div>
+                      </div>
+                      <div class="card-center"></div>
+                      <div class="card-bottom">
+                          <div class="card-bottom-box">
+                          <div class="title"> Title</div>
+                          <div> Description </div>
+                          </div>
+                      </div>
+                  </div>
+      
+                  <div class="card" data-index="1">
+
+                      <div class="card-top">
+                          <div class="card-top-box"> 
+                          <i class="close fas fa-times"></i>
+                              <div class="card-profile"> A </div>
+                              <div class="card-head">
+                                  Author
+                              </div> 
+                          </div>
+                      </div>
+                      <div class="card-center"></div>
+                      <div class="card-bottom">
+                          <div class="card-bottom-box">
+                          <div class="title"> Title</div>
+                          <div> Description </div>
+                          </div>
+                      </div>
+                  </div>
+      
+                  <div class="card" data-index="2">
+                      <div class="card-top">
+                          <div class="card-top-box"> 
+                          <i class="close fas fa-times"></i>
+                              <div class="card-profile"> A </div>
+                              <div class="card-head">
+                                  Author
+                              </div> 
+                          </div>
+                      </div>
+                      <div class="card-center"></div>
+                      <div class="card-bottom">
+                          <div class="card-bottom-box">
+                          <div class="title"> Title</div>
+                          <div> Description </div>
+                          </div>
+                      </div>
+                  </div>
+              </div>
+      
+              <div class="column">
+                <div class="card" data-index="3">
+                      <div class="card-top">
+                          <div class="card-top-box"> 
+                          <i class="close fas fa-times"></i>
+                              <div class="card-profile"> A </div>
+                              <div class="card-head">
+                                  Author
+                              </div> 
+                          </div>
+                      </div>
+                      <div class="card-center"></div>
+                      <div class="card-bottom">
+                          <div class="card-bottom-box">
+                          <div class="title"> Title</div>
+                          <div> Description </div>
+                          </div>
+                      </div>
+                  </div>
+                  
+                  <div class="card" data-index="4">
+                      <div class="card-top">
+                          <div class="card-top-box"> 
+                          <i class="close fas fa-times"></i>
+                              <div class="card-profile"> A </div>
+                              <div class="card-head">
+                                  Author
+                              </div> 
+                          </div>
+                      </div>
+                      <div class="card-center"></div>
+                      <div class="card-bottom">
+                          <div class="card-bottom-box">
+                          <div class="title"> Title</div>
+                          <div> Description </div>
+                          </div>
+                      </div>
+                  </div>
+                  <div class="card" data-index="5">
+                      <div class="card-top">
+                          <div class="card-top-box"> 
+                          <i class="close fas fa-times"></i>
+                              <div class="card-profile"> A </div>
+                              <div class="card-head">
+                                  Author
+                              </div> 
+                          </div>
+                      </div>
+                      <div class="card-center"></div>
+                      <div class="card-bottom">
+                          <div class="card-bottom-box">
+                          <div class="title"> Title</div>
+                          <div> Description </div>
+                          </div>
+                      </div>
+                  </div>
+              </div>
+              <div class="column">
+            
+      
+                <div class="card" data-index="6">
+                      <div class="card-top">
+                          <div class="card-top-box"> 
+                          <i class="close fas fa-times"></i>
+                              <div class="card-profile"> A </div>
+                              <div class="card-head">
+                                  Author
+                              </div> 
+                          </div>
+                      </div>
+                      <div class="card-center"></div>
+                      <div class="card-bottom">
+                          <div class="card-bottom-box">
+                          <div class="title"> Title</div>
+                          <div> Description </div>
+                          </div>
+                      </div>
+                  </div>
+      
+                  <div class="card" data-index="7">
+                      <div class="card-top">
+                          <div class="card-top-box"> 
+                          <i class="close fas fa-times"></i>
+                              <div class="card-profile"> A </div>
+                              <div class="card-head">
+                                  Author
+                              </div> 
+                          </div>
+                      </div>
+      
+                      <div class="card-center"></div>
+                      <div class="card-bottom">
+                          <div class="card-bottom-box">
+                          <div class="title"> Title</div>
+                          <div> Description </div>
+                          </div>
+                      </div>
+                  </div>
+      
+                  <div class="card" data-index="8">
+                      <div class="card-top">
+                          <div class="card-top-box"> 
+                          <i class="close fas fa-times"></i>
+                              <div class="card-profile"> A </div>
+                              <div class="card-head">
+                                  Author
+                              </div> 
+                          </div>
+                      </div>
+                      <div class="card-center"></div>
+                      <div class="card-bottom">
+                          <div class="card-bottom-box">
+                          <div class="title"> Title</div>
+                          <div> Description </div>
+                          </div>
+                      </div>
+                  </div>
+                  
+              </div>
+          </div> 
+        </div> 
+        <div class="menu-receipt">
+            <div class="menu-rec-name">
+                Food Name
+            </div>
+            <div class="menu-rec-detail">
+                <div class="menu-datail-ingred"></div>
+                <div class="menu-datail-met"></div>
+            </div>
+        </div>
+      
+ 
+        
+
+    </main>
+    
+    
+</body>
+
+<script title="Fuction">
+
+    // S = Select 
+    // Sa = Select All
+    // Sc =  Select Class Without .
+
+    function S(el){
+          return document.querySelector("."+el)
+    }
+
+    function Sa(el){
+        return document.querySelectorAll("."+el)
+    }
+    function St(el){
+        return document.querySelector(el)
+    }
+
+    let arr = [1,2,3,4,5,6,7]
+
+    Array.prototype.size = function(){
+        return this.length
+    }
+    function IsGreater(v1,v2){
+       return v1 > v2 ? v1 : v2;
+    }
+    function IsGl(v1,v2){
+       return v1 < v2 ? v1 + " < " + v2 : v2 + " < " + v1;
+    }
+
+    const elem = HTMLElement
+
+    elem.prototype.click = function(func){
+        this.addEventListener("click",func)
+    }
+
+    Object.prototype.on = function(evenHandler,func){
+        this.addEventListener(evenHandler,func)
+    }
+    Object.prototype.css = function(prop,value){
+    
+     let v = this.getAttribute("style")
+     this.setAttribute("style",prop +":"+value ) 
+
+     
+        if(v != null){
+  
+        this.setAttribute("style",v +"; "+ prop +":" +value )
+        }
+
+      
+    }
+
+    Object.prototype.addClass = function(cssClass){
+        this.classList.add(cssClass)
+    }
+
+
+
+    Object.prototype.cd = function(){
+        setTimeout(() =>{
+           console.log(this)
+        },1000)
+
+    }
+
+        
+   function timing(s,t){
+       return setTimeout(s,t) 
+    }    
+  
+
+
+ 
+
+
+
+</script>
+<script>
+
+    let card_center = Sa("card-center")
+    let card = Sa("card")
+
+
+    let card_top= Sa("card-top")
+    let card_bottom = Sa("card-bottom")
+    let card_top_box = Sa("card-top-box")
+    let card_bottom_box = Sa("card-bottom-box")
+    let card_head = Sa("card-head");
+    let card_profile = Sa("card-profile")
+    let column =  Sa("column")
+    let main = document.querySelector("main")
+    let banner = S('banner')
+    let title = Sa('title')
+
+
+    function addFocus(cc,ct,cb){
+        cc.classList.add("card-center-eff2")
+        ct.classList.add("card-center-eff")
+        cb.classList.add("card-center-eff")
+    }
+    function removeFocus(cc,ct,cb){
+        cc.classList.remove("card-center-eff2")
+        ct.classList.remove("card-center-eff")
+        cb.classList.remove("card-center-eff")
+    }
+
+
+    let arrImg = [
+    "https://images.unsplash.com/photo-1506280754576-f6fa8a873550?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=334&q=80",
+    "https://images.unsplash.com/photo-1522666257812-173fdc2d11fe?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=375&q=80",
+    "https://images.unsplash.com/photo-1565299624946-b28f40a0ae38?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=414&q=80",
+    "https://images.unsplash.com/photo-1612152328178-4a6c83d96429?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=367&q=80",
+    "https://images.unsplash.com/photo-1588338529744-4d5b9b55579b?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=80",
+    "https://images.unsplash.com/photo-1574894709920-11b28e7367e3?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=375&q=80",
+    "https://images.unsplash.com/photo-1544025162-d76694265947?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=749&q=80",
+    "https://images.unsplash.com/photo-1609770424775-39ec362f2d94?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=401&q=80",
+    "https://i2.wp.com/ifyougiveablondeakitchen.com/wp-content/uploads/2020/08/rosemary-focaccia-bread-2020-3.jpg",
+
+    ]
+
+    let food_name = [
+        "bruschetta","spaghetti","pizza","pasta","Carbonara",
+        "Lasagna","fiorentina steak","Risotto","focaccia bread"
+    ]
+
+      
+    
+    play = () => {
+        
+        
+           for(let i = 0 ; i < card.length ;i++){
+                if(i == 4){
+                    continue;
+                }
+                else{
+                    card[i].classList.add("none")
+                }
+
+
+           }
+        
+   banner.classList.add("main-eff2")
+
+    
+    timing(() => {
+        card_center.forEach(item => {
+            item.style.height = "40vh"
+        })
+
+        },1000)
+
+    timing(() => {
+        card_top.forEach(item => {
+            item.style.height = "10vh"
+            
+        })
+        card_bottom.forEach(item => {
+            item.style.height = "13vh"
+        })
+
+        card.forEach(item => {
+            item.style.background = "#F4F9F9"
+
+
+        })
+       
+    card_top_box.forEach(item => {
+        item.style.width = "90%"
+        item.style.height = "50%"
+        item.style.color = "#6E7C7C"
+
+
+    })
+
+    card_bottom_box.forEach(item => {
+        
+        item.style.width = "90%"
+        item.style.height = "50%"
+        item.style.padding = "0px"
+
+     
+    })
+       
+    card_head.forEach(item => {
+
+        item.style.fontSize = "0.8rem"
+        item.style.transform = "translateX(45px)"
+        
+    })
+
+    card_center.forEach(item => {
+        item.style.height = "25vh"
+
+        
+    })
+
+ 
+    card.forEach(item => {
+
+        item.style.background = "#C8C6C6"
+
+        })
+     
+     timing(() =>{
+    card_profile.forEach(item => {
+
+        item.style.transform = "scale(1,1)"
+        item.style.background = "white"
+        item.style.color = "#6E7C7C"
+
+    })
+
+    },100)
+
+    card_center.forEach(item => {
+        item.style.background = "#EEEEEE"
+        item.style.opacity = "0%"
+
+
+        })
+     },1500)
+
+    timing(() => {
+        for(let i = 0 ; i <= card_center.length-1 ; i++){
+            card_center[i].style.background = `url(${arrImg[i]})`
+
+            card_center[i].style.backgroundPosition = "center"
+            card_center[i].style.backgroundSize =  "cover"
+            card_center[i].style.backgroundRepeat =  "no-repeat"
+
+        }
+  
+        card_center.forEach(item => {
+        item.style.height = "50vh"
+
+        })
+        card.forEach(item => {
+            item.style.borderRadius = "20px" 
+        })
+        
+    },2000)
+    }
+
+    timing(() => {
+        card.forEach(item => {
+            item.style.borderRadius = "40px" 
+            item.style.transform = "scale(1.2,1.2)"
+        })
+
+    
+  
+     
+
+    },3000)
+
+    timing(() => {
+            card.forEach(item => {
+                item.style.borderRadius = "20px" 
+                item.style.transform = "scale(1,1)"
+                item.classList.remove("none")
+          
+        })
+        timing(() => {
+        card_center.forEach(item => {
+                item.style.opacity = "100%"
+        })
+
+        
+   
+    },200)
+   
+    card_head.forEach(item => item.innerHTML = "CaptzDevs")
+        card_profile.forEach(item => item.innerHTML = "C")
+        for(let i = 0 ; i < food_name.length ; i++){
+            title[i].innerHTML = food_name[i]
+        }
+        title.forEach(item =>{
+        item.nextElementSibling.innerHTML = "Italy Food"
+    })    
+
+    },3500)
+
+    timing(() => {
+       
+        card[4].style.borderRadius = "40px" 
+        
+        card[4].style.transform = "scale(1.2,1.2)";
+
+        card[3].style.transform = "translatey(-50px)"
+        card[5].style.transform = "translatey(50px)"
+
+    },4000)
+
+    timing(() => {
+        card_top_box.forEach(item => {
+        item.style.color = "white"
+        })
+
+        card_bottom_box.forEach(item => {
+            item.style.color = "white"
+        })
+
+        card[4].style.borderRadius = "20px" 
+
+        card[4].style.transform = "scale(1,1)"
+
+        
+
+        card.forEach(item => {
+                item.style.background = "#212322"
+
+        })
+       
+        card[3].style.transform = "translatey(0px)"
+        card[5].style.transform = "translatey(0px)"
+        
+          column[2].classList.add('card-eff')
+          column[0].classList.add('card-eff-rv')
+
+ 
+
+       },5000)
+       timing(()=>{
+        banner.style.width = "55%"
+        banner.style.height = "110vh"
+        banner.classList.remove("main-eff2")
+
+        banner.classList.add("main-eff")
+
+       },5500)
+
+       timing(()=>{
+        card_top.forEach(item => {
+        item.classList.add("bg")
+
+        })
+        card_bottom.forEach(item => {
+        item.classList.add("bg")
+
+        })
+
+       },6000)
+
+
+       timing(()=>{
+
+         addFocus(card_center[4],card_top[4],card_bottom[4])
+
+       },6500)
+
+       timing(()=>{
+         column[1].classList.add('slide-eff-bottom')
+
+         removeFocus(card_center[4],card_top[4],card_bottom[4])
+         addFocus(card_center[5],card_top[5],card_bottom[5])
+
+       },8000)
+       timing(()=>{
+         column[1].classList.add('slide-eff-top')
+
+         removeFocus(card_center[5],card_top[5],card_bottom[5])
+         removeFocus(card_center[4],card_top[4],card_bottom[4])
+
+         addFocus(card_center[3],card_top[3],card_bottom[3])
+
+       },9500)
+
+       timing(()=>{
+         column[1].classList.add('slide-eff-center')
+
+         removeFocus(card_center[5],card_top[5],card_bottom[5])
+         removeFocus(card_center[4],card_top[4],card_bottom[4])
+
+         addFocus(card_center[3],card_top[3],card_bottom[3])
+
+       },10500)
+
+       timing(()=>{
+        column[1].classList.remove('slide-eff-top')
+        column[1].classList.remove('slide-eff-bottom')
+
+        column[1].classList.add('slide-eff-center')
+         removeFocus(card_center[3],card_top[3],card_bottom[3])
+         addFocus(card_center[4],card_top[4],card_bottom[4])
+
+       },11500)
+       timing(()=>{
+
+         removeFocus(card_center[4],card_top[4],card_bottom[4])
+       
+       
+        banner.classList.add("main-eff-last2") 
+        banner.style.width = "130vw"
+
+
+       },13500)
+       timing(()=>{
+        banner.style.transform ="translateY(-130%)"
+
+    },14000)
+
+
+         timing(()=>{
+        column[0].classList.remove('card-eff-rv')
+        column[1].classList.remove('slide-eff-center')
+        column[2].classList.remove('card-eff')
+
+        column.forEach(item =>{
+      /*       item.style.transform = "translateY(110%)" */
+            item.style.height = "auto"
+            item.style.margin = "0px"
+            item.style.width = "100%"
+      
+
+
+        })
+        banner.classList.remove("main-eff") 
+        banner.classList.add("main-eff-last") 
+        banner.style.width = "30vw"
+        banner.style.height = "80vh"
+        banner.style.overflowY = "scroll"
+
+         card.forEach(item => {
+            item.style.transform = "scale(1,1)"
+            item.style.marginBottom = "12%"
+        })
+        main.style.justifyContent = "flex-start"
+
+        card_top.forEach(item => {
+      
+        item.style.borderBottomLeftRadius = "0px"
+        item.style.borderBottomRightRadius = "0px"
+
+        })
+        card_bottom.forEach(item => {
+
+        item.style.borderTopLeftRadius = "0px"
+        item.style.borderTopRightRadius = "0px"
+        })
+        
+        card.forEach(item =>{
+        item.style.background = "#F4F9F9"
+        })
+        card_top.forEach(item => {
+        item.style.background = "transparent"
+        })
+        card_bottom.forEach(item => {
+        item.style.background = "transparent"
+        })
+        card_top_box.forEach(item => {
+        item.style.color = "black"
+        })
+        card_bottom_box.forEach(item => {
+        item.style.color = "black"
+
+        })
+
+       },15000)
+
+       timing(()=>{
+        banner.style.transform ="translateY(0%)"
+       S('menu-receipt').style.width = "70%"
+       S('menu-receipt').style.overflowY = "scroll"
+       main.style.background = "transparent"
+
+    },15500)
+
+
+    play()
+
+
+
+</script>
+<script>
+
+    let menu_rec_name = S("menu-rec-name")
+    
+    let met = Sa("met")
+    let ingerd = Sa("ingerd")
+    let menu_detail_ingred = S("menu-datail-ingred")
+    let menu_detail_met = S("menu-datail-met")
+
+
+
+
+console.log(menu_detail_met)
+
+    let arrIngred = [
+    "<br>            - ขนมปังแป้งหมัก <br> - Sourdough bread <br>  - มะเขือเทศ 1ผลใหญ่<br>            - กระเทียมกลีบใหญ่สับละเอียด 1 กลีบ<br>           - น้ำมันมะกอก<br>         - หัวหอมใหญ่สับ 1 ชช<br>        - โหระพาอิตาเลียนสับ<br>  - เกลือ,<br> - พริกไทยป่น <br> - ซอสน้ำส้มอิตาเลียน Balsamico 1-2 ชต<br> ",
+    "<br>            เส้นสปาเกตตีต้มสุก 500 กรัม     <br>           ซอสเพสโตสำเร็จรูป 2 ช้อนโต๊ะ <br>            วอลนัต หรือไพน์นัตป่น 2 ช้อนโต๊ะ <br>           เบคอนหั่นเป็นเส้นเล็กๆ 10 แผ่น<br>            กระเทียมสับละเอียด 2-3 ช้อนโต๊ะ<br>            พริกป่น 1/2 ช้อนชา<br>            ชีสพาร์เมซานขูด 3 ช้อนโต๊ะ<br>            น้ำมันมะกอก  2 ช้อนโต๊ะ<br>            เกลือป่น 1/4 ช้อนชา<br>        ",
+    "<br>            แป้งโฮลวีท 450 กรัม <br>       น้ำอุ่น 1 ถ้วย (และอาจจะเตรียมเผื่อไว้เล็กน้อย)<br>        ยีสต์ 1-2 ช้อนชา<br>            น้ำมันมะกอก Extra Virgin 4 ช้อนชา<br>        เกลือ 2 ช้อนชา<br>        ",
+    "<br>            1. เส้นพาสต้าโฮลวีต 100 กรัม<br>            2. ไข่ไก่ 1 ฟอง<br>            3. งาขาวคั่ว 2 ช้อนโต๊ะ<br>            4. นมจืดพร่องมันเนย 3 ช้อนโต๊ะ<br>            5. เกลือ 1 ช้อนชา<br>            6. สตีเวีย 1 ช้อนชา<br>            7. น้ำส้มสายชูหมักจากข้าว 1 ช้อนโต๊ะ<br>            8. มิริน 1 ช้อนโต๊ะ<br>            9. ต้นหอมซอย สำหรับโรยหน้า<br>            10. งาขาวคั่ว สำหรับโรยหน้า <br>        ",
+    "<br>            เส้นสปาเก็ตตี้  100 กรัม<br>            เบคอนหรือแฮม 150 กรัม<br>            พาเมซานชีส 40 กรัม<br>            ไข่ไก่ 4 ฟอง<br>            เกลือหยิบมือ<br>            พริกไทย 1/8 ช้อนชา<br>            น้ำเดือด 50 มิลลิลิตร (ml)<br>        ",
+    "<br>                ส่วนผสม ลาซานญ่า<br>                แผ่นลาซานญ่าสำเร็จรูป 250 กรัม<br>                ส่วนผสม ซอสเนื้อ<br>                เนื้อวัวหรือเนื้อหมูบด 500 กรัม<br>                แครอทหั่นเป็นชิ้นเล็กๆ 1 หัว<br>                กระเทียมสับละเอียด 1 กานพลู<br>                หอมใหญ่ ครึ่งลูก<br>                มะเขือเทศปอกเปลือกและเอาเม็ดออก หั่นบางๆ 5 ลูก<br>                ซอสมะเขือเทศ 170 กรัม<br>                ผงออริกาโน่ 1 ช้อนชา<br>                พริกไทย ½ ช้อนชา<br>                ผงน้ำซุปไก่ 1 ช้อนช้า<br>                เกลือ 1 ช้อนชา<br>                น้ำตาล 2 ช้อนโต๊ะ<br>                น้ำมันพืช 3 ช้อนโต๊ะ<br>                น้ำ 300 มิลลิลิตร<br>                ส่วนผสม ซอสชีส<br>                นมสด 1,000 มิลลิลิตร<br>                เชดดาร์ชีสขูด 250 กรัม<br>                เนย 3 ช้อนโต๊ะ<br>                แป้งสาลี 3 ช้อนโต๊ะ<br>                พริกไทย 1/2 ช้อนชา<br>                ผงลูกจันทน์เทศ 1/2 ช้อนชา<br>                เกลือ 1/2 ช้อนชา<br>            ",
+    "<br>                สเต็กเนื้อหนา 1 นิ้ว (ประมาณ 2 นิ้ว) พร้อมกระดูก (สำหรับตัด,<br>                Porterhouse เป็นสิ่งที่ดีที่สุดเพราะมีทั้งแบบฟืนและแบบขนาน<br>                เนื้อฟิเล่ หากยังไม่พร้อมใช้งานให้ใช้ T-Bone หรือ<br>                สเต็ก<br>                เกลือทะเล Dash<br>                พริกไทยดำ<br>            ",
+    "<br>                        ข้าวรีซอสโต้60g.<br>                        น้ำมันมะกอก30g.<br>                        หอมหัวใหญ่1/2pcs.<br>                        ใบไทม์2pcs.<br>                        ใบเบลีฟ2pcs.<br>                        ไวน์ขาว<br>                        วิปปิ้งครีม<br>                        น้ำสต็อก<br>                        เกลือ<br>                        พริกไทยดำป่น<br>                        เบคอน30g.<br>                        ไข่1pcs<br>                        ชีสพาเมซาน<br>                        พาสลี่ <br>                    ",
+    "<br>                                แป้งอเนกประสงค์ 225 กรัม<br>                                ยีสต์แห้ง 1 ช้อนชา<br>                                น้ำตาลทราย 1 ช้อนชา<br>                                เกลือ 1/4 ช้อนชา<br>                                น้ำ 130 กรัม<br>                                น้ำมันมะกอก 15 กรัม<br>                                น้ำมันมะกอก (สำหรับทาถาดอบ) 1 ช้อนโต๊ะ<br>                                น้ำมันมะกอก (สำหรับหน้าขนมปัง) 2 ช้อนโต๊ะ<br>                                ดอกเกลือเล็กน้อย สำหรับโรยหน้า<br>                                โรสแมรี่แห้ง หรือสด เล็กน้อย สำหรับโรยหน้า<br>                            "
+    ]
+
+    let arrMet = [
+    "<br>   <br>            1.หั่นมะเขือเทศเป็นชิ้นเล็กๆ<br>            2.ใส่กระเทียมสับ หัวหอมสับ น้ำส้มสายชูBalsamico น้ำมันมะกอก เกลือ, พริกไทย ลงไปรวมกับมะเขือเทศ แล้วคลุกเคล้าเข้าด้วยกัน<br>            3.หั่นขนมปังหนาประมาณ1ซม. ทาด้วยน้ำมันมะกอก แล้วเข้าเตาอบ อบ150องศา ประมาณ10-12นาที หรือจนขนมปังเริ่มกรอบ จึงนำออกจากเตาอบ ทิ้งไว้ให้คลายความร้อนสักพัก<br>            4.สับใบโหระพาอิตาเลียนใส่ลงไปกับมะเขือเทศที่ปรุงไว้ และตักออกมาวางลงบนขนมปัง เสร็จแล้วจัดเสิร์ฟ<br>          <br>            ",
+    "<br>            ใส่น้ำมันมะกอกและเบคอนลงเจียวจนเหลือง (ไม่ต้องถึงกับกรอบ) ใส่กระเทียมลงเจียวพอสุก ถ้าไม่ชอบกลิ่นกระเทียมลดปริมาณลงได้<br>            เติมซอสเพสโต พริกป่น และเกลือ ผัดไปเรื่อยๆ จนเข้ากันดี จากนั้นใส่ถั่วไพน์นัตป่นและปิดไฟ<br>            ใส่เส้นสปาเกตตีร้อนๆ ลงคลุกในกระทะ โรยชีสพาร์เมซาน คลุกเคล้าให้เข้ากัน ถ้าชอบชีสสามารถเติมได้อีก  <br>        ",
+    "<br>            เทแป้งบนโต๊ะที่เช็ดทำความสะอาดอย่างดีแล้ว <br>            จากนั้นทำให้แป้งเป็นรูกลมๆ ตรงกลางสำหรับใส่ส่วนผสมต่างๆ<br>            ผสมยีสต์กับน้ำอุ่น คนจนยีสต์ละลาย <br>            จากนั้นเทลงไปในรูกลมของแป้งที่เราเตรียมไว้ช้าๆ <br>            พร้อมกับใช้นิ้วคนให้แป้งผสมกับยีสต์ ตามด้วยน้ำมันมะกอก<br>             นวดให้แป้งเข้ากันดี สามารถเติมน้ำได้ถ้าแป้งแห้งเกินไป<br>            สุดท้ายเติมเกลือลงไป นวดจนกว่าแป้งจะเป็นโด นำใส่ชามอ่าง คลุมด้วยผ้าขาวบางทิ้งไว้ 2-4 ชั่วโมง ก็จะได้แป้งทำพิซซ่า<br>        ",
+    "<br>            ลวกไข่และเส้นพาสต้าโฮลวีต<br>            - ตั้งน้ำให้เดือดจัด เมื่อน้ำเดือดเทลงในชามที่ใส่ไข่เอาไว้ให้ท่วมไข่ ทิ้งไว้ 12-13 นาที<br>            - ตั้งน้ำที่เหลือต่อให้เดือด จากนั้นนำเส้นพาสต้าโฮลวีต ลงไปต้มจนสุก ใช้เวลาประมาณ 7-8 นาที<br>            - เทน้ำเดือดจัดลงให้ท่วมไข่ นำเส้นไปต้มจนสุก <br>            - นำงาขาวคั่วไปบด โดยใช้ครกญี่ปุ่นหรือครกหิน<br>            - เมื่อละเอียดแล้วตักใส่ถ้วย ใส่น้ำส้มสายชูหมักจากข้าว และมิริน คนให้เข้ากัน จากนั้นใส่นมจืดพร่องมันเนย ปรุงรสด้วยเกลือและสตีเวีย <br>            - นำเส้นพาสต้าโฮลวีตที่ลวกแล้วมาใส่ภาชนะสำหรับคลุก จากนั้นเทซอสงาลงไป คลุกเคล้าให้เข้ากัน<br><br>        - ตักเส้นใส่จานที่ต้องการจัดเสิร์ฟ โปะหน้าด้วยไข่ลวก จากนั้นโรยหน้าด้วยต้นหอมซอย และงาขาว <br>        ",
+    "<br>           <br><br>        1. นำแฮมหรือเบคอนมาหั่นเป็นชิ้นขนาดตามต้อมการ<br><br>        2. นำไข่ไก่สดมาแยกไข่แดงออกจากไข่ขาว โดยใช้เฉพาะไข่แดงอย่างเดียว 3 ฟอง และไข่ไก่ทั้งใบ 1 ฟอง (ตามคลิป)<br><br>        3. นำพาเมซานชีสมาขูดให้เป็นเส้นฝอย (สามารถใช้แบบขูดสำเร็จรูปได้) แล้วนำมาผสมกับไข่ไก่ จากนั้นใส่พริกไทย และเกลือ คนผสมให้เข้ากัน<br><br>        4. ต้มน้ำให้เดือด แล้วใส่เกลือลงไป จากนั้นใส่เส้นสปาเก็ตตี้ลงไปต้ม ใช้เวลาต้มประมาณ 6 นาที<br><br>        5. นำเบคอนมาผัดในกระทะจนเหลืองหอม และเริ่มมีน้ำมันออกมา จากนั้นใส่เส้นสปาก็ตตี้ที่ต้มเสร็จแล้วลงไป ผัดจนน้ำมันเบคอนเคลือบเส้นดี เติมน้ำเดือดที่ใช้ต้มเส้นลงไปเล็กน้อย<br><br>        6. ปิดเตาแก๊ส จากนั้นใส่ส่วนผสมของไข่และชีสลงไป แล้วคลุกเคล้าให้เข้ากับเส้นสปาเก็ตตี้ จากนั้นตักลงจานพร้อมเสิร์ฟ<br>        ",
+    "<br>           <br>            ขั้นตอนที่ 1 อุ่นกระทะให้ร้อน แล้วผัดหอมและกระเทียมสับให้พอหอม<br>            ขั้นตอนที่ 2 ใส่เนื้อบด ค่อย ๆ คนจนสุก ใส่ซอสมะเขือเทศ และมะเขือเทศสับลงไป คนให้เข้ากัน<br>            ขั้นตอนที่ 3 โรยเกลือ น้ำตาล พริกไทย และออริกาโน่ เทน้ำและปรุงโดยใช้ความร้อนต่ำ ประมาณ 20 นาที แล้วค่อยเอาลงจากเตาแก๊ส พักไว้ด้านข้าง<br>            ขั้นตอนที่ 4 ในการทำซอสชีส ตั้งกระทะ เปิดไฟปานกลาง ละลายเนยที่เตรียมไว้ จากนั้นใส่แป้งแล้วคนให้เข้ากัน ค่อย ๆ เทนมสดแล้วคนไปเรื่อย ๆ ปรุงรสด้วยเกลือ พริกไทย และผงลูกจันทน์เทศ ใส่ชีสขูด แล้วคนจนเป็นแผ่นหนา เอาลงจากเตาและพักไว้<br>            ขั้นตอนที่ 5 ใส่แผ่นลาซานญ่าในถาด ตักซอสเนื้อใส่ลงไปบางๆ เกลี่ยให้ทั่วก้นถาด ตามด้วยซอสชีส และวางแผ่นลาซานญ่าอีกชั้น ทำอย่างนี้ไปเรื่อย ๆ เรียงสลับกันจนหมด<br>            ขั้นตอนที่ 6 หลังจากทำทุกอย่างเสร็จแล้ว ให้นำเข้าเตาอบ ประมาณ 30 นาที ใช้ไฟอุณหภูมิ 180 องศาเซลเซียส พอสุกดีแล้ว ก็พร้อมเสิร์ฟ<br><br>            ",
+    "<br>           <br>        เตรียม Coals and Grill<br>        เมื่อคุณมีสเต็กและถ่านหินของคุณพร้อม (พวกเขาควรจะร้อนมากคุณควรจะสามารถจับมือของคุณเหนือพวกเขาที่ความสูงย่างประมาณ 4 วินาที)<br>         ตั้งเตาของคุณประมาณ 4 นิ้ว (10 ซม.) เหนือพวกเขาและปล่อยให้ มันร้อนไม่กี่นาที แต่ไม่นานเกินไปเพราะมิฉะนั้นจะเผาเส้นลงในเนื้อ<br>        ย่าง<br>        วางสเต็กลงบนตะแกรงปล่อยทิ้งไว้สักครู่แล้วลดความร้อนโดยยกย่างขึ้นเล็กน้อย<br>        ทันทีที่สเต็กออกมาย่างได้อย่างง่ายดายพลิกมันและเสรีๆเกลือพื้นผิวย่างสด หลังจากผ่านไปไม่กี่นาทีเมื่ออีกด้านหนึ่งเป็นอิสระให้พลิกกลับอีกครั้งและเกลือ <br>        ย่างอีกสักสองสามนาทีพลิกฤดูเบา ๆ พริกไทยพลิกพริกไทยเบา ๆ เบา ๆ และนั่นแหล่ะ<br>           <br>    ",
+    "<br>           <br>                ตั้งน้ำมันให้ร้อนใส่หอมหัวใหญ่ครึ่งหนึ่งลงไปผัดให้หอมสุก<br>                ใส่ข้าวรีซอตโต้ลงผัดให้น้ำมันเคลือบข้าว ใส่ใบไทม์+ใบเบลีฟลงไปช่วยทำให้กลิ่นหอมไม่น่ารับประทาน <br>                ใส่ไวท์ขาวลงไป <br>                ใส่น้ำสต็อกลงไปผัดจนข้าวเกือบสุก<br>                พักข้าวไว้เเล้วนำเบลีฟกับไทม์ออกเพื่อให้สะดวกต่อการรับประทาน <br>                นำเบคอนลงไปผัดให้น้ำมันออกใส่หอมหัวใหญ่ผัดจนได้กลิ่นหอม <br>                นำครีมลงไปผัดใส่ข้าวลงไปปรุงรสเกลือพริกไทย <br>                ใส่ไข่ลงไป1ลูก+ชีส <br>                ตักอาหารลงจานโรยชีส+ตกเเต่งด้วยพาสลี่ <br>            ",
+    "<br>                        นำแป้งอเนกประสงค์ ยีสต์ น้ำตาลทราย และเกลือ ใส่ในชามผสม คนให้เข้ากัน<br>                        ทน้ำและน้ำมันมะกอกลงไป ผสมทุกอย่างให้เข้ากัน นวดประมาณ 10 นาที<br><br>                        นำแป้งขนมปังมารวบให้ตึงเป็นทรงกลม แล้วพักแป้งให้ฟูขึ้นประมาณ 1 ชั่วโมง หรือจนแป้งฟูขึ้นเป็น 2 เท่า<br>                        ทาถาดอบด้วยน้ำมันมะกอก 1 ช้อนโต๊ะ ให้ทั่ว<br>                        นำแป้งขนมปังมาวางที่ถาดอบ แผ่และกดแป้ง<br>                        ตกแต่งขนมปังโดยนำน้ำมันมะกอก 2 ช้อนโต๊ะ ทาให้ทั่วหน้าขนมปัง หลังจากนั้นโรยด้วยโรสแมรี่แห้งหรือสดให้ทั่ว โรยด้วยดอกเกลือเล็กน้อยให้ทั่วหน้าขนมปัง<br>                        พักแป้ง 20 นาที<br>                        นำไปอบที่อุณหภูมิ 200 องศาเซลเซียส ประมาณ 20 นาที จัดเสิร์ฟ<br><br>                    "
+]
+ 
+
+
+console.log(menu_detail_ingred)
+    
+    card.forEach(item => {
+        item.addEventListener("click",function(e){
+        let index = e.target.parentElement.dataset.index
+        let menu_name =   item.childNodes[5].childNodes[1].childNodes[1].innerText
+
+            menu_detail_ingred.innerHTML = arrIngred[index]
+            menu_detail_met.innerHTML = arrMet[index]
+            menu_rec_name.innerText = menu_name 
+        })
+    })
+    
+
+</script>
+
+</html>

@@ -1,0 +1,883 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Movie</title>
+    <script src="https://kit.fontawesome.com/0244365092.js" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="Moviestyle.css">
+</head>
+<style>
+    *{
+        margin: 0;
+        padding: 0;
+        font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+        box-sizing: border-box;
+        transition: 0.5s;
+
+        }
+        body{
+      background-color: rgb(43, 43, 43);
+     /*  background-color: rgb(255, 255, 255); */
+     overflow-y: scroll;
+   
+
+    }
+    main{
+        width: 100%;
+        height: auto;
+        display: flex;
+        align-items: center;
+        justify-content: flex-start;
+        flex-direction: column;
+       background-color: rgb(43, 43, 43);
+
+        filter: blur(50px);
+
+       margin-bottom: 50px;
+       
+    }
+    .banner{
+        width: 100%;
+        height: 100vh;
+       display: flex;
+        align-items: center;
+        justify-content: center;
+        flex-direction: column;
+        background: url(https://images.unsplash.com/photo-1618005198919-d3d4b5a92ead?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=774&q=80);
+        background-position: center;
+        background-size: cover;
+        background-repeat: no-repeat;
+        background-attachment: fixed;
+
+        font-size: 1.5rem;
+        color: white;
+
+    } 
+    .content{
+        width: 100%;
+        height: auto;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        flex-direction: column;
+       background-color: rgb(47, 47, 47);
+       padding: 30px;
+       background: url(https://images.unsplash.com/photo-1622737133809-d95047b9e673?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=1332&q=80);
+        background-position: center;
+        background-size: cover;
+        background-repeat: no-repeat;
+        background-attachment: fixed;
+        position: relative;
+
+    }
+ 
+    .movie{
+        width: 100%;
+        height: auto;
+        display: flex;
+        align-items: flex-start;
+        justify-content: center;
+        flex-wrap: wrap;
+        background-color: rgba(255, 255, 255, 0.1);
+        backdrop-filter: blur(0px);
+        overflow: hidden;
+      
+    }
+    .movie-item {
+        width: 230px;
+        height: 50vh;
+        margin: 10px;
+        cursor: pointer;
+
+    }
+    .movie-item:hover .movie-img  {
+        transform: scale(1.1,1.1);
+
+    }
+    .movie-img {
+        width: 100%;
+        height: 80%;
+        object-fit: contain;
+        border: none;
+
+    }
+
+    .movie-title-bar {
+        width:100%;
+        height: 20%;
+        font-size: 1rem;
+        padding: 10px;
+        overflow-y: auto;
+        color: rgb(255, 255, 255);
+
+    }
+    .movie-title {
+        width: 100%;
+        height: auto;
+        font-size: 0.8rem;
+
+    }
+    .btn-search-movie{
+      width: 50%;
+      height: 50px;
+      border-radius: 10px;
+      outline: none;
+      border: none;
+      padding-left: 20px;
+    font-size: 1.5rem;
+    background: rgba(236, 236, 236, 0.514);
+    color: rgb(66, 66, 66);
+    margin-top: 20px;
+    backdrop-filter: blur(50px);
+
+      
+
+    }
+.flex{
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+}
+
+.search{
+    width: 100%;
+    height: 0vh;
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+    overflow: hidden;
+    position: relative;
+    overflow-y: hidden;
+    background: url(https://images.unsplash.com/photo-1624359136353-f60129a367b9?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=1170&q=80);
+        background-position: center;
+        background-size: cover;
+        background-repeat: no-repeat;
+        background-attachment: fixed;
+        filter: brightness(110%);
+        
+
+}
+
+.search-detail i {
+    width: 30px;
+    height: 30px;
+    margin-right: 20px;
+    font-size: 1rem;
+    border-radius: 50%;
+    background: rgba(128, 128, 128, 0.411);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 20px;
+    color: rgb(255, 255, 255);
+   
+}
+.search-detail-item{
+    width: fit-content;
+    height: auto;
+    border-radius: 50px;
+    padding-left: 10px;
+    padding-right: 10px;
+    position: relative;
+    display: flex;
+    align-items: flex-start;
+    justify-content: flex-start;
+    padding: 10px;
+    background-color: rgba(197, 197, 197, 0.513);
+    color: #000;
+    backdrop-filter: blur(30px);
+
+}
+.search-detail-item div{
+    margin-right: 10px;
+
+
+}
+
+.search-img{
+    width: 25%;
+    height: 100%;
+    transform: translateY(100%);
+
+    transition: 1.5s;
+
+}
+
+
+
+.search-detail{
+    width: 30%;
+    height: 90%;
+    margin-left: 20px;
+    font-size: 1.5rem;
+    padding: 50px;
+    color: white;
+    padding-left: 50px;
+    overflow-y: scroll;
+    overflow-x: hidden;
+    border-radius: 10px;
+    transform: translateY(100%);
+    transition: 1.5s;
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    flex-direction: column;
+}
+
+
+.search-img img{
+        width: 100%;
+        height: 100%;
+        object-fit: contain;
+        border: none;
+}
+.search-title{
+    width: 100%;
+    font-size: 2rem;
+    text-align: center;
+}
+.search-loading{
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 3rem;
+    background-color: rgb(47, 47, 47);
+    color: white;
+    z-index: 5;
+}
+.search-box{
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    padding: 50px;
+}
+.load-more-movie{
+    width: 70px;
+    height: 70px;
+    background-color: rgb(141, 141, 141);
+    position: absolute;
+    bottom: -30px;
+    left: 48%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 20px;
+    cursor: pointer;
+    padding: 20px;
+    font-size: 0.8rem;
+    clip-path: polygon(50% 0, 100% 50%, 50% 100%, 0 50%);
+}
+
+.load-more-movie:hover{
+    transform: rotateZ(360deg);
+}
+
+.onMovie-load{
+    width: 100%;
+    height: 55vh;
+    position: absolute;
+    bottom: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    font-size: 3rem;
+
+}
+.movie-origin-load{
+    transform: translateY(-200%);
+}
+.movie-load{
+    transform: translateY(150%);
+}
+a{
+    color: white;
+    text-decoration: none;
+}
+
+.alert{
+    width: 0px;
+    height: 100px;
+    /* background: linear-gradient(45deg,
+    rgb(253, 246, 211),rgb(194, 244, 248)70%,rgb(169, 119, 235)95%); */
+     background: linear-gradient(to right,
+    rgba(255, 255, 255, 0),rgba(255, 255, 255, .5),rgba(255, 255, 255, )90%); 
+    position: fixed;
+    right: 0;
+    top: 30px;
+    z-index: 10;
+    border-top: 1px solid;
+    border-image-slice: 1;
+    border-top-width: 2px;
+    backdrop-filter: blur(50px);
+    color: white;
+    border-image-source: linear-gradient(45deg,rgb(253, 246, 211),rgb(194, 244, 248)70%,rgb(169, 119, 235)95%);;
+
+    background-clip: border-box;  
+}
+.alert-text{
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    z-index: 10;
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    font-size: 0.8rem;
+    padding: 10px;
+    
+}
+.new{
+    width: 100%;
+    height: 110vh;
+    background: url(https://images.unsplash.com/photo-1618005198920-f0cb6201c115?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1170&q=80);
+        background-position: center;
+        background-size: cover;
+        background-repeat: no-repeat;
+        background-attachment: fixed;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        position: relative;
+        overflow-y: scroll;
+        overflow-x: hidden;
+}
+.new-movie-box{
+    width: 100%;
+    height: 100%;
+    display: flex;
+        align-items: center;
+        justify-content: center;
+        flex-wrap: wrap;
+
+}
+
+a{
+    color: #000;
+}
+
+.search-plot{
+    font-size: 1rem;
+}
+.goleft{
+    width: 50px;
+    height: 50px;
+    background-color: red;
+    position: absolute;
+    left: 0;
+}
+.goright{
+    width: 50px;
+    height: 50px;
+    background-color: red;
+    position: absolute;
+    right: 0;
+    z-index: 5;
+}
+.line-right{
+        width: 1px;
+        height: 7vh;
+        background-color: white;
+        position: absolute;
+        top: 30px;
+        left: 10px;
+        color: white;
+        font-size: 1.5rem;
+        letter-spacing: 5px;
+        
+    }
+.slide-eff{
+    transform: rotateX(500%);
+}
+@media screen and (max-width: 480px){
+    .btn-search-movie{
+        width: 100%;
+    }
+}
+</style>
+<body>
+    <div class="alert">
+    <div class="alert-text">Lorem ipsum dolor sit amet consectetur, adipisicing elit. Perferendis </div>
+    </div>
+    <main>
+        <div class="banner">
+            <div class="line-right" style="width: 300px; background: none; padding-left: 10px; padding-top: 10px;">SEARCH</div>
+            <div class="line-right"></div>
+            <div class="search-box">
+            <div class="search-box-txt" style="text-transform: uppercase;"> Find your movie here</div>
+          
+                <input type="text" class="btn-search-movie" autocomplete="">
+            </div>
+
+        </div>
+        <div class="search">
+            <div class="line-right" style="width: 300px; background: none; padding-left: 10px; padding-top: 10px;">RESULT</div>
+            <div class="line-right"></div>
+        <div class="search-loading">
+            <i class="fas fa-spinner fa-spin"></i>
+        </div>
+           <div class="search-detail">
+            <div class="search-detail-item"><div class="search-title"></div></div>
+            <div class="search-detail-item"><div class="search-link"></div></div>
+            <div class="search-detail-item"><div class="search-plot"></div></div>
+            </div>
+            <div class="search-img">
+                <img src="">
+            </div>
+        <div class="search-detail">
+            <div class="search-detail-item"><div class="search-release"></div></div>
+            <div class="search-detail-item"><div class="search-time"></div></div>
+            <div class="search-detail-item"><div class="search-rating"></div></div>
+            </div>
+        </div>
+        <div class="new">
+            <div class="line-right" style="width: 300px; background: none; padding-left: 10px; padding-top: 10px;">NEW MOVIE</div>
+            <div class="line-right"></div>
+      <!--       <div class="goleft"></div>
+            <div class="goright"></div> -->
+            <div class="new-movie-box"></div>
+        </div>
+        <div class="content">
+            <div class="line-right" style="width: 300px; background: none; padding-left: 10px; padding-top: 10px;">MOVIE</div>
+            <div class="line-right"></div>
+            <div class="movie"> 
+          <!--  <div class="movie-item">
+                    <img class="movie-img"></img>
+                    <div class="movie-title-bar">
+                        <div class="movie-title">dsada</div>
+                    </div>
+                </div>  -->
+                <div class="onMovie-load">
+                 <i class="fas fa-spinner fa-spin"></i>
+                </div>
+            </div>
+            <div class="load-more-movie"><i class="fas fa-plus-circle"></i></div>
+        </div>
+    </main>
+</body>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+<script type="text/javascript"  src="/website/Extention/Top250.json"></script>
+
+<script>
+
+$.getJSON( "/Extention/Top250.json", function( data ) {
+
+    for(i in data.items){
+      /*   console.log(data.items[i].title,data.items[i].rank) */
+
+    }
+});
+
+
+$.getJSON( "/website/Extention/ComingSoon.json", function( data ) {
+
+    for(let i = 0 ; i < 5; i++){
+let mov_item = document.createElement('div')
+let mov_title = document.createElement('div')
+let mov_title_bar = document.createElement('div')
+let mov_img = document.createElement('img')
+
+mov_item.classList.add('movie-item')
+mov_title.classList.add('movie-title')
+mov_title_bar.classList.add('movie-title-bar')
+mov_img.classList.add('movie-img')
+
+mov_title.innerText = data.items[i].title
+mov_img.src =  data.items[i].image
+mov_title_bar.append(mov_title)
+mov_item.append(mov_img)
+mov_item.append(mov_title_bar)
+
+    $('.new-movie-box').append(mov_item)
+
+}
+});
+
+  $('.goright').click(function(){
+
+    $('.new-movie-box').children().add('slide-eff')
+    
+    let item = $('.new-movie-box').children().length
+    console.log(item)
+
+    $.getJSON( "/Extention/ComingSoon.json", function( data ) {
+
+        setTimeout(() => {
+            
+for(let i = item ; i < item+5; i++){
+
+
+let mov_item = document.createElement('div')
+let mov_title = document.createElement('div')
+let mov_title_bar = document.createElement('div')
+let mov_img = document.createElement('img')
+
+
+
+mov_item.classList.add('movie-item')
+mov_title.classList.add('movie-title')
+mov_title_bar.classList.add('movie-title-bar')
+mov_img.classList.add('movie-img')
+
+mov_title.innerText = data.items[i].title
+mov_img.src =  data.items[i].image
+mov_title_bar.append(mov_title)
+mov_item.append(mov_img)
+mov_item.append(mov_title_bar)
+
+    $('.new-movie-box').append(mov_item)
+
+}
+        }, 1000);
+   
+});
+
+ })
+
+
+let word = 'Ready player one'
+let wordArr = []
+
+    setTimeout(()=>{
+    $('main').css('filter',('blur(0px)'))
+    $('.onMovie-load').css('opacity','0%')
+
+
+    setTimeout(()=>{
+        let i = 0
+      let word1 = setInterval(()=>{
+            $('.btn-search-movie').val($('.btn-search-movie').val() + word[i])
+            i++
+            if(i == word.length){
+                clearInterval(word1)
+            }
+        },100)
+        
+
+    },100) 
+    },100) 
+
+$.getJSON( "/website/Extention/Top250.json", function( data ) {
+
+       
+
+for(let i = 0 ; i < 20; i++){
+
+
+let mov_item = document.createElement('div')
+let mov_title = document.createElement('div')
+let mov_title_bar = document.createElement('div')
+let mov_img = document.createElement('img')
+
+
+
+mov_item.classList.add('movie-item')
+mov_title.classList.add('movie-title')
+mov_title_bar.classList.add('movie-title-bar')
+mov_img.classList.add('movie-img')
+
+mov_title.innerText = data.items[i].title
+mov_img.src =  data.items[i].image
+mov_title_bar.append(mov_title)
+mov_item.append(mov_img)
+mov_item.append(mov_title_bar)
+
+$('.movie').append(mov_item)
+
+
+}
+
+});
+
+
+
+ $('.load-more-movie').click(function(e){
+    let item =  $('.movie')[0].children.length-1
+
+    if(item > 99 ){
+        $('.load-more-movie').remove() 
+    }
+
+$.getJSON( "/Extention/TopMovie.json", function( data ) {
+
+
+    $('.onMovie-load').css('opacity','100%') 
+    $('.movie-item').each((i,item) =>{
+        item.classList.add('movie-origin-load')
+    })
+
+    setTimeout(()=>{
+       
+    for(let i = item  ; i < item+5 ; i++){
+
+let mov_item = document.createElement('div')
+let mov_title = document.createElement('div')
+let mov_title_bar = document.createElement('div')
+let mov_img = document.createElement('img')
+
+mov_item.classList.add('movie-item')
+mov_item.classList.add('movie-load')
+mov_title.classList.add('movie-title')
+mov_title_bar.classList.add('movie-title-bar')
+mov_img.classList.add('movie-img')
+
+mov_title.innerText = data.items[i].title
+mov_img.src =  data.items[i].image
+mov_title_bar.append(mov_title)
+mov_item.append(mov_img)
+mov_item.append(mov_title_bar)
+
+$('.movie').append(mov_item)
+window.scrollTo(0,document.body.scrollHeight);
+
+
+$('.movie-item').each((i,item) =>{
+        item.classList.remove('movie-origin-load')
+ })
+
+setTimeout(()=>{
+         mov_item.classList.remove('movie-load')
+         $('.onMovie-load').css('opacity','0%')
+
+        },500)
+
+
+        }
+
+    },500)
+
+});
+    })
+
+
+let settings = {
+	"async": true,
+	"crossDomain": true,
+	"url": "",
+	"method": "GET",
+	"headers": {
+		"x-rapidapi-host": "imdb-internet-movie-database-unofficial.p.rapidapi.com",
+		"x-rapidapi-key": "63476cf8famsh8c779cd8432d89ap141dbajsnb61241ef1a2a"
+	},
+    beforeSend :function(){
+       console.log('loading')
+       $('.search-loading').show()
+        $('.onMovie-load').show()
+       $('.search-loading').css('opacity',"100%")
+        $('.search').css('height','100vh')
+        $('.search-detail').css('transform','translateY(100%)')
+        $('.search-img').css('transform','translateY(100%)')
+        window.scrollTo(0,722)
+
+        return true
+    }, 
+    complete: function(){
+       console.log('success')
+       setTimeout(()=>{
+        $('.search-loading').css('opacity',"0%")
+        $('.search-detail').css('transform','translateY(0%)')
+        $('.search-img').css('transform','translateY(0%)')
+
+        $('.alert').width('0px')
+
+       setTimeout(()=>{
+       $('.search-loading').hide()
+       $('.onMovie-load').hide()
+
+
+       },500)
+        },1000)
+
+      
+    }
+};
+
+
+
+$('.btn-search-movie').keypress(function(e){
+
+    if(event.which == '13'){
+        $('.btn-search-movie').blur()
+        e.preventDefault()
+        settings.url = `https://imdb-internet-movie-database-unofficial.p.rapidapi.com/film/${$('input').val()}`
+        $('.alert').width('300px')
+        $('.alert-text').text(`Searching ${$('input').val()} ...`)
+        $.ajax(settings).done(function (response) {
+        $('.search-img img').attr('src',response.poster)
+        $('.search-title').html(`<div class="flex"><i class="fas fa-tag"></i>${response.title} </div>`)
+        $('.search-release').html(`<div class="flex"><i class="fas fa-calendar-alt"></i> ${response.year} </div>`)
+        $('.search-time').html(`<div class="flex"><i class="fas fa-clock"></i> ${response.length} </div>`)
+        $('.search-rating').html(`<div class="flex"><i class="fas fa-star"></i> ${response.rating} </div>`)
+        $('.search-plot').html(`<div class="flex"><i class="fas fa-clipboard"></i> ${response.plot} </div>`)
+        $('.search-link').html(`<div class="flex"><i class="fas fa-video"></i> <a href = ${response.trailer.link}> Trailer </a> </div>`)
+
+	    console.log(response);
+        });
+    }
+
+})
+ $('.search-box-txt').css('opacity','0%')
+ $('.btn-search-movie').css('transform','translateY(-50px)')
+
+$('.btn-search-movie').focus(function(e){
+    $('.search-box-txt').css('opacity','100%')
+
+    $('.search-box').css('backdrop-filter','blur(50px)')
+ $('.btn-search-movie').css('transform','translateY(0px)')
+
+
+})
+$('.btn-search-movie').blur(function(e){
+    $('.search-box-txt').css('opacity','0%')
+    $('.search-box').css('backdrop-filter','blur(0px)')
+    $('.btn-search-movie').css('transform','translateY(-50px)')
+
+
+})
+
+
+
+
+/* let settings2 = {
+	"async": true,
+	"crossDomain": true,
+	"url": "https://imdb-api.com/en/API/MostPopularMovies/k_5i4lssyy",
+	"method": "GET",
+    beforeSend :function(){
+       console.log('loading')
+
+        return true
+    }, 
+    complete: function(){
+       console.log('success')
+
+    }
+
+};
+
+$.ajax(settings2).done(function (response) {
+
+    console.log(response)
+   $('.search-img img').attr('src',response.items[0].image)
+
+     /*     console.log(response.items[0])
+    for( i in response.items){
+
+    } 
+
+        }); */
+
+
+
+
+
+
+/*
+    function ce(elemType,Class){
+        let elem = document.createElement(elemType)
+      
+        
+        if(Class != null){
+            elem.classList.add(Class)
+            return elem
+        }else{
+            return elem
+
+        }
+
+
+    }
+ */
+ 
+
+
+/*  $('img').attr('draggable', false);
+
+
+  const settings = {
+	"async": true,
+	"crossDomain": true,
+    "url": "https://ott-details.p.rapidapi.com/advancedsearch?start_year=2015&end_year=2021&min_imdb=6&max_imdb=10&genre=action&language=english&type=movie&sort=latest&page=1",
+	"method": "GET",
+	"headers": {
+		"x-rapidapi-host": "ott-details.p.rapidapi.com",
+		"x-rapidapi-key": "5bb72c4084mshc5d6903d18170e2p16bca0jsn3586fb22f9ce"
+	}
+};
+
+
+
+$.ajax(settings).done(function (response) {
+
+
+for(let i = 0 ; i < response.results.length ; i++){
+
+    if( response.results[i].title != 'Mortal Kombat'){
+
+    let mov_item = document.createElement('div')
+    let mov_title = document.createElement('div')
+    let mov_title_bar = document.createElement('div')
+    let mov_img = document.createElement('img')
+
+
+
+if(response.results[i].imageurl != undefined){
+    mov_item.classList.add('movie-item')
+    mov_title.classList.add('movie-title')
+    mov_title_bar.classList.add('movie-title-bar')
+    mov_img.classList.add('movie-img')
+
+    mov_title.innerText = response.results[i].title
+    mov_img.src =  response.results[i].imageurl
+    mov_title_bar.append(mov_title)
+    mov_item.append(mov_img)
+    mov_item.append(mov_title_bar)
+
+    $('.movie').append(mov_item)
+
+
+}
+}
+
+    }
+
+setTimeout(()=>{
+    var img = document.querySelectorAll('img')
+    let movie_item = document.querySelectorAll('.movie-item')
+    let movie = document.querySelector('.movie')
+
+for(let i = 0 ; i < response.results.length ; i++){
+
+if(img[i].offsetHeight == 26){
+    movie.removeChild(img[i].parentElement)
+    }
+
+}
+    
+},500)
+
+}); 
+
+
+
+
+ */
+
+
+
+
+
+  
+
+ 
+
+</script>
+</html>

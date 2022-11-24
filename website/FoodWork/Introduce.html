@@ -1,0 +1,844 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Food House DEV</title>
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.6.1/css/all.css">
+    <script src="https://kit.fontawesome.com/0244365092.js" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="style.css">
+
+
+</head>
+
+<style>
+      html {
+    scroll-behavior: smooth;
+    -webkit-text-size-adjust: 100%;
+        }
+
+        *{
+    margin: 0;
+    padding: 0;
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    box-sizing: border-box;
+    transition: 0.5s;
+    }
+        body{
+      background-color: rgb(43, 43, 43);
+      overflow-x: hidden;
+  
+
+    }
+    .main{
+        width: 100%;
+        height: auto;
+        display: flex;
+        align-items: center;
+        justify-content: flex-start;
+        flex-direction: column;
+        position: relative;
+        padding: 20px 50px 50px 50px;
+       background-color: rgb(43, 43, 43);
+        margin-top: 50px;
+    }
+   
+    .banner-back{
+        width: 90%;
+        height: 60vh;
+        background:url("img/bg.jpg");
+        position: fixed;
+        z-index: 1;
+        opacity: 50%;
+        left: 5vw;
+        top: 10vh;
+
+    }
+    .banner{
+        width: 100%;
+        height: 55vh;
+        background-color: rgba(61, 61, 61, 0.700);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        position: relative;
+        overflow: hidden;
+        z-index: 2;
+    }
+  
+    .banner-box-right{
+        width: 50%;
+        height: 100%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        position: relative;
+        clip-path: polygon(35% 0%, 80% 0%, 70% 100%, 20% 100%);
+
+        
+    }
+    .banner-box-left{
+        width: 50%;
+        height: 100%;
+        display: flex;
+        align-items: flex-start;
+        justify-content: center;
+        flex-direction: column;
+        color: white;
+        font-size: 3vw;
+        padding-right: 150px;
+        padding-left: 50px;
+  
+    }
+    .banner-box-img{
+        width: 100%;
+        height: 100%;
+        background: url("img/meWhiteD.jpg");
+        background-position: center;
+        background-repeat: no-repeat;
+        background-size: 60%;
+        position: absolute;
+        top: 0px;
+    }
+   
+
+    .line-center{
+        width: 40vw;
+        height: 2vh;
+        background-color: rgba(255, 255, 255, 0.5);
+        position: absolute;
+        transform: rotateZ(-70deg);
+    }
+
+    .line-right{
+        width: 1px;
+        height: 7vh;
+        background-color: white;
+        position: absolute;
+        top: 0;
+        left: 0;
+        color: white;
+        font-size: 0.8rem;
+        letter-spacing: 5px;
+        
+    }
+    .content{
+        width: 100%;
+        height: auto;
+        background-color: rgb(43, 43, 43);
+
+        z-index: 2;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        flex-direction: column;
+        padding-bottom: 100px;
+        margin-bottom: 90px;
+
+
+    }
+    .sprit-bar{
+        width: 100%;
+        height: 15vh;
+       /*  background-color: rgb(61, 61, 61); */
+        z-index: 2;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        color:white;
+        font-size: 1.7rem;
+        margin-top: 30px;
+        padding-top: 20px;
+        
+    }
+    .sprit-bar i{
+        margin-right: 10px;
+    }
+    .line-sprit{
+        width: 15%;
+        height: 1px;
+        background-color: white;
+        margin-left: 20px;
+        margin-right: 20px;
+
+    }
+    .resume{
+        width: 100%;
+        height: 90vh;
+        z-index: 2;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        position: relative;
+        padding: 20px;
+        padding-bottom: 0px;
+        overflow:visible;
+        padding: 50px 0px 50px 0px;
+        background-color: rgba(51, 51, 51, 0.5);
+
+        margin-top: 20px;
+
+
+
+
+    }
+    .resume-box-cover{
+        width: 40%;
+        height: 100%;
+        position: absolute;
+        background: linear-gradient(-45deg,
+      rgba(255, 255, 255, 0),rgba(0, 0, 0, 0.158));
+      left: 0;
+
+
+    }
+    .resume-box-left{
+        width: 40%;
+        height: 100%;
+        border-top-left-radius: 10px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        margin-left: 10px;
+        position: relative;
+
+    }
+    .resume-left-img{
+        width: 100%;
+        height: 100%;
+        background: url("img/e2gl.png");
+        background-size:cover;
+        background-repeat: no-repeat;
+        background-position: center;
+        opacity: 90%;
+        clip-path: polygon(0% 0%, 75% 0%, 100% 100%, 10% 100%);
+
+    }
+    .resume-img-cover{
+        width: 50%;
+        height: 10%;
+        background: rgba(85, 85, 85, 0.8);
+        position: absolute;
+        bottom: 2%;
+        right: 12%;
+        z-index: 2;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        color: white;
+        padding: 10px;
+        border-radius: 10px;
+
+    }
+    .resume-box-right{
+        width: 50%;
+        height: 100%;
+        padding: 10px;
+        color: white;
+        font-size: 1.5rem;
+        display: flex;
+        align-items: flex-start;
+        justify-content: flex-start;
+        flex-direction: column;
+        padding-left: 90px;
+        line-height: 2;
+        color: rgb(255, 255, 255);
+       
+
+    }
+    
+    .resume-another{
+        width: 100%;
+        height: 100%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+    .location{
+        width: 100%;
+        height: 100%;
+        display: flex;
+        align-items: flex-start;
+        justify-content: flex-start;
+        flex-direction: column;
+        padding-right: 50px;
+    }
+    .contact{
+        width: 100%;
+        height: 100%;
+        display: flex;
+        align-items: flex-start;
+        justify-content: flex-start;
+        flex-direction: column;
+
+    }
+    .contact i{
+        cursor: pointer;
+        margin: 10px;
+    }
+    .contact-items{
+        font-size: 1.2rem;
+        color: rgb(180, 180, 180);
+    }
+    .history-school{
+        width: 100%;
+        height: auto;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        padding: 10px;
+        background-color: rgba(51, 51, 51, 0.5);
+
+        margin-top: 10px;
+        
+    }
+    .school{
+        width: auto;
+        height: 100%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        flex-direction: column;
+        color: white;
+        font-size: 1.4rem;
+
+
+    
+    }
+    .school-detail{
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        flex-direction: column;
+        font-size: 0.7rem;
+
+    }
+    .fav{
+        width: 100%;
+        height: auto;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        flex-direction: column;
+        margin-top: 20px;
+        position: relative;
+        background-color: rgba(51, 51, 51, 0.5);
+        padding: 50px 0px 50px 0px;
+   
+
+
+    }
+    .fav-item{
+        width: 70%;
+        height: 40vh;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        margin: 10px;
+        transition: 1s;
+        overflow: hidden;
+        cursor: pointer;
+        border-left:  20px solid rgb(68, 68, 68);
+
+
+    }
+    .fav-detail {
+        width: 50%;
+        height: 100%;
+        background-color: rgba(107, 107, 107, 0.158);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        flex-direction: column;
+        font-size: 1.2rem;
+        color: rgba(255, 255, 255, 0.700);
+        border-top-left-radius: 5px;
+        border-bottom-left-radius: 5px;
+        
+    }
+
+    .fav-detail div:nth-child(2){
+        margin-top: 10px;
+        font-size: 1.5rem;
+        color: white;
+
+    }
+    .fav-img {
+        width: 100%;
+        height: 100%;
+       
+       
+    }
+    .game{
+        background: url("img/lol2.jpg");
+        background-position: center;
+        background-size: 100%;
+        background-repeat: no-repeat;
+    }
+    .movie{
+        background: url("img/mainpic2.jpg");
+        background-position: center;
+        background-size: 80%;
+    }
+    .song{
+        background: url("img/song.jpg");
+        background-position: center;
+        background-size: 100%;
+
+    }
+    .food{
+        background: url("img/ff.jpg");
+        background-position: center;
+        background-size: 100%;
+
+    }
+    
+    .fav-item:hover .fav-img{
+        background-size: 110%;
+
+    }
+    
+    .star{
+        width: 100%;
+        height: 80vh;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        position: relative;
+        margin-top: 30px;
+        background-color: #f1f1f1d0;
+
+
+    }
+    .star-box {
+        width: 100%;
+        height: 100%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        margin: 10px;
+        
+    }
+    
+    .star-pic-back{
+        width: 100%;
+        height: 100%;
+        background-color: #5c5c5ca8;
+        position: absolute;
+     clip-path: polygon(52% 0%, 50% 40%, 90% 100%, 15% 75%);
+     
+
+    }
+    .star-pic-back2{
+        width: 100%;
+        height: 100%;
+        position: absolute;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-size: 6rem;
+        color: rgb(27, 27, 27);
+        text-transform: uppercase;
+ 
+     
+
+    }
+    .star-pic-back2 div{
+        margin-right: 18vw;
+        margin-left: 8vw;
+
+    }
+    .star-pic{
+        width: 100%;
+        height: 100%;
+        background: url("img/jd2.png");
+        background-repeat: no-repeat;
+        background-position: center;
+        background-size: contain;
+        color: rgb(197, 197, 197);
+          
+   clip-path: polygon(10% 0, 100% 0%, 100% 100%, 0% 70%); 
+   /* clip-path: polygon(35% 0%, 80% 0%, 70% 100%, 20% 100%);  */        
+    }
+    .star:hover  .star-pic-back{
+     clip-path: polygon(52% 0%, 50% 40%, 90% 100%, 15% 75%);
+
+    }
+    .star-detail{
+        width: 10vw;
+        height: 5vh;
+        background-color: rgba(85, 85, 85, 0.603);
+        position: absolute;
+        bottom: 0;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-size: 1.0rem;
+        color: white;
+    }
+    .star-activity{
+        width: 100%;
+        height: 60vh;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        margin-top: 50px;
+        padding: 10px;
+        position: relative;
+    }
+    .star-activity-item{
+        width: 15vw;
+        height: 50vh;
+        margin: 20px;
+        cursor: pointer;
+        position: relative;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+    .star-activity-item img{
+        width: 100%;
+        height:100%;
+        object-fit: cover;
+        object-position: center;
+        
+    }
+    .star-activity-item:hover img{
+        width: 120%;
+        height: 110%;
+    }
+    .conner{
+        width: 5vw;
+        height: 10vh;
+        position: absolute;
+        border-top: 1px solid white;
+        border-left: 1px solid white;
+        left: 0;
+        top: 0;
+    }
+    .conner-right{
+        width: 5vw;
+        height: 10vh;
+        position: absolute;
+        border-bottom: 1px solid white;
+        border-right: 1px solid white;
+        right: 0;
+        bottom: 0;
+      
+    }
+    
+    
+    footer{
+        width: 100%;
+        height: 20vh;
+        background: rgb(109, 109, 109);
+        position: absolute;
+        bottom: 0;
+        z-index: 2;
+        margin-top: 20px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        color: rgb(255, 255, 255);
+    }
+    
+.footer-social{
+  width: 50%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 20px;
+  font-size: 1.3rem;
+  border-right: 1px solid white;
+  background: rgba(44, 44, 44, 0.8);
+
+
+}
+.footer-social-icon{
+  width: 30%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  cursor: pointer;
+  font-size: 1.2rem;
+
+}
+.footer-about{
+  width: 70%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 20px;
+  font-size: 1.2rem;
+  background: rgba(44, 44, 44, 0.8);
+
+
+
+}
+.footer-about-detail{
+  width: 100%;
+  height:100%;
+  font-size: 0.8rem;
+
+}
+</style>
+<body >
+    <header >
+        <div class="loader"></div>
+        <div class="header-logo"><span class="head-name-float">Food House <i class="fab fa-accusoft"></i></span></div>
+        <a href="FoodIndex.html" class="header-item">
+            <i class="fas fa-home"></i> Home
+            <div class="detail">Home</div>
+        </a>
+        <a href="FoodMenu.html" class="header-item profile-btn">
+            <i class="fas fa-utensils"></i></i></i> Menu
+            <div class="detail">Library</div>
+        </a>
+        <a href="FoodIngre.html" class="header-item">
+            <i class="fab fa-elementor"></i></i> Recipe
+            <div class="detail">Shop</div>
+        </a>
+        <a href="Introduce.html" class="header-item">
+            <i class="fas fa-code"></i> Dev
+            <div class="detail">Shop</div>
+        </a>
+      </header>
+      <div class="banner-back"></div>
+
+    <div class="main">
+          <div class="banner">
+                 <div class="banner-box-left"> 
+                <div>ศิวกร จันทร์แสงศรี<u style="margin-left: 50px;"></u></div>
+                <div style="font-size: 1.2vw; letter-spacing: 5px; margin-top: 5px;">(Siwakorn Jansangsri)</div>
+              </div>
+              
+              <div class="banner-box-right">
+                  
+                  <div class="banner-box-img"></div>
+              </div>
+              <div class="line-center"></div>
+              
+              <div class="line-right" style="width: 30px; background: none; padding-left: 10px; padding-top: 10px;">Resume</div>
+              <div class="line-right"></div>
+
+          </div>
+
+            <div class="content">
+
+            <div class="sprit-bar">
+            <div class="line-sprit"></div>
+
+            <i class="fas fa-address-card"></i>
+             <div>Resume</div>
+             <div class="line-sprit"></div>
+            </div>
+          <div class="resume">
+            <div class="line-right" style="width: 30px; background: none; padding-left: 10px; padding-top: 10px;">Resume</div>
+            <div class="line-right"></div>
+              <div class="resume-box-left">
+                  <div class="resume-img-cover">
+                      Web Devaloper & Design
+                  </div>
+         
+                <div class="resume-left-img"></div>
+              </div>
+              <div class="resume-box-right">
+                <h3>General</h3>
+                <div class="contact-items">
+                <div>Name : Siwakorn Jansangsri ( Captain ) ;</div>
+                <div>Age : 19 ;</div>
+                <div>Gender : Male ;</div>
+                <div>Birth Day : 21 March 2002 ;</div>
+                <div>height : 178 / weight : 65;</div>
+
+                <div>Nationality : Thailand ;</div>
+                
+                </div>
+                <div style="width: 80%; height: 1px;background: white; margin-top: 10px;"></div>
+                <div class="resume-another">
+                <div class="location">
+                        <h3>Location</h3>
+                            <div class="contact-items">
+                                73 m.4 Nathawee Songkhla 90160
+                            </div>
+                        </div>
+                <div class="contact">
+                <h3>Contact</h3>
+                    <div class="contact-items">
+                        <i class="fab fa-facebook-square"></i>
+                        <i class="fab fa-instagram"></i>
+                        <i class="fab fa-twitter-square"></i>
+                    </div>
+                </div>
+            </div>
+              </div>
+          </div>
+          <div class="history-school">
+              <div class="school">
+                <div class="school-detail">( 6 years )</div>
+                <i class="fas fa-graduation-cap"></i>
+                <div class="school-detail">
+                    <div>primary school</div>
+                    <div>Ban Nathawee School</div>
+                </div>
+              </div>
+            <div class="line-sprit"></div>
+
+            <div class="school">
+                <div class="school-detail">( 3 years )</div>
+                <i class="fas fa-graduation-cap"></i>
+                <div class="school-detail">
+                    <div>junior high school</div>
+                    <div>Nathaweewittayakom School</div>
+                </div>
+              </div>
+
+            <div class="line-sprit"></div>
+
+              <div class="school">
+                <div class="school-detail">( 3 years )</div>
+                <i class="fas fa-graduation-cap"></i>
+                <div class="school-detail">
+                    <div> Vocational Certificate</div>
+                    <div>Hatyai Technical collage</div>
+                </div>
+              </div>
+
+            <div class="line-sprit"></div>
+
+              <div class="school">
+                <div class="school-detail">( Studying )</div>
+                <i class="fas fa-graduation-cap" style="font-size: 2rem; color: rgb(255, 174, 0);"></i>
+                <div class="school-detail">
+                    <div>High Vocational Certificate</div>
+                    <div>Hatyai Technical collage</div>
+
+                </div>
+              </div>
+
+          </div>
+          <div class="sprit-bar">
+            <div class="line-sprit"></div>
+
+            <i class="fas fa-heart"></i>
+             <div>Favorite</div>
+             <div class="line-sprit"></div>
+            </div>
+        <div class="fav">
+            <div class="line-right" style="width: 30px; background: none; padding-left: 10px; padding-top: 10px;">Favorite </div>
+           
+            <div class="line-right"></div>
+            <div class="fav-item">
+                <div class="fav-detail"> <i class="fas fa-gamepad"></i> Favorite Game 
+                    <div> | League of legend | </div>
+                </div>
+                <div  class="fav-img game"></div>
+             </div>
+             <div class="fav-item">
+                <div class="fav-detail"><i class="fas fa-video"></i> Favorite Movie 
+                    <div> | Prirate of Carribien | </div>
+
+                </div>
+                <div  class="fav-img movie"></div>
+             </div>
+             <div class="fav-item">
+                <div class="fav-detail"><i class="fas fa-music"></i> Favorite Song 
+                    <div> | Joji - Mr. Hollywood | </div>
+
+                </div>
+                <div  class="fav-img song"></div>
+             </div>
+             <div class="fav-item">
+                <div class="fav-detail"><i class="fas fa-utensils"></i> Favorite Food 
+                    <div> | French Fries | </div>
+
+                </div>
+                <div  class="fav-img food"></div>
+             </div>
+          
+
+        </div>
+        <div class="sprit-bar">
+            <div class="line-sprit"></div>
+
+            <i class="fas fa-star"></i>
+             <div>Star</div>
+             <div class="line-sprit"></div>
+            </div>
+        
+        <div class="star">
+            <div class="line-right" style="width: 30px; background: none; padding-left: 10px; padding-top: 10px; color: black;"> Star</div>
+            <div class="line-right" style="border: 1px solid black;"></div>
+            <div class="star-pic-back">   </div>
+         
+            <div class="star-pic-back2">
+                
+               <div> Johnny </div> <div> Depp</div>
+            </div>
+            <div class="star-box star-pic"></div>
+
+            <div class="star-detail">Hollywood Actor</div>
+        </div>
+        <div class="star-activity">
+            <div class="conner"></div>
+            <div class="conner-right"></div>
+
+            <div class="star-activity-item">
+      
+                
+                <img src="img/m1.jpg" >
+
+            </div>
+            <div class="star-activity-item">
+
+                <img src="img/m3.jpg" >
+
+            </div>
+            <div class="star-activity-item">
+
+                <img src="img/m4.png" >
+
+            </div>
+            <div class="star-activity-item">
+
+                <img src="img/m2.png" >
+
+            </div>
+           
+        </div>
+        <footer class="footer">
+            <div class = "footer-social">
+                Follow us
+                <div class = "footer-social-icon">
+                     <i class="fab fa-facebook-square"></i>
+                     <i class="fab fa-instagram"></i>
+                     <i class="fab fa-twitter-square"></i>
+                 </div>
+            </div>
+            <div class = "footer-about">
+                About-us
+            <div class = "footer-about-detail">
+                73 m.4 Nathawee Songkhla 90160
+                 Lorem ipsum dolor, sit amet consectetur adipisicing elit.
+                 Amet quibusdam doloribus animi ipsa eum exercitationem magni velit commodi nulla explicabo.
+                  Exercitationem tempora fugit non pariatur totam odio aliquid unde quas!
+
+            </div>
+             
+            </div>
+            
+        </footer>
+
+        </div> 
+    </div>
+  
+
+</body>
+</html>
+

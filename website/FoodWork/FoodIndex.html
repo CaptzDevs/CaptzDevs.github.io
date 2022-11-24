@@ -1,0 +1,976 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <script src="https://kit.fontawesome.com/0244365092.js" crossorigin="anonymous"></script>
+ 
+    <title>Food House</title>
+    
+  
+</head>   
+    <style>
+.card{
+        width: 25vw;
+        height: auto;
+        background:white;
+        position:relative;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        flex-wrap: wrap;
+        border-radius: 0px;
+        margin-bottom: 30px;
+        perspective: 1000px;
+        overflow-x: visible;
+        
+
+    }
+
+    .card-top{
+        width: 100%;
+        height: 6.5vh;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-size: 1.2rem;
+        padding-left: 5px;
+        font-weight: 500;
+        transform-origin: top ;
+        border-radius: 20px;
+        transform:perspective(0px) translateX(0px);
+        box-shadow: none;
+
+    }
+    .card-center{
+        width: 150%;
+        height: 0vh;
+        background:rgb(155, 155, 155);
+        background-position: center;
+        background-size: cover;
+        transform:perspective(0px) translateX(0px);
+        box-shadow: none;
+        overflow-x: visible;
+
+        
+    }
+    .card-bottom{
+        width: 100%;
+        height: 9vh;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        padding-left: 5px;
+        transform-origin: bottom left;
+        border-radius: 20px;
+        transform:perspective(0px) translateX(0px);
+        box-shadow: none;
+
+    }
+   .title {
+        font-size: 1.2rem;
+        font-weight: 500;
+    }
+
+    .replay{
+        width: 100px;
+        height: 100px;
+        background: rgb(151, 151, 151);
+        position: absolute;
+        top: 0;
+        right: 0;
+    }
+    .card-bottom-box{
+        width: 100%;
+        height: 100%;
+        display: flex;
+        align-items: flex-start;
+        justify-content: flex-end;
+        flex-direction: column;
+        transform-origin: bottom left;
+        padding-bottom: 10px;
+      
+    }
+
+    .card-top-box{
+        width: 100%;
+        height: 100%;
+        display: flex;
+        align-items: center;
+        justify-content: flex-start;
+        transform-origin: bottom left;
+        position: relative;
+    }
+
+    .card-profile{
+        width: 35px;
+        height: 90%;
+        border-radius: 50%;
+        background: rgb(151, 151, 151);
+        margin-right: 10px;
+        transform: scale(0,0);
+        transform-origin: center;
+        color: rgb(255, 255, 255);
+        display: flex;
+        align-content: center;
+        justify-content: center;
+        font-size: 1rem;
+    }
+    .card-head{
+        margin-bottom: 1px;
+        position: absolute;
+      
+    }
+    .close{
+        top: 5px;
+        right: 5px;
+        position: absolute;
+        cursor: pointer;
+    }
+    
+    .column {
+        width: auto;
+        height: 50%;
+        display: flex;
+        align-content: center;
+        justify-content: center;
+        flex-direction: column;
+        margin-left: 50px;
+        margin-right: 50px;
+        transition: 1s ease-out;
+        overflow-x: visible;
+
+
+
+    }
+    .none{
+        opacity: 0%;
+    }
+    .card-eff-rv{
+        transform: translateY(-100%);
+        transition: all 1s cubic-bezier(0, 0, .58, 1);
+    }
+    .card-eff{
+        transform: translateY(100%);
+        transition: all 1s cubic-bezier(0, 0, .58, 1);
+
+
+    }
+    .bg{
+        background: #2a3442;
+        }
+    .main-eff{
+        transform: rotate(20deg) skew(-20deg, -20deg) scale(0.8,0.8);
+       /*  transform: rotate(40deg) skew(-20deg, -20deg) scale(0.8,0.8); */
+    }
+    .main-eff2{
+        transform: rotate(0deg) skew(0deg, 0deg) scale(0.8,0.8);
+       /*  transform: rotate(40deg) skew(-20deg, -20deg) scale(0.8,0.8); */
+    }
+
+    .main-eff-last{
+        transform: rotate(0deg) skew(0deg, 0deg) scale(0.8,0.8) translateX(-100%);
+
+       /*  transform: rotate(40deg) skew(-20deg, -20deg) scale(0.8,0.8); */
+    }
+    .card-center-eff{
+        transform:perspective(500px) translateX(-100px) translateY(-70px);
+  /*       box-shadow: 100px 50px 10px rgba(0, 0, 0, 0.205); */
+        transition: 1.5s;
+        
+
+    }
+
+    .card-center-eff2{
+        transform:perspective(500px) translateX(-140px) translateY(-85px) scale(1.05,1.05);
+        box-shadow: 130px 65px 10px rgba(0, 0, 0, 0.205);
+        transition: 1.5s ;
+        z-index: 10;
+
+    }
+    .slide-eff-bottom{
+        transform: translateY(-150%);
+    }
+    .slide-eff-cenet{
+        transform: translateY(0%);
+    }
+    .slide-eff-top{
+        transform: translateY(150%);
+    }
+
+
+
+  
+   
+
+   /*  .card-center-eff:hover{
+        transform:perspective(500px) translateX(-100px) translateY(-50px);
+        box-shadow: 100px 50px 10px rgba(0, 0, 0, 0.205);
+
+    }
+    .card-center:hover{
+        transition: 0.5s;
+        transform:perspective(500px) translateX(-130px) translateY(-65px) scale(1.2,1.2);
+        z-index: 10;
+    }
+   */
+  
+  </style>
+<style>
+    @import url('https://fonts.googleapis.com/css2?family=Cormorant:ital,wght@1,300&display=swap');
+    @import url('https://fonts.googleapis.com/css2?family=Noto+Sans&display=swap');
+    </style>
+<style>
+    *{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+
+    transition: 0.5s;
+    }
+        body{
+      background-color: rgb(0, 0, 0);
+      overflow-x: hidden;
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif; 
+
+     /*  background-color: rgb(255, 255, 255); */
+
+
+    }
+    main{
+        width: 100%;
+        height: auto;
+        display: flex;
+        align-items: center;
+        justify-content: flex-start;
+        flex-direction: column;
+        position: relative;
+        background-color: #212322;
+        background-color: #dfdfdf;
+        padding-top: 50px;
+
+    
+    }
+    .banner{
+        width: 100%;
+        height: 100vh;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        position: relative;
+        padding: 20px 40px 50px 40px;
+       background-color: rgb(65, 65, 65);
+      overflow: hidden;   
+      margin-top: 50px;
+    
+    }
+
+    .bannerMain{
+        width: 100%;
+        height: 95vh;
+        background-color: rgb(124, 124, 124);
+      background: url(https://images.unsplash.com/photo-1505935428862-770b6f24f629?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=747&q=80);
+        background-size: cover;
+        background-position: center;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        transition: 1s;
+        position: relative;
+        overflow: hidden;
+    }
+    .banner-box{
+        width: 53%;
+        height: 100%;
+        font-size: 4rem;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        flex-direction: row;
+
+    }
+    .banner-box-pic{
+        width: 100%;
+        height: 40%;
+        transform: translateY(0px) scale(2,2);
+        transition: 0s ease-out;
+        background: url(https://pngimg.com/uploads/steak/steak_PNG23.png) no-repeat;
+        background-size: contain;
+        background-position: center;
+    }
+    .banner-box-text{
+        width: 100%;
+        font-size: 2.5rem;
+        margin-left: 20px;
+        margin-right: 20px;
+        font-family: 'Cormorant', serif;
+        font-weight: 900;
+        color: rgb(75, 75, 75);
+
+    }
+
+  
+    .banner-box-text div {
+  overflow: hidden;
+  border-right: .10em solid #212322;
+  white-space: nowrap; 
+  margin: 0 auto; 
+  letter-spacing: 0.15rem;
+  margin-bottom: 10px;
+  animation: 
+    typing 3.5s steps(30, end),
+    blink-caret .5s step-end 10;
+}
+
+    @keyframes typing {
+        from { width: 0 }
+    to { width: 100% }
+}
+@keyframes blink-caret {
+  from, to { border-color: transparent }
+  30% { border-color: rgb(54, 54, 54); }
+
+}
+
+.content{
+        width: 100%;
+        height: auto;
+       /*  background-color: #212322; */
+        z-index: 2;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        flex-direction: column;
+    }
+    .menu-box{
+        width: 70%;
+        height: 60vh;
+        background-color: #c0c0c0;
+        overflow: hidden;
+        position: relative;
+        display: flex;
+        align-items: flex-start;
+        justify-content: center;
+        position: relative;
+        margin-top: 30vh;
+        margin-bottom: 30vh;
+
+    }
+
+    .menu-bg{
+        width: 50%;
+        height: 100%;
+       /*  background: url(https://images.unsplash.com/photo-1563865436874-9aef32095fad?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=334&q=80); */
+        background: url(https://images.unsplash.com/photo-1506280754576-f6fa8a873550?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=334&q=80);
+       background-repeat: no-repeat ;
+        background-size: cover;
+        display: flex;
+        align-items: flex-start;
+        justify-content: center;
+        padding-top: 10px;
+        
+
+    }
+    .menu-content{
+        width: 80%;
+        height: 100%;
+        background-color: rgba(99, 99, 99, 0.507);
+        backdrop-filter: blur(5px);
+        display: flex;
+        align-items: center;
+        justify-content: flex-start;
+        flex-direction: column;
+        font-family: 'Cormorant', serif;
+        font-size: 3rem;
+        color: white;
+        padding: 50px;
+        padding-top: 20px;
+
+      
+    }
+
+    .menu-content-text{
+        font-size:1rem;
+        font-family: 'Noto Sans', sans-serif;
+        overflow-y: auto;
+        text-overflow: ellipsis;
+
+    }
+
+    .menu{
+        width: 100%;
+        height: auto;
+        background: rgb(32, 32, 32);
+        padding: 50px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        flex-direction: column;
+
+    }
+    .menu-row{
+        width: 80%;
+        height: 50vh;
+        margin-top: 50px;
+        margin-bottom: 50px;
+        display: flex;
+        align-items:flex-start;
+        justify-content: center;
+        position: relative;
+    }
+    .menu-row-img{
+        width: 70%;
+        height: 90%;
+        background: url(https://pngimg.com/uploads/spaghetti/spaghetti_PNG34.png) no-repeat;
+        background-position: center;
+        background-size: contain;
+        transform: translateY(500px);
+    }
+    .menu-eff{
+       animation: menuSpin 1s 0s forwards;
+    }
+    @keyframes menuSpin {
+        from{
+       transform: translateY(500px) rotateZ(360deg);
+        }
+        to{
+            transform: translateY(0px) rotateZ(0deg);
+
+
+        }
+    }
+    .menu-row-text{
+        width: 80%;
+        height: 100%;
+        margin-bottom: 50px;
+        display: flex;
+        align-items: flex-start;
+        justify-content: flex-start;
+        flex-direction: column;
+        color: white;
+        font-size: 1rem;
+        padding: 50px;
+        transition: e;
+        
+    }
+    .menu-row-head{
+        color: white;
+        font-size: 2rem;
+        background: #585858;
+        margin-bottom: 20px;
+        letter-spacing: 5px;
+        font-family: 'Cormorant', serif;
+        display: flex;
+        align-items:center;
+        justify-content: center;
+
+    }
+    .menu-row-lore{
+        width: 95%;
+        height: 50vh;
+        text-align: left;
+        overflow-y: scroll;
+
+    }
+
+
+    .conner-left{
+        width: 30px;
+        height: 30px;
+        position: absolute;
+        top: 0;
+        left: 0;
+        border-top: 1px solid white;
+        border-left: 1px solid white;
+    }
+    .conner-right{
+        width: 30px;
+        height: 30px;
+        position: absolute;
+        bottom: 0;
+        right: 0;
+        border-bottom: 1px solid white;
+        border-right: 1px solid white;
+    }
+    .conner-box{
+        width: 15px;
+        height: 15px;
+        position: absolute;
+        background: white;
+        transform: rotate(45deg);
+    }
+    .dot{
+        transform: rotate(45deg);
+        margin-right: 10px;
+        margin-left: 10px;
+        position: relative;
+        background: linear-gradient(to right,
+    rgb(187, 133, 16),rgb(243, 229, 30) );
+
+    }
+    .line-left{
+        width: 1px;
+        height: 50px;
+        background: white;
+        position: absolute;
+        left: 0;
+        top: 25%;
+        
+    }
+    .sprit-bar{
+        width: 100%;
+        height: 15vh;
+       /*  background-color: rgb(61, 61, 61); */
+        z-index: 2;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        color:white;
+        background: rgb(32, 32, 32);
+
+        font-size: 3rem;
+        margin-top: 30px;
+        padding-top: 20px;
+       font-family: 'Cormorant', serif;
+
+        
+    }
+    .sprit-bar i{
+        margin-right: 10px;
+    }
+    .line-sprit{
+        width: 15%;
+        height: 1px;
+        background: linear-gradient(to right, rgb(255, 255, 255),transparent );
+        margin-left: 20px;
+        margin-right: 20px;
+
+    }
+
+    .ingre{
+        width: 100%;
+        height: 110vh;
+        background: rgb(32, 32, 32);
+        display: flex;
+        align-items: center;
+        justify-content: flex-start;
+        flex-direction: column;
+
+
+
+    }
+    .ingre-row-box{
+        width: auto;
+        height: 90%;
+        display: flex;
+        align-items:center;
+        justify-content: center;
+        margin-top: -15vh;
+        overflow: hidden;
+
+    }
+    .ingre-bg{
+        width: 50%;
+        height: 100%;
+        background: url(https://images.unsplash.com/photo-1563865436874-9aef32095fad?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=334&q=80);
+       background-repeat: no-repeat ;
+        background-size: cover;
+        background-position: center;
+        display: flex;
+        align-items: flex-start;
+        justify-content: center;
+        padding-top: 10px;
+
+    }
+    .ingre-mainpic{
+        width: 150%;
+        height: 200%;
+        object-fit: contain;
+        margin: 0px 7vw 0px 5vw;
+    }
+    .ingre-subpic{
+        width: 100%;
+        height: 100%;
+        object-fit: contain;
+        margin: 0px 2vw 0px 2vw;
+    }
+    .ingre-item{
+        width: 50%;
+        height: 25%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        flex-direction: column;
+        padding-top: 30px;
+        
+
+     
+
+    }
+    .ingre-item-txt{
+       font-size: 2rem;
+       color: white;
+       font-family: 'Cormorant', serif;
+       transform: translateY(50px);
+
+    }
+
+  .ingre-row-box-eff{
+     transform: translateY(0px);
+  }
+
+</style>
+<body>
+    <header >
+        <div class="loader"></div>
+        <div class="header-logo"><span class="head-name-float">Food House <i class="fab fa-accusoft"></i></span></div>
+        <a href="FoodIndex.html" class="header-item">
+            <i class="fas fa-home"></i> Home
+            <div class="detail">Home</div>
+        </a>
+        <a href="FoodMenu.html" class="header-item profile-btn">
+            <i class="fas fa-utensils"></i></i></i> Menu
+            <div class="detail">Library</div>
+        </a>
+        <a href="FoodIngre.html" class="header-item">
+            <i class="fab fa-elementor"></i></i> Recipe
+            <div class="detail">Shop</div>
+        </a>
+        <a href="Introduce.html" class="header-item">
+            <i class="fas fa-code"></i> Dev
+            <div class="detail">Shop</div>
+        </a>
+      </header>
+    <main>
+        <div class="bannerMain">
+            <div class="banner-box">
+                <div class="banner-box-text">
+                    <div>Wellcome to </div>
+                    <div>Italy Food House</div>
+                </div>
+                <div class="banner-box-pic"></div>
+            </div> 
+        </div>
+
+        <div class="content">
+            <div class="menu-box">
+                <div class="menu-bg">
+                </div>
+                <div class="menu-content">
+                    <u>   MENU </u>
+                    <div class="menu-content-text">
+                        Lorem ipsum dolor sit amet consectetur adipisicing elit. Similique id aliquid consequuntur
+                         officiis vero impedit eaque at, 
+                        amet ducimus sequi unde. Rem ipsum sed libero, deserunt possimus ratione facere dolore.
+                        Lorem ipsum dolor sit amet consectetur adipisicing elit. Similique id aliquid consequuntur
+                        officiis vero impedit eaque at, 
+                       amet ducimus sequi unde. Rem ipsum sed libero, deserunt possimus ratione facere dolore.
+                       Lorem ipsum dolor sit amet consectetur adipisicing elit. Similique id aliquid consequuntur
+                       officiis vero impedit eaque at, 
+                      amet ducimus sequi unde. Rem ipsum sed libero, deserunt possimus ratione facere dolore.
+                    </div>
+                </div>
+            </div>
+            <div class="menu">
+                <div class="sprit-bar">
+                    <div class="line-sprit" style=" background: linear-gradient(to left, rgb(255, 255, 255),transparent );"></div>
+                     <div>MENU</div>
+                     <div class="line-sprit"></div>
+                    </div>
+                <div class="menu-row">
+                    <div class="conner-left"></div>
+                    <div class="menu-row-img"></div>
+                    <div class="menu-row-text">
+
+                        <div class="menu-row-head"><div class="conner-box dot" ></div> Spaghetti</div>
+                        <div class="menu-row-lore">
+                            Lorem ipsum dolor sit amet consectetur adipisicing elit. Tempora animi provident delectus.
+                             Nesciunt aspernatur, reiciendis debitis error porro,
+                             earum ab dicta non sapiente nulla optio libero officiis animi, consequatur odit! </div>
+                    </div>
+                </div>
+                <div class="menu-row" style="flex-direction: row-reverse;">
+
+                    <div class="menu-row-img"></div>
+                    <div class="menu-row-text" >
+                        <div class="menu-row-head"><div class="conner-box dot" ></div> Pizza</div>
+                            <div class="menu-row-lore"  >
+                                Lorem ipsum dolor sit amet consectetur adipisicing elit. Tempora animi provident delectus.
+                                Nesciunt aspernatur, reiciendis debitis error porro,
+                                earum ab dicta non sapiente nulla optio libero officiis animi, consequatur odit!
+                            </div>
+                        </div>
+                    </div>
+                    <div class="menu-row">
+                        <div class="conner-right"></div>
+
+                        <div class="menu-row-img"></div>
+                        <div class="menu-row-text">
+                            <div class="menu-row-head"><div class="conner-box dot" ></div>  Pasta</div>
+                            <div class="menu-row-lore">
+                                Lorem ipsum dolor sit amet consectetur adipisicing elit. Tempora animi provident delectus.
+                                 Nesciunt aspernatur, reiciendis debitis error porro,
+                                 earum ab dicta non sapiente nulla optio libero officiis animi, consequatur odit! </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="menu-box" style=>
+                    <div class="ingre-bg">
+                    </div>
+                    <div class="menu-content">
+                        <u>   Ingredient  </u>
+                        <div class="menu-content-text">
+                            Lorem ipsum dolor sit amet consectetur adipisicing elit. Similique id aliquid consequuntur
+                             officiis vero impedit eaque at, 
+                            amet ducimus sequi unde. Rem ipsum sed libero, deserunt possimus ratione facere dolore.
+                            Lorem ipsum dolor sit amet consectetur adipisicing elit. Similique id aliquid consequuntur
+                            officiis vero impedit eaque at, 
+                           amet ducimus sequi unde. Rem ipsum sed libero, deserunt possimus ratione facere dolore.
+                           Lorem ipsum dolor sit amet consectetur adipisicing elit. Similique id aliquid consequuntur
+                           officiis vero impedit eaque at, 
+                          amet ducimus sequi unde. Rem ipsum sed libero, deserunt possimus ratione facere dolore.
+                        </div>
+                    </div>
+                </div>
+              
+                <div class="ingre">
+                    <div class="sprit-bar">
+                        <div class="line-sprit" style=" background: linear-gradient(to left, rgb(255, 255, 255),transparent );"></div>
+                         <div>Ingredient</div>
+                         <div class="line-sprit"></div>
+                        </div>
+                    <div class="ingre-row-box">
+                        <div class="ingre-item" style="transform:translateY(100px);">
+                            <img class="ingre-subpic"  src="https://pngimg.com/uploads/pasta/pasta_PNG27.png" alt="">
+                            <div class="ingre-item-txt">Pasta</div>
+                        </div>
+                        <div class="ingre-item" style="transform:translateY(50px);">
+                            <img class="ingre-subpic" src="https://pngimg.com/uploads/cheese/cheese_PNG97066.png" alt="">
+                            <div class="ingre-item-txt">Cheese</div>
+                        </div>
+                        <div class="ingre-item">
+                            <img class="ingre-mainpic" src="https://pngimg.com/uploads/meat/meat_PNG3919.png" alt="">
+                            <div class="ingre-item-txt" style="transform: translateY(50px);">Meat</div>
+                            
+                        </div>
+                    <div class="ingre-item" style="transform:translateY(50px);">
+                        <img class="ingre-subpic" src="https://pngimg.com/uploads/tomato/tomato_PNG12592.png" alt="">
+                        <div class="ingre-item-txt">Tomato</div>
+
+                    </div>
+                    <div class="ingre-item" style="transform:translateY(100px);">
+                        <img class="ingre-subpic" src="img/leaf.png" alt="">
+                        <div class="ingre-item-txt">basil</div>
+                    </div>
+                        
+      
+
+                      
+                    </div>
+                </div>
+                <div class="menu-box" style="
+                width: 100%;
+                margin: 50px;
+                background: url(https://images.unsplash.com/photo-1476224203421-9ac39bcb3327?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=750&q=80); 
+                background-position: center;">
+                    <div class="menu-content" style="position: absolute; justify-content: center;">
+                        <u class="backtotop" style="cursor:pointer;">   Back to top </u>
+                    </div>
+                  
+                   
+                </div>
+             </div>
+      
+
+
+</main>
+<footer class="footer">
+    <div class = "footer-social">
+        Follow us
+        <div class = "footer-social-icon">
+             <i class="fab fa-facebook-square"></i>
+             <i class="fab fa-instagram"></i>
+             <i class="fab fa-twitter-square"></i>
+         </div>
+    </div>
+    <div class = "footer-about">
+        About-us
+    <div class = "footer-about-detail">
+        73 m.4 Nathawee Songkhla 90160
+         Lorem ipsum dolor, sit amet consectetur adipisicing elit.
+         Amet quibusdam doloribus animi ipsa eum exercitationem magni velit commodi nulla explicabo.
+          Exercitationem tempora fugit non pariatur totam odio aliquid unde quas!
+
+    </div>
+     
+    </div>
+    
+</footer>
+
+    
+</body>
+
+
+<script title="Fuction">
+
+    // S = Select 
+    // Sa = Select All
+    // Sc =  Select Class Without .
+
+    function S(el){
+          return document.querySelector("."+el)
+    }
+
+    function Sa(el){
+        return document.querySelectorAll("."+el)
+    }
+    function St(el){
+        return document.querySelector(el)
+    }
+
+    let arr = [1,2,3,4,5,6,7]
+
+    Array.prototype.size = function(){
+        return this.length
+    }
+    function IsGreater(v1,v2){
+       return v1 > v2 ? v1 : v2;
+    }
+    function IsGl(v1,v2){
+       return v1 < v2 ? v1 + " < " + v2 : v2 + " < " + v1;
+    }
+
+    const elem = HTMLElement
+
+    elem.prototype.click = function(func){
+        this.addEventListener("click",func)
+    }
+
+    Object.prototype.on = function(evenHandler,func){
+        this.addEventListener(evenHandler,func)
+    }
+
+   
+
+
+
+    
+
+    Object.prototype.css = function(prop,value){
+    
+     let v = this.getAttribute("style")
+     this.setAttribute("style",prop +":"+value ) 
+
+     
+        if(v != null){
+  
+        this.setAttribute("style",v +"; "+ prop +":" +value )
+        }
+
+      
+    }
+
+    Object.prototype.addClass = function(cssClass){
+        this.classList.add(cssClass)
+    }
+
+
+
+    Object.prototype.cd = function(){
+        setTimeout(() =>{
+           console.log(this)
+        },1000)
+
+    }
+
+        
+   function timing(s,t){
+       return setTimeout(s,t) 
+    }    
+  
+
+
+
+
+
+
+</script>
+<script>
+
+let menu_pic = Sa("menu-row-img")
+let ingre_item = Sa("ingre-item")
+
+ingre_item.forEach(item =>{
+            item.style.transform = "translateY(500px) scale(1,1)"
+            })
+
+    window.addEventListener("scroll",function(){
+        if(pageYOffset*(-1) > -450){
+            S("banner-box").style.transform = "translateY("+ pageYOffset*(-1) +"px)"
+        }
+
+        if(pageYOffset > 1500){
+            menu_pic[0].classList.add("menu-eff")
+            menu_pic[0].style.transform = "translateY(0px)"
+
+        } 
+        
+        if(pageYOffset > 1800){
+            menu_pic[1].classList.add("menu-eff")
+        } 
+        if(pageYOffset > 2300){
+            menu_pic[2].classList.add("menu-eff")
+        }  
+
+
+         if(pageYOffset > 3850 && pageYOffset < 4300){
+             let i = 0;
+             let c = setInterval(()=>{
+                ingre_item[i].style.transform = "translateY(0px) scale(1,1)"
+                ingre_item[i].style.transition = "1s "
+                i++
+                if(i == 5){
+                clearInterval(c)
+            }
+            },300)
+        } 
+        
+        if(pageYOffset > 4300){
+            ingre_item.forEach(item =>{
+                item.style.margin = "30px"
+            })
+        } 
+    })
+
+    let menuPic = [
+    'https://pngimg.com/uploads/spaghetti/spaghetti_PNG34.png'
+    ,'https://pngimg.com/uploads/pizza/pizza_PNG7132.png'
+    ,'https://pngimg.com/uploads/pasta/pasta_PNG63.png']
+
+
+
+    for(let i = 0; i < menu_pic.length ; i++) {
+        menu_pic[i].style.background = `url(${menuPic[i]})`
+        menu_pic[i].style.backgroundPosition = 'center'
+        menu_pic[i].style.backgroundSize = 'contain'
+        menu_pic[i].style.backgroundRepeat = 'no-repeat'
+
+        }
+        
+    S('backtotop').click(()=>{
+        window.scrollTo(0, 0);
+    })
+
+   
+
+
+  
+    
+</script>
+
+
+
+
+</html>

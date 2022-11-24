@@ -1,0 +1,1599 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Element</title>
+</head>
+<style>
+  
+/* Custom scrollbar */
+::-webkit-scrollbar {
+  width: 10px;
+}
+
+
+::-webkit-scrollbar-track {
+  background: #f1f1f1; 
+}
+ 
+
+::-webkit-scrollbar-thumb {
+  background: #888; 
+}
+
+
+::-webkit-scrollbar-thumb:hover {
+  background: #555; 
+}
+
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+</style>
+<style>
+    html {
+    scroll-behavior: smooth;
+        }
+        *{
+    margin: 0;
+    padding: 0;
+    font-family: "Google Sans",Arial,Helvetica,sans-serif;
+    box-sizing:border-box;
+    transition: 0.5s ;
+    }
+    body{
+      background-color: rgb(43, 43, 43);
+      overflow: hidden;
+    }
+    .main{
+        width: 95%;
+        height: 90vh;
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        justify-content: center;
+        color: white;
+      
+     
+      
+    }
+    .table-bar{
+        width: 100%;
+        height: auto;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        font-weight: 400;
+        margin: 10px;
+        margin-top: 80px;
+        overflow: hidden;
+      
+    }
+    .table {
+        width: 100%;
+        height: 100%;
+        display: flex;
+        flex-direction: row;
+        align-items: flex-start;
+        justify-content: center;
+        position: relative;
+
+    }
+    .table2{
+        width: 100%;
+        height: 15%;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+       margin-top: 20px;
+      
+
+    }
+ 
+    .col {
+        width: 55px;
+        height: 470px;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: flex-end;
+        background-color: rgb(49, 49, 49);
+      
+
+    }
+    .row {
+        width: 1175px;
+        height: 100%;
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        justify-content: center;
+        
+
+
+        
+
+    }
+    .element{
+        width: 55px;
+        height: 55px;
+        background-color: rgb(69, 69, 75);
+        border: 1px solid rgb(136, 136, 136);
+        cursor: pointer;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        position: relative;
+        text-overflow: clip;
+ 
+    
+    }
+ 
+    .element:hover{
+       background-color: #000000c2;
+        transform: translate(28px,-28px) scale(2,2);
+        z-index: 3;
+      
+    }
+    .element-empty{
+      width: 50px;
+        height: 50px;
+        cursor: pointer;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        background-color: transparent;
+        border: none;
+    }
+    .element-type{
+        width: 520px;
+        height: 245px;
+  /*       background-color: rgba(77, 77, 77, 0.384); */
+        position: absolute;
+        top: 5px;
+        margin-left: -150px;
+        padding: 10px;
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        justify-content: center;
+        
+    }
+    .element-type-bar{
+      width: 50%;
+      height: 100%;
+      display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+
+      
+    }
+  
+    .element-type-box{
+      width: 85%;
+      height: 35px;
+      background-color: #63636311;
+      display: flex;
+        flex-direction: row;
+        align-items: center;
+        justify-content: flex-start;
+         margin-bottom: 5px;
+         padding-left: 10px;
+         cursor: pointer;
+
+    }
+    .element-type-color{
+       width: 15px;
+       height: 15px;
+      background-color: rgb(21, 165, 153);
+    }
+    .element-type-name{
+       width: fit-content;
+       height: fit-content;
+       color: white;
+      margin-left: 10px;
+      font-size: 0.7rem;
+    
+    }
+    .element-status{
+       width: 260px;
+       height: 145px;
+      /*  background-color: rgba(77, 77, 77, 0.384); */
+        position: absolute;
+        top: -5px;
+        margin-left: 650px;
+        padding: 10px 10px 10px 0px;
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        justify-content: flex-start;
+    }
+    .element-status-bar{
+      width: 40%;
+      height: 100%;
+      display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+        justify-content: center;
+        margin-right: 30px;
+        
+
+    }
+    
+    .element-status-box{
+       width: 110px;
+       height: 150px;
+       background-color: #6363632d;
+       margin: 10px;
+       display: flex;
+        flex-direction: row;
+        align-items: center;
+        justify-content: flex-start;
+        cursor: pointer;
+  
+    }
+    .element-status-color{
+      width: 30px;
+      height: 70%;
+      margin-left: 5px;
+      display: flex;
+      flex-direction: row;
+      align-items: center;
+      justify-content: center;
+      border: 1px solid white;
+      
+    }
+    .element-status-name{
+     font-size: 0.7rem;
+     margin-left: 10px;
+     
+    }
+    .element-type-box:hover, 
+    .element-status-box:hover{
+      background-color: #5f5f5f;
+
+    }
+    .selectType{
+      background-color: #5f5f5f;
+    }
+    .alkali{
+       background-color: #f36342 ;
+      z-index: 2;
+    }
+   .alkaline{
+      background-color: #fca447 ;
+      z-index: 2;
+
+
+   }    
+   .lanthanoids{
+      background-color: #e75599 ;
+      z-index: 2;
+
+
+   }
+   .actinoids{
+      background-color: #e755d4;
+      z-index: 2;
+
+
+   }
+   .transition{
+      background-color: #e2c93d ;
+      z-index: 2;
+
+
+   }
+   .post-transition{
+      background-color: #9bd643 ;
+      z-index: 2;
+
+   }
+   .metalloids{
+      background-color: #30bde4 ;
+      z-index: 2;
+
+   }
+   .non{
+      background-color: #4874da ;
+      z-index: 2;
+
+   }
+   .noble{
+      background-color: #8d56c0;
+      z-index: 2;
+
+   }
+   .liquid{
+      color: #07fff3;
+   }
+  
+   .gas{
+      color: #ffcb5b;
+
+   }
+  
+   .unknown{
+      color: #797878;
+
+   }
+   .row-all{
+        width: 50px;
+        height: 470px;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: flex-end;
+       
+   }
+
+   .col-n{
+      top: -25px;
+      position: absolute;
+      color: rgba(255, 255, 255, 0.5);
+   }
+   .row-n{
+      width: 55px;
+        height: 55px;
+        cursor: pointer;
+        display: flex;
+        flex-direction: column;
+        align-items: flex-end;
+        justify-content: center;
+        color: rgba(255, 255, 255, 0.5);
+        padding-right: 20px;
+      
+
+   }
+   .between{
+      font-size: 0.7rem;
+   }
+ 
+   .white-bg{
+     background-color: rgb(255, 255, 255);
+     transform: translate(0px,-5px)
+   }
+   .black-bg{
+     background-color: rgb(71, 71, 71);
+     transform: translate(0px,5px);
+     z-index: 1;
+     opacity: 50%;
+
+
+   }
+
+
+   .element-atomic{
+     position: absolute;
+     top: 0;
+     left: 0;
+     font-size: 60%;
+
+   }
+   .element-symbol{
+    font-size: 90%;
+
+   } 
+   .element-name{
+    font-size: 50%;
+    position: absolute;
+     bottom: 5px;
+  
+     text-overflow: clip;
+     word-break:normal;
+
+ 
+ 
+   }
+   body:hover .table-bar{
+     width: 100%;
+        transition: 1s;
+   
+   }
+  
+/*   */
+
+   @media screen and (max-width : 1000px){
+      .main{
+         width: 100%;
+         height: 80vh;
+         align-items: flex-start;
+        justify-content: flex-start;
+
+      }
+      .element-status{
+         display: none;
+      }
+      .element-type{
+        width: 100%;
+        height: 10%;
+        margin-left: -15px;
+        top: 5px;
+
+        
+      }
+      .element-type-bar{
+      width: 25%;
+      height: 100%;
+      align-items: flex-start;
+        justify-content: flex-start;
+    
+    }
+      .element-type-box{
+      width: 78%;
+      height: 120px;
+      background-color: #63636300;
+      margin-bottom: 5px;
+      padding-left: 0px;
+      
+    
+    }
+     .element-type-color{
+       width: 5px;
+       height: 5px;
+    }
+    .element-type-name{
+       width: fit-content;
+       height: fit-content;
+       color: white;
+      margin-left: 10px;
+      font-size: 6px;
+    
+    
+    } 
+    
+      .table-bar{
+         width: 100%;
+         height: auto;
+         font-size: 45%;
+         margin: 0px;
+        align-items: flex-start;
+        justify-content: flex-start;
+        margin-top: 25%;
+        margin-right: 10px;
+        padding-bottom: 100px;
+     
+      }
+
+      .table {
+        width: 100%;
+        height: 100%;
+       
+      
+    }
+    .table2{
+        width: 100%;
+        height: 20px;
+        align-items: flex-end;
+        
+        
+    }
+    
+    .col{
+      width: 15%;
+      height: 180px;
+     
+    
+        
+    }
+    .row {
+        width: 82%;
+        height: 100%;
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        justify-content: center;
+    }
+    
+    .element{
+        width: 100%;
+        height: 20px;
+        font-size: 70%;
+    
+    }
+   
+  
+    .row-all{
+      width: 15%;
+      height: 180px;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: flex-end;
+         
+       
+   }
+
+    .row-n{
+      width: 100%;
+        height: 20px;
+        padding-right: 5px;
+  
+    }
+    .col-n{
+      top: -15px;
+   }
+   .between{
+      font-size: 6px;
+   }
+   }
+  
+   @media screen and (max-width : 800px){
+  .table-bar{
+
+    margin-top: 5%;
+  }
+   }
+   @media screen and (max-width : 500px){
+  .table-bar{
+
+    margin-top: 15%;
+  }
+   }
+  
+</style>
+<body>
+  
+  <div class="display-cover"></div>
+        <div class="main">
+            <div class="table-bar">
+                
+            <div class="table">
+            
+                <div class="element-type">
+                  <div class="element-type-bar">
+                  <div class="element-type-box">
+                     <div class="element-type-color alkali"></div>
+                     <div class="element-type-name">Alkali metals</div>
+                  </div>
+
+                  <div class="element-type-box">
+                     <div class="element-type-color alkaline"></div>
+                     <div class="element-type-name">Alkaline earth metals</div>
+                  </div>
+                     
+                     <div class="element-type-box">
+                        <div class="element-type-color transition"></div>
+                        <div class="element-type-name">Transition metals</div>
+                     </div>
+                     <div class="element-type-box">
+                        <div class="element-type-color post-transition"></div>
+                        <div class="element-type-name">Post-transition metals </div>
+                     </div>
+                      <div class="element-type-box">
+                        <div class="element-type-color metalloids"></div>
+                        <div class="element-type-name">Metalloids</div>
+                     </div>
+                   
+                  </div>
+                  
+                  <div class="element-type-bar">
+                 
+                     <div class="element-type-box">
+                        <div class="element-type-color non"></div>
+                        <div class="element-type-name">Non-metals</div>
+                     </div>
+
+                     <div class="element-type-box">
+                        <div class="element-type-color noble"></div>
+                        <div class="element-type-name">Noble gases</div>
+                     </div>
+                     <div class="element-type-box">
+                        <div class="element-type-color lanthanoids"></div>
+                        <div class="element-type-name">Lanthanoids</div>
+                     </div>
+                     <div class="element-type-box">
+                        <div class="element-type-color actinoids"></div>
+                        <div class="element-type-name">Actinoids</div>
+                     </div>
+                   
+                  </div>
+               </div>
+                <div class="element-status">
+                  <div class="element-status-bar">
+                     <div class="element-status-box">
+                        <div class="element-status-color ">S</div>
+                        <div class="element-status-name">Solid</div>
+                     </div>
+                     <div class="element-status-box">
+                        <div class="element-status-color liquid ">L</div>
+                        <div class="element-status-name">Liquid</div>
+                     </div>
+                  </div>
+                     <div class="element-status-bar">
+                     <div class="element-status-box">
+                        <div class="element-status-color gas">G</div>
+                        <div class="element-status-name">Gas</div>
+                     </div>
+                     <div class="element-status-box">
+                        <div class="element-status-color unknown">U</div>
+                        <div class="element-status-name">Unknown</div>
+                     </div>
+               </div>
+            </div>
+            
+        
+            <div class="row-all">
+               <span class="row-n">1</span>
+               <span class="row-n">2</span>
+               <span class="row-n">3</span>
+               <span class="row-n">4</span>
+               <span class="row-n">5</span>
+               <span class="row-n">6</span>
+               <span class="row-n">7</span>
+            </div>
+
+                 <div class="col col1">
+                    <span class="col-n">1</span>
+                     <div class="element non ">
+                        <div class="element-atomic">1</div>
+                        <div class="element-symbol">H</div>
+                        <div class="element-name">Hydrogen</div>
+                     </div>
+                     <div class="element alkali">
+                
+                      <div class="element-atomic">3</div>
+                      <div class="element-symbol">Li</div>
+                      <div class="element-name">Lithium</div>
+                     </div>
+                     <div class="element alkali">
+
+                      <div class="element-atomic">11</div>
+                      <div class="element-symbol">Na</div>
+                      <div class="element-name">Sodium</div>
+                     </div>
+                     <div class="element alkali">
+               
+
+                      <div class="element-atomic">19</div>
+                      <div class="element-symbol">K</div>
+                      <div class="element-name">Potassium</div>
+                     </div>
+                     <div class="element alkali">
+              
+                      <div class="element-atomic">37</div>
+                      <div class="element-symbol">Rb</div>
+                      <div class="element-name">Rubidium</div>
+                     </div>
+                     <div class="element alkali">
+                   
+                      <div class="element-atomic">55</div>
+                      <div class="element-symbol">Cs</div>
+                      <div class="element-name">Caesium</div>
+                     </div>
+                    <div class="element alkali">
+                 
+                      <div class="element-atomic">87</div>
+                      <div class="element-symbol unknown">Fr</div>
+                      <div class="element-name">Francium</div>
+                    </div>
+                    
+                  </div>
+               
+                 <div class="col col2">
+                  <span class="col-n">2</span>
+                    <div class="element alkaline">
+                      <div class="element-atomic">4</div>
+                      <div class="element-symbol">Be</div>
+                      <div class="element-name">Beryllium</div>
+                
+                    </div>
+                    <div class="element alkaline">
+                      <div class="element-atomic">12</div>
+                      <div class="element-symbol">Mg</div>
+                      <div class="element-name">Magnesium</div>
+                    </div>
+                    <div class="element alkaline">
+                      <div class="element-atomic">20</div>
+                      <div class="element-symbol">Ca</div>
+                      <div class="element-name">Calcium</div>
+                    </div>
+                    <div class="element alkaline">
+                      <div class="element-atomic">38</div>
+                      <div class="element-symbol">Sr</div>
+                      <div class="element-name">Strontium</div>
+                    </div>
+                    <div class="element alkaline">
+                      <div class="element-atomic">56</div>
+                      <div class="element-symbol">Ba</div>
+                      <div class="element-name">Caesium</div>
+               
+                    </div>
+                    <div class="element alkaline">
+                      <div class="element-atomic">88</div>
+                      <div class="element-symbol">Ra</div>
+                      <div class="element-name">Barium</div>
+              
+                    </div>
+
+                 </div>
+                 <div class="col col3">
+                  <span class="col-n">3</span>
+                    <div class="element transition">
+                      <div class="element-atomic">21</div>
+                      <div class="element-symbol">Sc</div>
+                      <div class="element-name">Scandium</div>
+                    </div>
+                    <div class="element transition">
+                      <div class="element-atomic">39</div>
+                      <div class="element-symbol">Y</div>
+                      <div class="element-name">Yttrium</div>
+                    </div>
+                    <div class="element transition between" >
+                     <div>57-71</div>
+                    </div>
+                    <div class="element transition between" >
+                     <div>89-103</div>
+                    </div>
+                 </div>
+                 <div class="col col4">
+                  <span class="col-n">4</span>
+
+                    <div class="element transition">
+                      <div class="element-atomic">22</div>
+                      <div class="element-symbol">Ti</div>
+                      <div class="element-name">Titanium</div>
+                    </div>
+                    <div class="element transition">
+                      <div class="element-atomic">40</div>
+                      <div class="element-symbol">Zr</div>
+                      <div class="element-name">Zirconium</div>
+                    </div>
+                    <div class="element transition">
+                      <div class="element-atomic">72</div>
+                      <div class="element-symbol">Hf</div>
+                      <div class="element-name">Hafnium</div>
+                    </div>
+                    <div class="element transition">
+                      <div class="element-atomic">104</div>
+                      <div class="element-symbol unknown">Rf</div>
+                      <div class="element-name" style="letter-spacing: -1px;">Rutherfordium</div>
+                    </div>
+                 </div>
+                 <div class="col col5">
+                  <span class="col-n">5</span>
+
+                    <div class="element transition">
+                      <div class="element-atomic">23</div>
+                      <div class="element-symbol">V</div>
+                      <div class="element-name">Vanadium</div>
+                    </div>
+                    <div class="element transition">
+                      <div class="element-atomic">41</div>
+                      <div class="element-symbol">Nb</div>
+                      <div class="element-name">Niobium</div>
+                    </div>
+                    <div class="element transition">
+                      <div class="element-atomic">73</div>
+                      <div class="element-symbol">Ta</div>
+                      <div class="element-name">Tantalum</div>
+                    </div>
+                    <div class="element transition">
+                      <div class="element-atomic">105</div>
+                      <div class="element-symbol unknown">Db</div>
+                      <div class="element-name">Dubnium</div>
+                    </div>
+                 </div>
+                 <div class="col col6">
+                  <span class="col-n">6</span>
+
+                    <div class="element transition">
+                      <div class="element-atomic">24</div>
+                      <div class="element-symbol">Cr</div>
+                      <div class="element-name">Dubnium</div>
+
+                    </div>
+                    <div class="element transition">
+                      <div class="element-atomic">42</div>
+                      <div class="element-symbol">Mo</div>
+                      <div class="element-name">Molybdenum</div>
+
+                    </div>
+                    <div class="element transition">
+                      <div class="element-atomic">74</div>
+                      <div class="element-symbol">W</div>
+                      <div class="element-name">Tungsten</div>
+
+                    </div>
+                    <div class="element transition">
+                      <div class="element-atomic">106</div>
+                      <div class="element-symbol unknown">Sg</div>
+                      <div class="element-name">Seaborgium</div>
+                    </div>
+                 </div>
+                 <div class="col col7">
+                  <span class="col-n">7</span>
+
+                    <div class="element transition">
+                      <div class="element-atomic">25</div>
+                      <div class="element-symbol">Mn</div>
+                      <div class="element-name">Manganese</div>
+                    </div>
+                    <div class="element transition">
+                      <div class="element-atomic">106</div>
+                      <div class="element-symbol">Tc</div>
+                      <div class="element-name">Technetium</div>
+
+                    </div>
+                    <div class="element transition">
+                      <div class="element-atomic">106</div>
+                      <div class="element-symbol">Re</div>
+                      <div class="element-name">Rhenium</div>
+                    </div>
+                    <div class="element transition">
+                      <div class="element-atomic">106</div>
+                      <div class="element-symbol unknown">Bh</div>
+                      <div class="element-name">Bohrium</div>
+
+                    </div>
+                 </div>
+                 <div class="col col8">
+                  <span class="col-n">8</span>
+
+                    <div class="element transition">
+                      <div class="element-atomic">23</div>
+                      <div class="element-symbol">Fe</div>
+                      <div class="element-name">Iron</div>
+
+                    </div>
+                    <div class="element transition">
+                      <div class="element-atomic">44</div>
+                      <div class="element-symbol">Ru</div>
+                      <div class="element-name">Ruthenium</div>
+
+                    </div>
+                    <div class="element transition">
+                      <div class="element-atomic">76</div>
+                      <div class="element-symbol">Os</div>
+                      <div class="element-name">Osmium</div>
+
+                    </div>
+                    <div class="element transition">
+                      <div class="element-atomic">108</div>
+                      <div class="element-symbol unknown">Hs</div>
+                      <div class="element-name">Hassium</div>
+
+                    </div>
+                 </div>
+                 <div class="col col9">
+                  <span class="col-n">9</span>
+
+                    <div class="element transition">
+                      <div class="element-atomic">27</div>
+                      <div class="element-symbol">Co</div>
+                      <div class="element-name">Cobalt</div>
+                    </div>
+                    <div class="element transition">
+                      <div class="element-atomic">45</div>
+                      <div class="element-symbol">Rh</div>
+                      <div class="element-name">Hassium</div>
+
+                    </div>
+                    <div class="element transition">
+                      <div class="element-atomic">77</div>
+                      <div class="element-symbol">Ir</div>
+                      <div class="element-name">Iridium</div>
+
+                    </div>
+                    <div class="element ">
+                      <div class="element-atomic">109</div>
+                      <div class="element-symbol unknown">Mt</div>
+                      <div class="element-name">Meitnerium</div>
+                    </div>
+                 </div>
+                 <div class="col col10">
+                  <span class="col-n">10</span>
+
+                    <div class="element transition">
+                      <div class="element-atomic">28</div>
+                      <div class="element-symbol">Ni</div>
+                      <div class="element-name">Nickel</div>
+
+                    </div>
+                    <div class="element transition">
+                      <div class="element-atomic">46</div>
+                      <div class="element-symbol">Pd</div>
+                      <div class="element-name">Palladium</div>
+                    </div>
+                    <div class="element transition">
+                      <div class="element-atomic">78</div>
+                      <div class="element-symbol">Pt</div>
+                      <div class="element-name">Platinum</div>
+                    </div>
+                    <div class="element ">
+                      <div class="element-atomic">110</div>
+                      <div class="element-symbol unknown">Ds</div>
+                      <div class="element-name">Darmstadtium</div>
+                    </div>
+                 </div>
+                 <div class="col col11">
+                  <span class="col-n">11</span>
+
+                    <div class="element transition">
+                      <div class="element-atomic">29</div>
+                      <div class="element-symbol">Cu</div>
+                      <div class="element-name">Copper</div>
+                    </div>
+                    <div class="element transition">
+                      <div class="element-atomic">47</div>
+                      <div class="element-symbol">Ag</div>
+                      <div class="element-name">Silver</div>
+                    </div>
+                    <div class="element transition">
+                      <div class="element-atomic">79</div>
+                      <div class="element-symbol">Au</div>
+                      <div class="element-name">Gold</div>
+                    </div>
+                    <div class="element ">
+                      <div class="element-atomic">111</div>
+                      <div class="element-symbol unknown">Rg</div>
+                      <div class="element-name">Roentgenium</div>
+                    </div>
+                 </div>
+                 <div class="col col12">
+                  <span class="col-n">12</span>
+
+                    <div class="element transition">
+                      <div class="element-atomic">30</div>
+                      <div class="element-symbol ">Zn</div>
+                      <div class="element-name">Zinc</div>
+                    </div>
+                    <div class="element transition">
+                      <div class="element-atomic">48</div>
+                      <div class="element-symbol ">Cd</div>
+                      <div class="element-name">Cadmium</div>
+                    </div>
+                    <div class="element transition">
+                      <div class="element-atomic">
+                      </div>
+                      <div class="element-atomic">80</div>
+                      <div class="element-symbol ">Hg</div>
+                      <div class="element-name">Mercury</div>
+                    </div>
+                    <div class="element ">
+                      <div class="element-atomic">112</div>
+                      <div class="element-symbol unknown">Cn</div>
+                      <div class="element-name">Copernicium</div>
+                    </div>
+                 </div>
+                 <div class="col col13">
+                  <span class="col-n">13</span>
+
+                    <div class="element metalloids">
+                      <div class="element-atomic">5</div>
+                      <div class="element-symbol ">B</div>
+                      <div class="element-name">Boron</div>
+                    </div>
+                    <div class="element post-transition">
+                      <div class="element-atomic">13</div>
+                      <div class="element-symbol ">Al</div>
+                      <div class="element-name">Aluminium</div>
+                    </div>
+                    <div class="element post-transition">
+                      <div class="element-atomic">31</div>
+                      <div class="element-symbol ">Ga</div>
+                      <div class="element-name">Gallium</div>
+                    </div>
+                    <div class="element post-transition">
+                      <div class="element-atomic">49</div>
+                      <div class="element-symbol ">In</div>
+                      <div class="element-name">Indium</div>
+                    </div>
+                    <div class="element post-transition">
+                      <div class="element-atomic">81</div>
+                      <div class="element-symbol ">Tl</div>
+                      <div class="element-name">Thallium</div>
+                    </div>
+                    <div class="element ">
+                      <div class="element-atomic">113</div>
+                      <div class="element-symbol unknown">Nh</div>
+                      <div class="element-name">Nihonium</div>
+                    </div>
+                 </div>
+                 <div class="col col14">
+                  <span class="col-n">14</span>
+
+                    <div class="element non">
+                      <div class="element-atomic">6</div>
+                      <div class="element-symbol ">C</div>
+                      <div class="element-name">Carbon</div>
+                    </div>
+                    <div class="element metalloids">
+                      <div class="element-atomic">14</div>
+                      <div class="element-symbol ">Nh</div>
+                      <div class="element-name">Nihonium</div>
+                    </div>
+                    <div class="element metalloids">
+                      <div class="element-atomic">32</div>
+                      <div class="element-symbol ">Ge</div>
+                      <div class="element-name">Germanium</div>
+                    </div>
+                    <div class="element post-transition">
+                      <div class="element-atomic">50</div>
+                      <div class="element-symbol ">Sn</div>
+                      <div class="element-name">Tin</div>
+                    </div>
+                    <div class="element post-transition">
+                      <div class="element-atomic">82</div>
+                      <div class="element-symbol ">Pb</div>
+                      <div class="element-name">Lead</div>
+                    </div>
+                    <div class="element"> 
+                      <div class="element-atomic">114</div>
+                      <div class="element-symbol unknown">Fl</div>
+                      <div class="element-name">Flerovium</div>
+                 </div>
+               </div>
+                 <div class="col col15">
+                  <span class="col-n">15</span>
+
+                    <div class="element non">
+                      <div class="element-atomic">7</div>
+                      <div class="element-symbol ">N</div>
+                      <div class="element-name">Nitrogen</div>
+                    </div>
+                    <div class="element non">
+                      <div class="element-atomic">15</div>
+                      <div class="element-symbol ">P</div>
+                      <div class="element-name">Phosphorus</div>
+                    </div>
+                    <div class="element metalloids">
+                      <div class="element-atomic">33</div>
+                      <div class="element-symbol ">As</div>
+                      <div class="element-name">Arsenic</div>
+                    </div>
+                    <div class="element metalloids">
+                      <div class="element-atomic">51</div>
+                      <div class="element-symbol ">Sb</div>
+                      <div class="element-name">Antimony</div>
+                    </div>
+                    <div class="element post-transition">
+                      <div class="element-atomic">83</div>
+                      <div class="element-symbol ">Bi</div>
+                      <div class="element-name">Bismuth</div>
+                    </div>
+                    <div class="element">
+                      <div class="element-atomic">115</div>
+                      <div class="element-symbol unknown">Mc</div>
+                      <div class="element-name">Moscovium</div>
+                    </div>
+
+                 </div>
+                 <div class="col col16">
+                  <span class="col-n">16</span>
+
+                    <div class="element non">
+                      <div class="element-atomic">8</div>
+                      <div class="element-symbol ">Mc</div>
+                      <div class="element-name">Oxygen</div>
+                       
+                    </div>
+                    <div class="element non">
+                      <div class="element-atomic">16</div>
+                      <div class="element-symbol ">O</div>
+                      <div class="element-name">Sulfur</div>
+
+                    </div>
+                    <div class="element non">
+                      <div class="element-atomic">34</div>
+                      <div class="element-symbol ">S</div>
+                      <div class="element-name">Selenium</div>
+
+                    </div>
+                    <div class="element metalloids">
+                      <div class="element-atomic">52</div>
+                      <div class="element-symbol ">Te</div>
+                      <div class="element-name">Tellurium</div>
+
+                    </div>
+                    <div class="element post-transition">
+                      <div class="element-atomic">84</div>
+                      <div class="element-symbol ">Po</div>
+                      <div class="element-name">Polonium</div>
+
+                    </div>
+                    <div class="element">
+                      <div class="element-atomic">116</div>
+                      <div class="element-symbol unknown">Lv</div>
+                      <div class="element-name">Livermorium</div>
+
+                    </div>
+
+                 </div>
+                 <div class="col col17">
+                  <span class="col-n">17</span>
+
+                    <div class="element non">
+                      <div class="element-atomic">9</div>
+                      <div class="element-symbol ">F</div>
+                      <div class="element-name">Fluorine</div>
+                    </div>
+                    <div class="element non">
+                      <div class="element-atomic">17</div>
+                      <div class="element-symbol ">Cl</div>
+                      <div class="element-name">Chlorine</div>
+                    </div>
+                    <div class="element non">
+                      <div class="element-atomic">35</div>
+                      <div class="element-symbol ">Br</div>
+                      <div class="element-name">Bromine</div>
+                    </div>
+                    <div class="element non">
+                      <div class="element-atomic">53</div>
+                      <div class="element-symbol ">I</div>
+                      <div class="element-name">Iodine</div>
+                    </div>
+                    <div class="element metalloids">
+                      <div class="element-atomic">85</div>
+                      <div class="element-symbol ">At</div>
+                      <div class="element-name">Astatine</div>
+                    </div>
+                    <div class="element">
+                      <div class="element-atomic">117</div>
+                      <div class="element-symbol unknown">Ts</div>
+                      <div class="element-name">Tennessine</div>
+                    </div>
+                 </div>
+                 <div class="col col18">
+                  <span class="col-n">18</span>
+                    
+                    <div class="element noble">
+                      <div class="element-atomic">2</div>
+                      <div class="element-symbol ">He</div>
+                      <div class="element-name">Helium</div>
+                    </div>
+                    <div class="element noble">
+                      <div class="element-atomic">10</div>
+                      <div class="element-symbol ">Ne</div>
+                      <div class="element-name">Neon</div>
+                    </div>
+                    <div class="element noble">
+                      <div class="element-atomic">18</div>
+                      <div class="element-symbol ">Ar</div>
+                      <div class="element-name">Argon</div>
+                    </div>
+                    <div class="element noble">
+                      <div class="element-atomic">36</div>
+                      <div class="element-symbol ">Kr</div>
+                      <div class="element-name">Krypton</div>
+                    </div>
+                    <div class="element noble">
+                      <div class="element-atomic">54</div>
+                      <div class="element-symbol ">Xe</div>
+                      <div class="element-name">Xenon</div>
+                    </div>
+                    <div class="element noble">
+                      <div class="element-atomic">86</div>
+                      <div class="element-symbol ">Rn</div>
+                      <div class="element-name">Radon</div>
+                    </div>
+                    <div class="element">
+                      <div class="element-atomic">118</div>
+                      <div class="element-symbol unknown">Og</div>
+                      <div class="element-name">Oganesson</div>
+                    </div>
+                 </div>
+
+            </div>
+            <div class="table2">
+                <div class="row">
+                    <div class="element-empty "></div>
+                    <div class="element-empty"></div>
+                    <div class="element-empty"></div>
+                    <div class="element-empty"></div>
+
+                   <div class="element lanthanoids">
+                    <div class="element-atomic">57</div>
+                    <div class="element-symbol ">La</div>
+                    <div class="element-name">Lanthanum</div>
+                     </div>
+                   <div class="element lanthanoids">
+                    <div class="element-atomic">58</div>
+                    <div class="element-symbol ">Ce</div>
+                    <div class="element-name">Cerium</div>
+                   </div>
+                   <div class="element lanthanoids">
+                    <div class="element-atomic">59</div>
+                    <div class="element-symbol ">Pr</div>
+                    <div class="element-name">Praseodymium</div>
+
+                   </div>
+                   <div class="element lanthanoids">
+                    <div class="element-atomic">60</div>
+                    <div class="element-symbol ">Nd</div>
+                    <div class="element-name">Neodymium</div>
+
+                   </div>
+                   <div class="element lanthanoids">
+                    <div class="element-atomic">61</div>
+                    <div class="element-symbol ">Pm</div>
+                    <div class="element-name">Promethium</div>
+
+                   </div>
+                   <div class="element lanthanoids">
+                    <div class="element-atomic">62</div>
+                    <div class="element-symbol ">Sm</div>
+                    <div class="element-name">Samarium</div>
+
+                   </div>
+                   <div class="element lanthanoids">
+                    <div class="element-atomic">63</div>
+                    <div class="element-symbol ">Eu</div>
+                    <div class="element-name">Europium</div>
+
+                   </div>
+                   <div class="element lanthanoids">
+                    <div class="element-atomic">64</div>
+                    <div class="element-symbol ">Gd</div>
+                    <div class="element-name">Gadolinium</div>
+
+                   </div>
+                   <div class="element lanthanoids">
+                    <div class="element-atomic">65</div>
+                    <div class="element-symbol ">Tb</div>
+                    <div class="element-name">Terbium</div>
+
+                   </div>
+                
+                   <div class="element lanthanoids">
+                    <div class="element-atomic">66</div>
+                    <div class="element-symbol ">Dy</div>
+                    <div class="element-name">Dysprosium</div>
+
+                   </div>
+                   <div class="element lanthanoids">
+                    <div class="element-atomic">67</div>
+                    <div class="element-symbol ">Ho</div>
+                    <div class="element-name">Holmium</div>
+
+                   </div>
+                   <div class="element lanthanoids">
+                    <div class="element-atomic">68</div>
+                    <div class="element-symbol ">Er</div>
+                    <div class="element-name">Erbium</div>
+
+                   </div>
+                   <div class="element lanthanoids">
+                    <div class="element-atomic">69</div>
+                      <div class="element-symbol ">Tm</div>
+                      <div class="element-name">Thulium</div>
+
+                   </div>
+                   <div class="element lanthanoids">
+                    <div class="element-atomic">70</div>
+                    <div class="element-symbol ">Yb</div>
+                    <div class="element-name">Ytterbium</div>
+
+                   </div>
+                   <div class="element lanthanoids">
+                    <div class="element-atomic">71</div>
+                    <div class="element-symbol ">Lu</div>
+                    <div class="element-name">Lutetium</div>
+
+                   </div>
+                
+                </div>
+                <div class="row">
+                    <div class="element-empty"></div>
+                    <div class="element-empty"></div>
+                    <div class="element-empty"></div>
+                    <div class="element-empty"></div>
+                    <div class="element actinoids">
+                      <div class="element-atomic">89</div>
+                      <div class="element-symbol ">Ac</div>
+                      <div class="element-name">Actinium</div>
+
+                    </div>
+                    <div class="element actinoids">
+                      <div class="element-atomic">90</div>
+                      <div class="element-symbol ">Th</div>
+                      <div class="element-name">Lutetium</div>
+
+                    </div>
+                    <div class="element actinoids">
+                      <div class="element-atomic">91</div>
+                      <div class="element-symbol ">Pa</div>
+                      <div class="element-name">Protactinium</div>
+
+                    </div>
+                    <div class="element actinoids">
+                      <div class="element-atomic">92</div>
+                      <div class="element-symbol ">U</div>
+                      <div class="element-name">Uranium</div>
+
+                    </div>
+                    <div class="element actinoids">
+                      <div class="element-atomic">93</div>
+                      <div class="element-symbol ">Np</div>
+                      <div class="element-name">Neptunium</div>
+
+                    </div>
+                    <div class="element actinoids">
+                      <div class="element-atomic">94</div>
+                      <div class="element-symbol ">Pu</div>
+                      <div class="element-name">Neptunium</div>
+
+                    </div>
+                    <div class="element actinoids">
+                      <div class="element-atomic">95</div>
+                      <div class="element-symbol ">Am</div>
+                      <div class="element-name">Americium</div>
+                    </div>
+                    <div class="element actinoids">
+                      <div class="element-atomic">96</div>
+                      <div class="element-symbol ">Cm</div>
+                      <div class="element-name">Curium</div>
+
+                    </div>
+                    <div class="element actinoids">
+                      <div class="element-atomic">97</div>
+                      <div class="element-symbol ">Bk</div>
+                      <div class="element-name">Berkelium</div>
+
+                    </div>
+                    <div class="element actinoids">
+                      <div class="element-atomic">98</div>
+                      <div class="element-symbol ">Cf</div>
+                      <div class="element-name">Californium</div>
+
+                    </div>
+                    <div class="element actinoids">
+                      <div class="element-atomic">99</div>
+                      <div class="element-symbol ">Es</div>
+                      <div class="element-name">Einsteinium</div>
+
+                    </div>
+                    <div class="element actinoids">
+                      <div class="element-atomic">100</div>
+                      <div class="element-symbol ">Fm</div>
+                      <div class="element-name">Fermium</div>
+
+                    </div>
+                    <div class="element actinoids">
+                      <div class="element-atomic">101</div>
+                      <div class="element-symbol ">Md</div>
+                      <div class="element-name">Mendelevium</div>
+
+                    </div>
+                    <div class="element actinoids">
+                      <div class="element-atomic">102</div>
+                      <div class="element-symbol ">No</div>
+                      <div class="element-name">Nobelium</div>
+
+                    </div>
+                    <div class="element actinoids">
+                      <div class="element-atomic">73</div>
+                      <div class="element-symbol ">Lr</div>
+                      <div class="element-name">Lawrencium</div>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        </div>
+    
+</body>
+
+<script>
+       function docSelect(el){
+          return document.querySelector("."+el)
+      }
+       function docSelectAll(el){
+          return document.querySelectorAll("."+el)
+      }
+
+</script>
+<script>
+  
+
+  
+    let alkali = docSelect("alkali","element-type-color")
+    let alkaline= docSelect("alkaline","element-type-color")
+    let transition= docSelect("transition","element-type-color")
+    let post = docSelect("post-transition","element-type-color")
+    let metalloids = docSelect("metalloids","element-type-color")
+    let non = docSelect("non","element-type-color")
+    let noble = docSelect("noble","element-type-color")
+    let lanthanoids = docSelect("lanthanoids","element-type-color")
+    let actinoids = docSelect("actinoids","element-type-color")
+    let type_color = docSelectAll("element-type-color")
+
+    let type_box = docSelectAll("element-type-box")
+    let elem = docSelectAll("element")
+
+  
+  setColor()
+function setColor(){
+  let elem = docSelectAll("element")
+
+  let i0 = -1
+  let i1 = -1
+  let i2 = -1
+  let fcd = setInterval(()=>{
+        i0++
+        elem[i0].classList.add(("black-bg"))
+        if(i0 == elem.length-1){
+      clearInterval(fcd)
+}
+    },0)
+ let cd = setInterval(()=>{
+    i1++
+    elem[i1].classList.add(("white-bg"))
+    elem[i1].classList.remove("black-bg")
+
+    if(i1 == elem.length-1){
+      clearInterval(cd)
+}
+  },10)
+  let cd2 = setInterval(()=>{
+    i2++
+    elem[i2].classList.remove(("white-bg"))
+    if(i2 == elem.length-1){
+      clearInterval(cd2)
+}
+  },15)
+
+/*   setTimeout(()=>{
+    elem.forEach(item=>{
+      item.classList.add(("white-bg"))
+    }) 
+    setTimeout(()=>{
+      elem.forEach(item=>{
+      item.classList.remove(("white-bg"))
+    }) 
+   
+    },500)
+},2500) */
+}
+   
+
+  
+  window.addEventListener("click",function(e){
+    console.log(e.target.className )
+    let tbox = "element-type-box"
+    let tname = "element-type-name"
+    let cname = "element-type-color"
+    let target = e.target.classList
+   
+
+    if(target == tname){
+      if(e.target.parentElement.classList == "element-type-box"){
+      type_box.forEach(item =>{
+        item.classList.remove("selectType")
+      })
+      setTimeout(()=>{
+      e.target.parentElement.classList.add("selectType")
+    },100)
+    
+    } else{
+      console.log("dsadasd")
+      e.target.parentElement.classList.remove("selectType")
+      setColor()
+
+    } 
+  } 
+   
+
+    
+  
+
+    
+    
+     if(target == tbox ){
+      type_box.forEach(item =>{
+        item.classList.remove("selectType")
+      })
+      e.target.classList.add("selectType")
+     
+    }
+    
+    else if(target == "element-type-box selectType"){
+      e.target.classList.remove("selectType")
+      setColor()
+
+
+    } 
+   
+  })    
+
+
+  window.addEventListener("load",selectType)
+  function selectType(){
+   alkali.parentElement.addEventListener("click",function(e){
+    elem.forEach(item =>{
+      item.classList.remove("black-bg")
+      if(item.classList != "element alkali"){
+        item.classList.add("black-bg")
+      }
+    })
+   })
+
+   alkaline.parentElement.addEventListener("click",function(e){
+    elem.forEach(item =>{
+      item.classList.remove("black-bg")
+      if(item.classList != "element alkaline"){
+        item.classList.add("black-bg")
+    
+      }
+    })
+   })
+
+   transition.parentElement.addEventListener("click",function(e){
+    elem.forEach(item =>{
+      item.classList.remove("black-bg")
+      if(item.classList != "element transition"){
+        item.classList.add("black-bg")
+      }
+    })
+   })
+   post.parentElement.addEventListener("click",function(e){
+    elem.forEach(item =>{
+      item.classList.remove("black-bg")
+      if(item.classList != "element post-transition"){
+        item.classList.add("black-bg")
+      }
+    })
+   })
+
+   metalloids.parentElement.addEventListener("click",function(e){
+    elem.forEach(item =>{
+      item.classList.remove("black-bg")
+      if(item.classList != "element metalloids"){
+        item.classList.add("black-bg")
+      }
+    })
+   })
+
+   non.parentElement.addEventListener("click",function(e){
+    elem.forEach(item =>{
+      item.classList.remove("black-bg")
+      if(item.classList != "element non"){
+        item.classList.add("black-bg")
+      }
+    })
+   })
+   noble.parentElement.addEventListener("click",function(e){
+    elem.forEach(item =>{
+      item.classList.remove("black-bg")
+      if(item.classList != "element noble"){
+        item.classList.add("black-bg")
+      }
+    })
+   })
+
+   lanthanoids.parentElement.addEventListener("click",function(e){
+    elem.forEach(item =>{
+      item.classList.remove("black-bg")
+      if(item.classList != "element lanthanoids"){
+        item.classList.add("black-bg")
+      }
+    })
+   })
+
+   actinoids.parentElement.addEventListener("click",function(e){
+    elem.forEach(item =>{
+      item.classList.remove("black-bg")
+      if(item.classList != "element actinoids"){
+        item.classList.add("black-bg")
+      }
+    })
+   })
+  }
+ 
+  
+
+
+</script>
+  
+
+</html>
